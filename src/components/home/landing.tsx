@@ -2,7 +2,8 @@ import Me from "@/assets/me.png";
 import Image from "next/image";
 import { BsMouse } from "react-icons/bs";
 import { Anton, Roboto } from "next/font/google";
-import Navbar from "@/components/navbar";
+import { BsFacebook, BsGithub, BsTwitter, BsLinkedin } from "react-icons/bs";
+import Link from "next/link";
 
 const anton = Anton({ weight: "400", subsets: ["latin"] });
 const roboto = Roboto({ weight: "400", subsets: ["latin"] });
@@ -22,6 +23,20 @@ const HomeLanding = () => {
           className={`${roboto.className} block my-2 text-2xl text-stone-300`}>
           A web and app developer.
         </span>
+        <div className='flex xl:justify-start justify-center gap-6 my-8'>
+          <Link href='https://www.facebook.com/kentaki.dev'>
+            <BsFacebook size={32} />
+          </Link>
+          <Link href='https://twitter.com/_kentjordan'>
+            <BsTwitter size={32} />
+          </Link>
+          <Link href='https://www.linkedin.com/in/kjordannn'>
+            <BsLinkedin size={32} />
+          </Link>
+          <Link href='https://github.com/kentjordan'>
+            <BsGithub size={32} />
+          </Link>
+        </div>
         <div className='relative xl:absolute bottom-0 flex first-letter:flex justify-center items-center xl:my-32 my-16'>
           <BsMouse className='text-white/75' size={32} />
           <span className='block mx-2 text-white/75'>

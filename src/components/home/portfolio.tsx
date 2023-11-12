@@ -1,15 +1,10 @@
-import React, { useState } from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import { Anton, Roboto } from "next/font/google";
 import Image from "next/image";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import {
-  A11y,
-  EffectFade,
-  Navigation,
-  Pagination,
-  Scrollbar,
-} from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -30,7 +25,7 @@ const Item = ({
   tags: string[];
 }) => {
   return (
-    <div className='flex flex-col justify-between my-8 w-[400px]  bg-stone-900 rounded'>
+    <div className='flex flex-col justify-between my-8 w-[300px]  bg-stone-900 rounded'>
       <div>
         <Image src={img_url} alt='works 1' width={400} height={200} />
         <div className='flex flex-col p-6'>
@@ -109,49 +104,20 @@ function HomePortfolio() {
   ]);
 
   return (
-    <div className='my-64 p-4'>
-      <h1 className={`${anton.className} text-6xl my-8`}>My recent works</h1>
-      <div className='flex flex-col my-12'>
+    <div className='flex flex-col items-center p-4' id='works'>
+      <h1 className={`${anton.className} text-6xl my-8 text-center`}>
+        My recent works
+      </h1>
+      <div className='flex flex-col my-12 items-center'>
         <h1 className={`${roboto.className} text-2xl`}>From a client</h1>
-        <div className='flex gap-4'>
-          {fromClient.length <= 3 ? (
-            [...fromClient]
-          ) : (
-            <Swiper
-              navigation={true}
-              slidesPerView={3}
-              spaceBetween={30}
-              pagination={{
-                clickable: true,
-              }}
-              modules={[Pagination, Navigation]}>
-              {fromClient.map((e, i) => {
-                return <SwiperSlide>{e}</SwiperSlide>;
-              })}
-            </Swiper>
-          )}
+        <div className='flex gap-4 flex-wrap justify-center'>
+          {...fromClient}
         </div>
       </div>
-      <div className='flex flex-col my-12'>
+      <div className='flex flex-col my-12 items-center'>
         <h1 className={`${roboto.className} text-2xl`}>Personal Projects</h1>
-        <div className='flex gap-4'>
-          {personalProjects.length <= 3 ? (
-            [...personalProjects]
-          ) : (
-            <Swiper
-              navigation={true}
-              slidesPerView={3}
-              spaceBetween={30}
-              pagination={{
-                clickable: true,
-              }}
-              modules={[Pagination, Navigation]}
-              className=''>
-              {personalProjects.map((e, i) => {
-                return <SwiperSlide>{e}</SwiperSlide>;
-              })}
-            </Swiper>
-          )}
+        <div className='flex gap-4 flex-wrap justify-center'>
+          {...personalProjects}
         </div>
       </div>
     </div>
