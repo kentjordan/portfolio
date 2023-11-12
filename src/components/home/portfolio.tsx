@@ -1,20 +1,31 @@
 "use client";
 import React, { useState } from "react";
 import { Anton, Roboto } from "next/font/google";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 const anton = Anton({ weight: "400", subsets: ["latin"] });
 const roboto = Roboto({ weight: ["400", "700"], subsets: ["latin"] });
+
+import PeachTreeDesigns from "@/assets/ptd.png";
+import GoExploreBatangas from "@/assets/goexplore.png";
+import MDASCalculator from "@/assets/mdas_calculator.png";
+import KabsahiCart from "@/assets/kabsahi_cart.png";
+import BinarySearch from "@/assets/binary_search.png";
+import LinearSearch from "@/assets/linear_search.png";
+
+import Link from "next/link";
 
 const Item = ({
   title,
   description,
   img_url,
+  view_url,
   tags,
 }: {
   title: string;
   description: string;
-  img_url: string;
+  img_url: string | StaticImageData;
+  view_url: string;
   tags: string[];
 }) => {
   return (
@@ -50,10 +61,11 @@ const Item = ({
           {/*  */}
         </div>
       </div>
-      <button
+      <Link
+        href={view_url}
         className={`${roboto.className} border border-stone-400 text-stone-400 w-40 m-8 p-2`}>
         VIEW
-      </button>
+      </Link>
     </div>
   );
 };
@@ -64,14 +76,16 @@ function HomePortfolio() {
       title: "Peach Tree Designs",
       description:
         "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis quod rerum dignissimos debitis? Earum odio ea dolores ipsum vitae totam!",
-      img_url: "https://picsum.photos/400/200",
+      img_url: PeachTreeDesigns,
+      view_url: "https://www.peachtree-designs.com/",
       tags: ["EXPRESS.JS", "ADMIN PANEL"],
     },
     {
       title: "Go Explore Batangas",
       description:
         "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis quod rerum dignissimos debitis? Earum odio ea dolores ipsum vitae totam!",
-      img_url: "https://picsum.photos/400/200",
+      img_url: GoExploreBatangas,
+      view_url: "https://www.goexplorebatangas.com/",
       tags: ["EXPRESS.JS"],
     },
   ]);
@@ -81,28 +95,34 @@ function HomePortfolio() {
       title: "Kabsahi Cart",
       description:
         "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis quod rerum dignissimos debitis? Earum odio ea dolores ipsum vitae totam!",
-      img_url: "https://picsum.photos/400/200",
+      img_url: KabsahiCart,
+      view_url: "https://kabsahi-devlopment.vercel.app/",
       tags: ["REACT.JS"],
     },
     {
       title: "MDAS Calculator",
       description:
         "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis quod rerum dignissimos debitis? Earum odio ea dolores ipsum vitae totam!",
-      img_url: "https://picsum.photos/400/200",
+      img_url: MDASCalculator,
+      view_url: "https://calc-kjordan.vercel.app/",
       tags: ["FLUTTER WEB"],
     },
     {
       title: "Binary Search Visualizer",
       description:
         "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis quod rerum dignissimos debitis? Earum odio ea dolores ipsum vitae totam!",
-      img_url: "https://picsum.photos/400/200",
+      img_url: BinarySearch,
+      view_url:
+        "https://kjordan-visualize.vercel.app/algorithms/searching/binary-search/demo",
       tags: ["REACT.JS"],
     },
     {
       title: "Linear Search Visualizer",
       description:
         "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis quod rerum dignissimos debitis? Earum odio ea dolores ipsum vitae totam!",
-      img_url: "https://picsum.photos/400/200",
+      img_url: LinearSearch,
+      view_url:
+        "https://kjordan-visualize.vercel.app/algorithms/searching/linear-search/demo",
       tags: ["REACT.JS"],
     },
   ]);
@@ -122,6 +142,7 @@ function HomePortfolio() {
                 title={e.title}
                 description={e.description}
                 img_url={e.img_url}
+                view_url={e.view_url}
                 tags={e.tags}
               />
             );
@@ -138,6 +159,7 @@ function HomePortfolio() {
                 title={e.title}
                 description={e.description}
                 img_url={e.img_url}
+                view_url={e.view_url}
                 tags={e.tags}
               />
             );
