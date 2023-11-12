@@ -50,7 +50,7 @@ const HomeLanding = () => {
       <div className='flex-col justify-end items-center flex-1 flex overflow-hidden'>
         <Image
           src={Me}
-          className='min-w-[800px] w-[800px] h-[680px] mb-8'
+          className='min-w-[800px] w-[800px] h-[680px]'
           alt='Me'></Image>
       </div>
     </div>

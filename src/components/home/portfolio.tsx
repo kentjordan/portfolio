@@ -29,7 +29,7 @@ const Item = ({
   tags: string[];
 }) => {
   return (
-    <div className='flex flex-col justify-between my-8 w-[300px]  bg-stone-900 rounded'>
+    <div className='flex flex-col justify-between my-8 max-w-[320px] w-full  bg-stone-900 rounded'>
       <div>
         <Image src={img_url} alt='works 1' width={400} height={200} />
         <div className='flex flex-col p-6'>
