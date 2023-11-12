@@ -4,15 +4,26 @@ import { BsMouse } from "react-icons/bs";
 import { Anton, Roboto } from "next/font/google";
 import { BsFacebook, BsGithub, BsTwitter, BsLinkedin } from "react-icons/bs";
 import Link from "next/link";
+import { useLayoutEffect, useState } from "react";
 
 const anton = Anton({ weight: "400", subsets: ["latin"] });
 const roboto = Roboto({ weight: "400", subsets: ["latin"] });
 
 const HomeLanding = () => {
+  const [height, setHeight] = useState<number | undefined>(undefined);
+
+  useLayoutEffect(() => {
+    setHeight(window.innerHeight);
+  }, [height]);
+
   return (
-    <div className='flex justify-center h-screen flex-wrap'>
+    <div
+      className={`flex justify-center flex-wrap relative h-screen`}
+      style={{
+        maxHeight: `${height}px`,
+      }}>
       <div className='absolute bg-gradient-to-t from-black via-black/10  to-transparent max-w-[1280px] w-full h-full'></div>
-      {/*  */}
+      {/* Info about me */}
       <div className='absolute bottom-0 text-center xl:text-start flex-col justify-center flex-[.5] xl:flex xl:relative'>
         <span
           className={`${roboto.className} block my-2 text-xl sm:text-4xl text-stone-300`}>
