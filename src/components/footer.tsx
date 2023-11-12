@@ -4,7 +4,7 @@ import React from "react";
 const Footer = () => {
   return (
     <div className='  w-full flex flex-col items-center p-8'>
-      <ul className='flex gap-8 justify-center my-16'>
+      <ul className='flex gap-8 justify-center my-16 flex-wrap'>
         <li className='cursor-pointer'>
           <Link href='/'>Home</Link>
         </li>
