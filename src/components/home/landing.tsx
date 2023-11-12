@@ -1,5 +1,5 @@
-import Me from "@/assets/me.png";
 import Image from "next/image";
+import Me from "@/assets/me.png";
 import { BsMouse } from "react-icons/bs";
 import { Anton, Roboto } from "next/font/google";
 import { BsFacebook, BsGithub, BsTwitter, BsLinkedin } from "react-icons/bs";
