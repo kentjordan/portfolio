@@ -1,14 +1,7 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Anton, Roboto } from "next/font/google";
 import Image from "next/image";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
-
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 
 const anton = Anton({ weight: "400", subsets: ["latin"] });
 const roboto = Roboto({ weight: ["400", "700"], subsets: ["latin"] });
@@ -34,13 +27,17 @@ const Item = ({
             {tags.map((item, index) => {
               if (index >= 1) {
                 return (
-                  <span className='ml-2 text-stone-300 font-bold text-sm'>
+                  <span
+                    key={index}
+                    className='ml-2 text-stone-300 font-bold text-sm'>
                     {item}
                   </span>
                 );
               }
               return (
-                <span className='text-stone-300 font-bold text-sm'>{item}</span>
+                <span key={index} className='text-stone-300 font-bold text-sm'>
+                  {item}
+                </span>
               );
             })}
           </div>
@@ -63,44 +60,51 @@ const Item = ({
 
 function HomePortfolio() {
   const [fromClient, setFromClient] = useState([
-    <Item
-      title='Peach Tree Designs'
-      description='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis quod rerum dignissimos debitis? Earum odio ea dolores ipsum vitae totam!'
-      img_url='https://picsum.photos/400/200'
-      tags={["EXPRESS.JS", "ADMIN PANEL"]}
-    />,
-    <Item
-      title='Go Explore Batangas'
-      description='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis quod rerum dignissimos debitis? Earum odio ea dolores ipsum vitae totam!'
-      img_url='https://picsum.photos/400/200'
-      tags={["EXPRESS.JS"]}
-    />,
+    {
+      title: "Peach Tree Designs",
+      description:
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis quod rerum dignissimos debitis? Earum odio ea dolores ipsum vitae totam!",
+      img_url: "https://picsum.photos/400/200",
+      tags: ["EXPRESS.JS", "ADMIN PANEL"],
+    },
+    {
+      title: "Go Explore Batangas",
+      description:
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis quod rerum dignissimos debitis? Earum odio ea dolores ipsum vitae totam!",
+      img_url: "https://picsum.photos/400/200",
+      tags: ["EXPRESS.JS"],
+    },
   ]);
+
   const [personalProjects, setPersonalProjects] = useState([
-    <Item
-      title='Kabsahi Cart'
-      description='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis quod rerum dignissimos debitis? Earum odio ea dolores ipsum vitae totam!'
-      img_url='https://picsum.photos/400/200'
-      tags={["REACT.JS"]}
-    />,
-    <Item
-      title='MDAS Calculator'
-      description='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis quod rerum dignissimos debitis? Earum odio ea dolores ipsum vitae totam!'
-      img_url='https://picsum.photos/400/200'
-      tags={["FLUTTER WEB"]}
-    />,
-    <Item
-      title='Binary Search Visualizer'
-      description='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis quod rerum dignissimos debitis? Earum odio ea dolores ipsum vitae totam!'
-      img_url='https://picsum.photos/400/200'
-      tags={["REACT.JS"]}
-    />,
-    <Item
-      title='Linear Search Visualizer'
-      description='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis quod rerum dignissimos debitis? Earum odio ea dolores ipsum vitae totam!'
-      img_url='https://picsum.photos/400/200'
-      tags={["REACT.JS"]}
-    />,
+    {
+      title: "Kabsahi Cart",
+      description:
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis quod rerum dignissimos debitis? Earum odio ea dolores ipsum vitae totam!",
+      img_url: "https://picsum.photos/400/200",
+      tags: ["REACT.JS"],
+    },
+    {
+      title: "MDAS Calculator",
+      description:
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis quod rerum dignissimos debitis? Earum odio ea dolores ipsum vitae totam!",
+      img_url: "https://picsum.photos/400/200",
+      tags: ["FLUTTER WEB"],
+    },
+    {
+      title: "Binary Search Visualizer",
+      description:
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis quod rerum dignissimos debitis? Earum odio ea dolores ipsum vitae totam!",
+      img_url: "https://picsum.photos/400/200",
+      tags: ["REACT.JS"],
+    },
+    {
+      title: "Linear Search Visualizer",
+      description:
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis quod rerum dignissimos debitis? Earum odio ea dolores ipsum vitae totam!",
+      img_url: "https://picsum.photos/400/200",
+      tags: ["REACT.JS"],
+    },
   ]);
 
   return (
@@ -111,13 +115,33 @@ function HomePortfolio() {
       <div className='flex flex-col my-12 items-center'>
         <h1 className={`${roboto.className} text-2xl`}>From a client</h1>
         <div className='flex gap-4 flex-wrap justify-center'>
-          {...fromClient}
+          {fromClient.map((e, i) => {
+            return (
+              <Item
+                key={i}
+                title={e.title}
+                description={e.description}
+                img_url={e.img_url}
+                tags={e.tags}
+              />
+            );
+          })}
         </div>
       </div>
       <div className='flex flex-col my-12 items-center'>
         <h1 className={`${roboto.className} text-2xl`}>Personal Projects</h1>
         <div className='flex gap-4 flex-wrap justify-center'>
-          {...personalProjects}
+          {personalProjects.map((e, i) => {
+            return (
+              <Item
+                key={i * 2}
+                title={e.title}
+                description={e.description}
+                img_url={e.img_url}
+                tags={e.tags}
+              />
+            );
+          })}
         </div>
       </div>
     </div>

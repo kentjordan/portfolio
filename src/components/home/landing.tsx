@@ -16,7 +16,7 @@ const HomeLanding = () => {
       <div className='absolute bottom-0  text-center xl:text-start flex-col justify-center flex-[.5] xl:flex xl:relative'>
         <span
           className={`${roboto.className} block my-2 text-4xl text-stone-300`}>
-          Hello, I'm
+          Hello, I&apos;m
         </span>
         <h1 className={`${anton.className} text-6xl`}>Kent Jordan</h1>
         <span
