@@ -20,12 +20,14 @@ const Item = ({
   description,
   img_url,
   view_url,
+  isOnDevelopment,
   tags,
 }: {
   title: string;
   description: string;
   img_url: string | StaticImageData;
   view_url: string;
+  isOnDevelopment: boolean;
   tags: string[];
 }) => {
   return (
@@ -61,11 +63,20 @@ const Item = ({
           {/*  */}
         </div>
       </div>
-      <Link
-        href={view_url}
-        className={`${roboto.className} border border-stone-400 text-stone-400 w-40 m-8 p-2`}>
-        VIEW
-      </Link>
+      {isOnDevelopment ? (
+        <button
+          onClick={() => alert("Project is still on development.")}
+          className={`${roboto.className} border border-stone-400 text-stone-400 w-40 m-8 p-2`}>
+          VIEW
+        </button>
+      ) : (
+        <Link
+          href={view_url}
+          className={`${roboto.className} border border-stone-400 text-stone-400 w-40 m-8 p-2`}
+          target='_blank'>
+          VIEW
+        </Link>
+      )}
     </div>
   );
 };
@@ -75,16 +86,18 @@ function HomePortfolio() {
     {
       title: "Peach Tree Designs",
       description:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis quod rerum dignissimos debitis? Earum odio ea dolores ipsum vitae totam!",
+        "PTD is my first US based client. I did the admin panel and backend for them.",
       img_url: PeachTreeDesigns,
       view_url: "https://www.peachtree-designs.com/",
+      isOnDevelopment: false,
       tags: ["EXPRESS.JS", "ADMIN PANEL"],
     },
     {
       title: "Go Explore Batangas",
       description:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis quod rerum dignissimos debitis? Earum odio ea dolores ipsum vitae totam!",
+        "This is my second client. I was assigned as a backend developer and cloud deployment for this project.",
       img_url: GoExploreBatangas,
+      isOnDevelopment: true,
       view_url: "https://www.goexplorebatangas.com/",
       tags: ["EXPRESS.JS"],
     },
@@ -93,36 +106,36 @@ function HomePortfolio() {
   const [personalProjects, setPersonalProjects] = useState([
     {
       title: "Kabsahi Cart",
-      description:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis quod rerum dignissimos debitis? Earum odio ea dolores ipsum vitae totam!",
+      description: "A Cart System for an eCommerce supposedly for Kabsahi.",
       img_url: KabsahiCart,
       view_url: "https://kabsahi-devlopment.vercel.app/",
+      isOnDevelopment: false,
       tags: ["REACT.JS"],
     },
     {
-      title: "MDAS Calculator",
-      description:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis quod rerum dignissimos debitis? Earum odio ea dolores ipsum vitae totam!",
+      title: "Calculator",
+      description: "An MDAS calculator based on flutter web.",
       img_url: MDASCalculator,
       view_url: "https://calc-kjordan.vercel.app/",
+      isOnDevelopment: false,
       tags: ["FLUTTER WEB"],
     },
     {
       title: "Binary Search Visualizer",
-      description:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis quod rerum dignissimos debitis? Earum odio ea dolores ipsum vitae totam!",
+      description: "To visualize the binary search algorithm.",
       img_url: BinarySearch,
       view_url:
         "https://kjordan-visualize.vercel.app/algorithms/searching/binary-search/demo",
+      isOnDevelopment: false,
       tags: ["REACT.JS"],
     },
     {
       title: "Linear Search Visualizer",
-      description:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis quod rerum dignissimos debitis? Earum odio ea dolores ipsum vitae totam!",
+      description: "To visualize the linear search algorithm.",
       img_url: LinearSearch,
       view_url:
         "https://kjordan-visualize.vercel.app/algorithms/searching/linear-search/demo",
+      isOnDevelopment: false,
       tags: ["REACT.JS"],
     },
   ]);
@@ -143,6 +156,7 @@ function HomePortfolio() {
                 description={e.description}
                 img_url={e.img_url}
                 view_url={e.view_url}
+                isOnDevelopment={e.isOnDevelopment}
                 tags={e.tags}
               />
             );
@@ -160,6 +174,7 @@ function HomePortfolio() {
                 description={e.description}
                 img_url={e.img_url}
                 view_url={e.view_url}
+                isOnDevelopment={e.isOnDevelopment}
                 tags={e.tags}
               />
             );
