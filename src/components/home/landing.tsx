@@ -24,7 +24,7 @@ const HomeLanding = () => {
       }}>
       <div className='absolute bg-gradient-to-t from-black via-black/10  to-transparent max-w-[1280px] w-full h-full'></div>
       {/* Info about me */}
-      <div className='absolute bottom-0 flex text-center xl:text-start flex-col h-full flex-[0.5] justify-end xl:justify-center xl:flex xl:relative'>
+      <div className='absolute bottom-0 flex text-center xl:text-start flex-col h-full flex-[0.5] justify-end mx-8 xl:justify-center xl:flex xl:relative'>
         <span
           className={`${roboto.className} block my-2 text-xl sm:text-4xl text-stone-300`}>
           Hello, I&apos;m
