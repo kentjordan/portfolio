@@ -12,6 +12,7 @@ import MDASCalculator from "@/assets/mdas_calculator.png";
 import KabsahiCart from "@/assets/kabsahi_cart.png";
 import BinarySearch from "@/assets/binary_search.png";
 import LinearSearch from "@/assets/linear_search.png";
+import ThreadsClone from "@/assets/threads-clone.png";
 
 import Link from "next/link";
 
@@ -140,6 +141,18 @@ function HomePortfolio() {
     },
   ]);
 
+  const [onDevPersonalProjects, setOnDevPersonalProjects] = useState([
+    {
+      title: "Threads Clone",
+      description:
+        "This project is still on development. I will continue this when I got a spare time. 😜",
+      img_url: ThreadsClone,
+      view_url: "",
+      isOnDevelopment: true,
+      tags: ["REACT NATIVE", "EXPRESS.JS"],
+    },
+  ]);
+
   return (
     <div className='flex flex-col items-center p-4' id='works'>
       <h1 className={`${anton.className} text-6xl my-8 text-center`}>
@@ -167,6 +180,26 @@ function HomePortfolio() {
         <h1 className={`${roboto.className} text-2xl`}>Personal Projects</h1>
         <div className='flex gap-4 flex-wrap justify-center'>
           {personalProjects.map((e, i) => {
+            return (
+              <Item
+                key={i * 2}
+                title={e.title}
+                description={e.description}
+                img_url={e.img_url}
+                view_url={e.view_url}
+                isOnDevelopment={e.isOnDevelopment}
+                tags={e.tags}
+              />
+            );
+          })}
+        </div>
+      </div>
+      <div className='flex flex-col my-12 items-center'>
+        <h1 className={`${roboto.className} text-2xl`}>
+          On Development Personal Projects
+        </h1>
+        <div className='flex gap-4 flex-wrap justify-center'>
+          {onDevPersonalProjects.map((e, i) => {
             return (
               <Item
                 key={i * 2}
