@@ -159,7 +159,9 @@ function HomePortfolio() {
         My recent works
       </h1>
       <div className='flex flex-col my-12 items-center'>
-        <h1 className={`${roboto.className} text-2xl`}>From a client</h1>
+        <h1 className={`${roboto.className} text-2xl text-center`}>
+          From a client
+        </h1>
         <div className='flex gap-4 flex-wrap justify-center'>
           {fromClient.map((e, i) => {
             return (
@@ -177,7 +179,9 @@ function HomePortfolio() {
         </div>
       </div>
       <div className='flex flex-col my-12 items-center'>
-        <h1 className={`${roboto.className} text-2xl`}>Personal Projects</h1>
+        <h1 className={`${roboto.className} text-2xl text-center`}>
+          Personal Projects
+        </h1>
         <div className='flex gap-4 flex-wrap justify-center'>
           {personalProjects.map((e, i) => {
             return (
@@ -195,7 +199,7 @@ function HomePortfolio() {
         </div>
       </div>
       <div className='flex flex-col my-12 items-center'>
-        <h1 className={`${roboto.className} text-2xl`}>
+        <h1 className={`${roboto.className} text-2xl text-center`}>
           On Development Personal Projects
         </h1>
         <div className='flex gap-4 flex-wrap justify-center'>
