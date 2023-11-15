@@ -72,7 +72,7 @@ const Item = ({
       ) : (
         <Link
           href={view_url}
-          className={`${roboto.className} border border-stone-400 text-stone-400 w-40 m-8 p-2`}
+          className={`${roboto.className} text-center border border-stone-400 text-stone-400 w-40 m-8 p-2`}
           target='_blank'>
           VIEW
         </Link>
@@ -86,7 +86,7 @@ function HomePortfolio() {
     {
       title: "Peach Tree Designs",
       description:
-        "PTD is my first US based client. I did the admin panel and backend for them.",
+        "Peach Tree Designs is my first US based client. I helped them by developing their portfolio website wherein I built an Admin Panel and the Backend which is written on Express.",
       img_url: PeachTreeDesigns,
       view_url: "https://www.peachtree-designs.com/",
       isOnDevelopment: false,
@@ -95,7 +95,7 @@ function HomePortfolio() {
     {
       title: "Go Explore Batangas",
       description:
-        "This is my second client. I was assigned as a backend developer and cloud deployment for this project.",
+        "This is my second client. I was assigned as a backend developer and responsible for the cloud deployment.",
       img_url: GoExploreBatangas,
       isOnDevelopment: true,
       view_url: "https://www.goexplorebatangas.com/",
