@@ -98,7 +98,7 @@ function HomePortfolio() {
       description:
         "This is my second client. I was assigned as a backend developer and responsible for the cloud deployment.",
       img_url: GoExploreBatangas,
-      isOnDevelopment: true,
+      isOnDevelopment: false,
       view_url: "https://www.goexplorebatangas.com/",
       tags: ["EXPRESS.JS"],
     },
