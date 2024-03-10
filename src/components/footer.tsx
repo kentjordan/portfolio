@@ -21,7 +21,9 @@ const Footer = () => {
           <Link href='/contact'>Contact</Link>
         </li>
       </ul>
-      <h1 className='text-sm text-center'>Copyright 2023 | Kent John Jordan</h1>
+      <h1 className='text-sm text-center'>
+        Copyright {new Date().getFullYear()} | Kent John Jordan
+      </h1>
     </div>
   );
 };

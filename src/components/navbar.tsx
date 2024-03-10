@@ -93,7 +93,7 @@ function Navbar() {
         <div className='flex items-center text-base gap-4'>
           <BsDownload size={20} />
           <h1 className={`${roboto.className} cursor-pointer font-extrabold`}>
-            Get Resume/CV
+            Request Resume
           </h1>
         </div>
         <ul className='flex gap-8 text-base'>
@@ -101,13 +101,13 @@ function Navbar() {
             <Link href='/'>Home</Link>
           </li>
           <li className='cursor-pointer'>
-            <Link href='/about'>About</Link>
-          </li>
-          <li className='cursor-pointer'>
             <Link href='/works'>Works</Link>
           </li>
           <li className='cursor-pointer'>
             <Link href='/blogs'>Blogs</Link>
+          </li>
+          <li className='cursor-pointer'>
+            <Link href='/about'>About</Link>
           </li>
           <li className='cursor-pointer'>
             <Link href='/contact'>Contact</Link>
