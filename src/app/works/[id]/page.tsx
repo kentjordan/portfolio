@@ -27,16 +27,30 @@ function WorksPage({ params }: { params: { id: string } }) {
           <h1 className='text-3xl font-bold mb-4 text-center px-2'>
             {workItem?.title}
           </h1>
-          <span className='text-stone-300 text-center px-2'>
+          <span className='text-stone-400 text-center px-2 max-w-[40ch]'>
             {workItem?.description}
           </span>
-        </div>
-        {!workItem?.isOnDevelopment && workItem?.view_url && (
-          <div className='flex items-center gap-2'>
-            <Link href={workItem?.view_url}>View Live</Link>
-            <FaExternalLinkAlt />
+          {!workItem?.isOnDevelopment && workItem?.view_url && (
+            <div className='flex items-center gap-2 mt-4'>
+              <Link className='font-bold' href={workItem?.view_url}>
+                View Live
+              </Link>
+              <FaExternalLinkAlt />
+            </div>
+          )}
+          <span className='text-stone-300 text-center px-2 mt-12 max-w-[80ch]'>
+            {workItem?.body}
+          </span>
+          <div className='font-bold mt-8 flex flex-wrap justify-center'>
+            {workItem?.tech_stack?.map((e) => {
+              return (
+                <span className='border border-stone-400 p-2 text-stone-400 text-center rounded-lg m-1'>
+                  {e}
+                </span>
+              );
+            })}
           </div>
-        )}
+        </div>
         <div className='flex flex-wrap p-3'>
           {workItem?.img_url.map((e, i) => {
             return (
