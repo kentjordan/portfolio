@@ -103,12 +103,12 @@ function Navbar() {
           <li className='cursor-pointer'>
             <Link href='/works'>Works</Link>
           </li>
-          <li className='cursor-pointer'>
+          {/* <li className='cursor-pointer'>
             <Link href='/blogs'>Blogs</Link>
           </li>
           <li className='cursor-pointer'>
             <Link href='/about'>About</Link>
-          </li>
+          </li> */}
           <li className='cursor-pointer'>
             <Link href='/contact'>Contact</Link>
           </li>
