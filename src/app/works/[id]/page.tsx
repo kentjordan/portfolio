@@ -42,9 +42,11 @@ function WorksPage({ params }: { params: { id: string } }) {
             {workItem?.body}
           </span>
           <div className='font-bold mt-8 flex flex-wrap justify-center'>
-            {workItem?.tech_stack?.map((e) => {
+            {workItem?.tech_stack?.map((e, i) => {
               return (
-                <span className='border border-stone-400 p-2 text-stone-400 text-center rounded-lg m-1'>
+                <span
+                  key={i}
+                  className='border border-stone-400 p-2 text-stone-400 text-center rounded-lg m-1'>
                   {e}
                 </span>
               );
