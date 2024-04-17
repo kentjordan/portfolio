@@ -16,54 +16,54 @@ const HomeCertificates = () => {
           </LinearGradient>
         </h1>
       </div>
-      <div className='flex flex-wrap gap-8 items-center justify-center'>
-        <div className='flex flex-col items-center'>
+      <div className='flex flex-wrap gap-8 items-top justify-center'>
+        <div className='flex flex-col items-center border border-stone-500 rounded-md'>
           <Image
             alt='Certificate'
             src={require("@/assets/certificates/cert-4.png")}
-            className='w-96 h-60'
+            className='w-96 h-60 rounded-t-md'
             width={800}
             height={400}
           />
           <p className='m-2 max-w-[40ch] text-center'>
-            Introduction to Python from Data Camp
+            Introduction to Python from <b>Data Camp</b>
           </p>
         </div>
-        <div className='flex flex-col items-center'>
+        <div className='flex flex-col items-center border border-stone-500 rounded-md'>
           <Image
             alt='Certificate'
             src={require("@/assets/certificates/cert-3.png")}
-            className='w-96 h-60'
+            className='w-96 h-60 rounded-t-md'
             width={800}
             height={400}
           />
           <p className='m-2 max-w-[40ch] text-center'>
-            Supervised Machine Learning: Regression and Classification from
-            Stanford University
+            Supervised Machine Learning: Regression and Classification from{" "}
+            <b>Stanford University</b>
           </p>
         </div>
-        <div className='flex flex-col items-center'>
+        <div className='flex flex-col items-center rounded border border-stone-500'>
           <Image
             alt='Certificate'
             src={require("@/assets/certificates/cert-1.jpg")}
-            className='w-96 h-60'
+            className='w-96 h-60 rounded-t-md'
             width={800}
             height={400}
           />
           <p className='m-2 max-w-[40ch] text-center'>
-            Coding Game from Programming Philippines
+            Coding Game from <b>Programming Philippines</b>
           </p>
         </div>
-        <div className='flex flex-col items-center'>
+        <div className='flex flex-col items-center rounded border border-stone-500'>
           <Image
             alt='Certificate'
             src={require("@/assets/certificates/cert-2.png")}
-            className='w-96 h-60'
+            className='w-96 h-60 rounded-t-md'
             width={800}
             height={400}
           />
           <p className='m-2 max-w-[40ch] text-center'>
-            Code Fest from STI - Tagisan ng Talino
+            Code Fest from <b>STI - Tagisan ng Talino</b>
           </p>
         </div>
       </div>
