@@ -1,4 +1,5 @@
 "use client";
+import HomeCertificates from "@/components/home/certificates";
 import HomeLanding from "@/components/home/landing";
 import HomePortfolio from "@/components/home/portfolio";
 import HomeTechnologies from "@/components/home/technologies";
@@ -9,6 +10,7 @@ export default function Home() {
       <HomeLanding />
       <HomeTechnologies />
       <HomePortfolio />
+      <HomeCertificates />
     </div>
   );
 }
