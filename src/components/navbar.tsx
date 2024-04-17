@@ -38,26 +38,20 @@ export const MobileNavbarMenu = () => {
           </li>
           <li
             className={`cursor-pointer ${
-              currentPage?.toUpperCase() === "ABOUT" ? "border-b" : "border-0"
-            }`}>
-            <Link href='/about' onClick={toggleMobileNavMenu}>
-              About
-            </Link>
-          </li>
-          <li
-            className={`cursor-pointer ${
               currentPage?.toUpperCase() === "WORKS" ? "border-b" : "border-0"
             }`}>
-            <Link href='/works' onClick={toggleMobileNavMenu}>
+            <Link href='/#works' onClick={toggleMobileNavMenu}>
               Works
             </Link>
           </li>
           <li
             className={`cursor-pointer ${
-              currentPage?.toUpperCase() === "BLOGS" ? "border-b" : "border-0"
+              currentPage?.toUpperCase() === "CERTIFICATES"
+                ? "border-b"
+                : "border-0"
             }`}>
-            <Link href='/blogs' onClick={toggleMobileNavMenu}>
-              Blogs
+            <Link href='/#certificates' onClick={toggleMobileNavMenu}>
+              Certificates
             </Link>
           </li>
           <li
