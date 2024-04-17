@@ -18,6 +18,7 @@ const HomeLanding = () => {
 
   return (
     <div
+      id='home'
       className={`flex justify-center items-end flex-wrap relative h-screen `}
       style={{
         maxHeight: `${height}px`,
@@ -26,7 +27,7 @@ const HomeLanding = () => {
       {/* Info about me */}
       <div className='absolute bottom-0 flex text-center xl:text-start flex-col h-full flex-[0.6] justify-end mx-8 xl:justify-center xl:flex xl:relative'>
         <span
-          className={`${roboto.className} block my-2 text-xl sm:text-4xl text-stone-300`}>
+          className={`${roboto.className} block my-2 text-2xl sm:text-4xl text-stone-300`}>
           Hi there! I&apos;m
         </span>
         <h1 className={`${anton.className} text-5xl sm:text-6xl`}>
@@ -37,7 +38,7 @@ const HomeLanding = () => {
           </LinearGradient>
         </h1>
         <span
-          className={`${roboto.className}  mt-4 block my-2 text-lg sm:text-xl text-stone-400`}>
+          className={`${roboto.className}  mt-4 block my-2 text-lg sm:text-xl text-stone-300`}>
           A fullstack web and app developer. An aspiring Machine Learning
           Engineer.
         </span>
