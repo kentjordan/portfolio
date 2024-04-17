@@ -1,10 +1,10 @@
-import Image from "next/image";
 import Me from "@/assets/me.png";
 import { BsMouse } from "react-icons/bs";
 import { Anton, Roboto } from "next/font/google";
 import { BsFacebook, BsGithub, BsTwitter, BsLinkedin } from "react-icons/bs";
 import Link from "next/link";
 import { useLayoutEffect, useState } from "react";
+import { LinearGradient } from "react-text-gradients";
 
 const anton = Anton({ weight: "400", subsets: ["latin"] });
 const roboto = Roboto({ weight: "400", subsets: ["latin"] });
@@ -24,17 +24,22 @@ const HomeLanding = () => {
       }}>
       <div className='absolute bg-gradient-to-t from-black via-black/10  to-transparent max-w-[1280px] w-full h-full'></div>
       {/* Info about me */}
-      <div className='absolute bottom-0 flex text-center xl:text-start flex-col h-full flex-[0.5] justify-end mx-8 xl:justify-center xl:flex xl:relative'>
+      <div className='absolute bottom-0 flex text-center xl:text-start flex-col h-full flex-[0.6] justify-end mx-8 xl:justify-center xl:flex xl:relative'>
         <span
           className={`${roboto.className} block my-2 text-xl sm:text-4xl text-stone-300`}>
-          Hello, I&apos;m
+          Hi there! I&apos;m
         </span>
-        <h1 className={`${anton.className} text-4xl sm:text-6xl`}>
-          Kent Jordan
+        <h1 className={`${anton.className} text-5xl sm:text-6xl`}>
+          <LinearGradient
+            gradient={["to right", "#0ED2F7, #B2FEFA"]}
+            fallbackColor='#6DD5FA'>
+            Kent John Jordan
+          </LinearGradient>
         </h1>
         <span
-          className={`${roboto.className} block my-2 text-lg sm:text-2xl text-stone-300`}>
-          A web and app developer.
+          className={`${roboto.className}  mt-4 block my-2 text-lg sm:text-xl text-stone-400`}>
+          A fullstack web and app developer. An aspiring Machine Learning
+          Engineer.
         </span>
         <div className='flex xl:justify-start justify-center gap-6 my-8'>
           <Link href='https://www.facebook.com/kentaki.dev'>
