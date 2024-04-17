@@ -23,9 +23,15 @@ const Item = ({
   tags: string[];
 }) => {
   return (
-    <div className='flex flex-col justify-between my-8 max-w-[300px] bg-stone-900 rounded-xl p-2'>
+    <div className='flex flex-col justify-between my-8 max-w-[300px] border border-stone-700 rounded'>
       <div>
-        <Image src={img_url} alt='works 1' className='max-h-64 rounded-lg' />
+        <Image
+          src={img_url}
+          width={600}
+          height={400}
+          alt='works 1'
+          className='h-44 w-full rounded'
+        />
         <div className='flex flex-col p-6'>
           {/*  Tags */}
           <div className='flex my-4'>
@@ -57,7 +63,7 @@ const Item = ({
       </div>
       <Link
         href={`/works/${id}`}
-        className={`${roboto.className} text-center border text-sm border-stone-400 text-stone-400 w-40 m-8 p-2`}>
+        className={`${roboto.className} text-center border text-sm border-stone-700 rounded text-stone-400 w-40 m-8 p-2`}>
         VIEW
       </Link>
     </div>
