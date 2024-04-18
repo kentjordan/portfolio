@@ -30,7 +30,7 @@ const Item = ({
           width={600}
           height={400}
           alt='works 1'
-          className='h-56 w-full rounded'
+          className='h-40 w-full rounded'
         />
         <div className='flex flex-col p-6'>
           {/*  Tags */}
