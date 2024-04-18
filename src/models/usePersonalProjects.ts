@@ -23,11 +23,15 @@ import Sent10 from "@/assets/sent/10.png"
 import Sent11 from "@/assets/sent/11.png"
 import Sent12 from "@/assets/sent/12.png"
 
+import COVIDTracker0 from "@/assets/covidtracker/0.png";
+import COVIDTracker1 from "@/assets/covidtracker/1.png";
+
+
 const usePersonalProjects = () => {
 
     const [personalProjects, setPersonalProjects] = useState<WorkItem[]>([
         {
-            id: "PP-001",
+            id: "kabsahi-cart",
             title: "Kabsahi Cart",
             description: "A Cart System for an eCommerce supposedly for Kabsahi.",
             body: "In building of this personal project, I used React.js, and Redux Tookit as the state management.",
@@ -45,7 +49,7 @@ const usePersonalProjects = () => {
             tags: ["REACT.JS"],
         },
         {
-            id: "PP-011",
+            id: "sent",
             title: "Sent",
             description: "A social media with a real-time messaging system",
             body: "In building of this personal project, I used NEXT.js and TailwindCSS in the frontend while in the backend I used NestJS and PostgreSQL.",
@@ -64,13 +68,13 @@ const usePersonalProjects = () => {
                 Sent11,
                 Sent12,
             ],
-            view_url: "https://kabsahi-devlopment.vercel.app/",
+            view_url: "https://sent-beta.vercel.app/",
             isOnDevelopment: false,
             tags: ["NEXT.JS", "POSTGRE-SQL", "NEST.JS"],
         }
         ,
         {
-            id: "PP-002",
+            id: "calculator",
             title: "Calculator",
             tech_stack: ["Flutter Web"],
             description: "An MDAS calculator based on flutter web.",
@@ -81,7 +85,7 @@ const usePersonalProjects = () => {
             tags: ["FLUTTER WEB"],
         },
         {
-            id: "PP-003",
+            id: "bs-visualizer",
             title: "Binary Search Visualizer",
             tech_stack: ["React.js"],
             description: "To visualize the binary search algorithm.",
@@ -93,7 +97,7 @@ const usePersonalProjects = () => {
             tags: ["REACT.JS"],
         },
         // {
-        //     id: "PP-004",
+        //     id: "ls-visualizer",
         //     title: "Linear Search Visualizer",
         //     tech_stack: ["React.js"],
         //     description: "To visualize the linear search algorithm.",
@@ -104,6 +108,20 @@ const usePersonalProjects = () => {
         //     isOnDevelopment: false,
         //     tags: ["REACT.JS"],
         // },
+        {
+            id: "covid-tracker",
+            title: "COVID 19 Data Tracker",
+            tech_stack: ["Native Android", "Java"],
+            description: "Data tracker for COVID 19 made in Android Studio and Java.",
+            body: "A simple COVID 19 Data Tracker made in Android Studio when I was freshmen. I used Java as the main programming language and an API for COVID 19 data.",
+            img_url: [
+                COVIDTracker0,
+                COVIDTracker1
+            ],
+            view_url: "",
+            isOnDevelopment: true,
+            tags: ["JAVA", "NATIVE ANDROID"],
+        },
     ]);
 
     return personalProjects;
