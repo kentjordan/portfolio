@@ -30,23 +30,25 @@ const Item = ({
           width={600}
           height={400}
           alt='works 1'
-          className='h-40 w-full rounded'
+          className='h-40 w-full rounded-t'
         />
         <div className='flex flex-col p-6'>
           {/*  Tags */}
-          <div className='flex my-4'>
+          <div className='flex mt-1 mb-2'>
             {tags.map((item, index) => {
               if (index >= 1) {
                 return (
                   <span
                     key={index}
-                    className='ml-2 text-stone-300 font-bold text-sm'>
+                    className='ml-1 text-stone-400 bg-stone-800 px-2 py-1 rounded text-sm'>
                     {item}
                   </span>
                 );
               }
               return (
-                <span key={index} className='text-stone-300 font-bold text-sm'>
+                <span
+                  key={index}
+                  className='text-stone-400 bg-stone-800 px-2 py-1 rounded text-sm'>
                   {item}
                 </span>
               );
@@ -57,7 +59,7 @@ const Item = ({
             {title}
           </h1>
           {/* Description */}
-          <p className='text-stone-300 my-2 '>{description}</p>
+          <p className='text-stone-400 my-2 '>{description}</p>
           {/*  */}
         </div>
       </div>
