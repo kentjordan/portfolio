@@ -23,7 +23,11 @@ const Item = ({
   tags: string[];
 }) => {
   return (
-    <div className='flex flex-col justify-between my-8 max-w-[300px] border border-stone-700 rounded'>
+    <div
+      onClick={() => {
+        window.location.href = `/works/${id}`;
+      }}
+      className='flex flex-col justify-between my-8 max-w-[300px] border border-stone-700 hover:border-[#6DD5FA] rounded hover:shadow-[#6DD5FA]/50 hover:shadow-lg hover:scale-105 cursor-pointer'>
       <div>
         <Image
           src={img_url}
@@ -32,7 +36,7 @@ const Item = ({
           alt='works 1'
           className='h-40 w-full rounded-t'
         />
-        <div className='flex flex-col p-6'>
+        <div className='flex flex-col px-6 pb-8 pt-4'>
           {/*  Tags */}
           <div className='flex mt-1 mb-2'>
             {tags.map((item, index) => {
@@ -55,19 +59,14 @@ const Item = ({
             })}
           </div>
           {/*  Title */}
-          <h1 className={`${roboto.className} mt-4  text-2xl font-bold`}>
+          <h1 className={`${roboto.className} mt-4  text-xl font-bold`}>
             {title}
           </h1>
           {/* Description */}
-          <p className='text-stone-400 my-2 '>{description}</p>
+          <p className='text-stone-400 my-2 text-sm'>{description}</p>
           {/*  */}
         </div>
       </div>
-      <Link
-        href={`/works/${id}`}
-        className={`${roboto.className} text-center border text-sm border-stone-700 rounded text-stone-400 w-40 m-8 p-2`}>
-        VIEW
-      </Link>
     </div>
   );
 };
