@@ -33,14 +33,14 @@ function HomePortfolio() {
           My recent works
         </LinearGradient>
       </h1>
-      <div className='flex flex-col my-12 items-center justify-center mx-12'>
+      <div className='flex flex-col my-6 items-center justify-center mx-12'>
         <h1
           className={`${roboto.className} text-2xl text-center font-bold italic`}>
           FROM CLIENTS
         </h1>
         <div className='flex items-center gap-3 justify-center mt-8 text-stone-400'>
-          <PiHandSwipeLeftLight size={32} className=' text-stone-400' />
-          <span>Swipe to see more</span>
+          <PiHandSwipeLeftLight size={24} className=' text-stone-400' />
+          <span className='text-xs'>Swipe to see more</span>
         </div>
         <Carousel
           className='mt-8 p-1 max-w-5xl'
@@ -72,13 +72,13 @@ function HomePortfolio() {
           </CarouselContent>
         </Carousel>
       </div>
-      <div className='flex flex-col my-12 items-center justify-center mx-12'>
+      <div className='flex flex-col mt-12 items-center justify-center mx-12'>
         <h1 className={`${roboto.className} text-2xl text-center font-bold`}>
           PERSONAL PROJECTS
         </h1>
         <div className='flex items-center gap-3 justify-center mt-8 text-stone-400'>
-          <PiHandSwipeLeftLight size={32} className=' text-stone-400' />
-          <span>Swipe to see more</span>
+          <PiHandSwipeLeftLight size={24} className=' text-stone-400' />
+          <span className='text-xs'>Swipe to see more</span>
         </div>
         <Carousel
           className='mt-8 p-1 max-w-5xl'
