@@ -44,7 +44,7 @@ const Item = ({
                 return (
                   <span
                     key={index}
-                    className='ml-1 text-stone-400 bg-stone-800 px-2 py-1 rounded text-sm'>
+                    className='ml-1 text-stone-400 bg-stone-800 px-2 py-1 rounded text-xs'>
                     {item}
                   </span>
                 );
@@ -52,7 +52,7 @@ const Item = ({
               return (
                 <span
                   key={index}
-                  className='text-stone-400 bg-stone-800 px-2 py-1 rounded text-sm'>
+                  className='text-stone-400 bg-stone-800 px-2 py-1 rounded text-xs'>
                   {item}
                 </span>
               );
