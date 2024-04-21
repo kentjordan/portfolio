@@ -27,8 +27,8 @@ const HomeLanding = () => {
       {/* Info about me */}
       <div className='absolute bottom-0 flex text-center xl:text-start flex-col h-full flex-[0.6] justify-end mx-8 xl:justify-center xl:flex xl:relative'>
         <span
-          className={`${roboto.className} block my-2 text-2xl sm:text-4xl text-stone-300`}>
-          Hi there! I&apos;m
+          className={`${roboto.className} block my-2 text-lg sm:text-xl text-stone-300`}>
+          Hi there! 🤗   I&apos;m
         </span>
         <h1 className={`${anton.className} text-5xl sm:text-6xl`}>
           <LinearGradient
