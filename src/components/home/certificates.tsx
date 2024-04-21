@@ -18,7 +18,7 @@ const HomeCertificates = () => {
       </div>
       <div className='flex flex-wrap gap-8 items-top justify-center'>
         <div className='flex flex-col items-center border border-stone-500 rounded-md'>
-          <div className='w-96 h-72 rounded-t-md' />
+          <div className='max-w-96 w-full h-72 rounded-t-md' />
           <p className='m-2 max-w-[40ch] text-center flex-1'>
             Another Machine Learning certicate is on progress...
           </p>
