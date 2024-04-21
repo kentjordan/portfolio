@@ -18,28 +18,46 @@ const HomeCertificates = () => {
       </div>
       <div className='flex flex-wrap gap-8 items-top justify-center'>
         <div className='flex flex-col items-center border border-stone-500 rounded-md'>
+          <div className='w-96 h-72 rounded-t-md' />
+          <p className='m-2 max-w-[40ch] text-center flex-1'>
+            Another Machine Learning certicate is on progress...
+          </p>
+        </div>
+        <div className='flex flex-col items-center border border-stone-500 rounded-md'>
           <Image
             alt='Certificate'
             src={require("@/assets/certificates/cert-4.png")}
-            className='w-96 h-60 rounded-t-md'
+            className='w-96 h-72 rounded-t-md'
             width={800}
             height={400}
           />
           <p className='m-2 max-w-[40ch] text-center'>
-            Introduction to Python from <b>Data Camp</b>
+            Advanced Learning Algorithms from <b>Stanford University</b>
           </p>
         </div>
         <div className='flex flex-col items-center border border-stone-500 rounded-md'>
           <Image
             alt='Certificate'
             src={require("@/assets/certificates/cert-3.png")}
-            className='w-96 h-60 rounded-t-md'
+            className='w-96 h-72 rounded-t-md'
             width={800}
             height={400}
           />
           <p className='m-2 max-w-[40ch] text-center'>
             Supervised Machine Learning: Regression and Classification from{" "}
             <b>Stanford University</b>
+          </p>
+        </div>
+        <div className='flex flex-col items-center rounded border border-stone-500'>
+          <Image
+            alt='Certificate'
+            src={require("@/assets/certificates/cert-5.png")}
+            className='w-96 h-72 rounded-t-md flex-1'
+            width={800}
+            height={400}
+          />
+          <p className='m-2 max-w-[40ch] text-center'>
+            Introduction to Python from <b>Datacamp</b>
           </p>
         </div>
         <div className='flex flex-col items-center rounded border border-stone-500'>
