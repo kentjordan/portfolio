@@ -17,13 +17,13 @@ const HomeCertificates = () => {
         </h1>
       </div>
       <div className='flex flex-wrap gap-8 items-top justify-center'>
-        <div className='flex flex-col items-center border border-stone-500 rounded-md'>
+        <div className='flex flex-col items-center border border-stone-500 hover:border-[#6DD5FA] rounded-md hover:shadow-[#6DD5FA]/50 hover:shadow-lg hover:scale-105'>
           <div className='max-w-96 w-full h-72 rounded-t-md' />
           <p className='m-2 max-w-[40ch] text-center flex-1'>
             Another Machine Learning certicate is on progress...
           </p>
         </div>
-        <div className='flex flex-col items-center border border-stone-500 rounded-md'>
+        <div className='flex flex-col items-center border border-stone-500 rounded-md hover:border-[#6DD5FA] hover:shadow-[#6DD5FA]/50 hover:shadow-lg hover:scale-105'>
           <Image
             alt='Certificate'
             src={require("@/assets/certificates/cert-4.png")}
@@ -35,7 +35,7 @@ const HomeCertificates = () => {
             Advanced Learning Algorithms from <b>Stanford University</b>
           </p>
         </div>
-        <div className='flex flex-col items-center border border-stone-500 rounded-md'>
+        <div className='flex flex-col items-center border border-stone-500 rounded-md hover:border-[#6DD5FA] hover:shadow-[#6DD5FA]/50 hover:shadow-lg hover:scale-105'>
           <Image
             alt='Certificate'
             src={require("@/assets/certificates/cert-3.png")}
@@ -48,7 +48,7 @@ const HomeCertificates = () => {
             <b>Stanford University</b>
           </p>
         </div>
-        <div className='flex flex-col items-center rounded border border-stone-500'>
+        <div className='flex flex-col items-center rounded-md border border-stone-500 hover:border-[#6DD5FA] hover:shadow-[#6DD5FA]/50 hover:shadow-lg hover:scale-105'>
           <Image
             alt='Certificate'
             src={require("@/assets/certificates/cert-5.png")}
@@ -60,7 +60,7 @@ const HomeCertificates = () => {
             Introduction to Python from <b>Datacamp</b>
           </p>
         </div>
-        <div className='flex flex-col items-center rounded border border-stone-500'>
+        <div className='flex flex-col items-center rounded-md border border-stone-500 hover:border-[#6DD5FA] hover:shadow-[#6DD5FA]/50 hover:shadow-lg hover:scale-105'>
           <Image
             alt='Certificate'
             src={require("@/assets/certificates/cert-1.jpg")}
@@ -72,7 +72,7 @@ const HomeCertificates = () => {
             Coding Game from <b>Programming Philippines</b>
           </p>
         </div>
-        <div className='flex flex-col items-center rounded border border-stone-500'>
+        <div className='flex flex-col items-center rounded-md border border-stone-500 hover:border-[#6DD5FA] hover:shadow-[#6DD5FA]/50 hover:shadow-lg hover:scale-105'>
           <Image
             alt='Certificate'
             src={require("@/assets/certificates/cert-2.png")}
