@@ -57,7 +57,7 @@ const useFromClients = () => {
                 Cliemb5,
                 Cliemb6,
             ],
-            isOnDevelopment: false,
+            isOnDevelopment: true,
             view_url: "https://cliemb.online/",
             tags: ["WEB", "MOBILE-APP", "FULLSTACK"],
         },
