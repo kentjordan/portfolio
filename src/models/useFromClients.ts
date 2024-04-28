@@ -22,7 +22,7 @@ import { WorkItem } from "@/types/works";
 const useFromClients = () => {
     const [fromClient, setFromClient] = useState<WorkItem[]>([
         {
-            id: "FC-002",
+            id: "go-explore",
             title: "Go Explore Batangas",
             tech_stack: ["Express.JS (API)", "PostgreSQL", "Hostinger VPS"],
             description: "A web information system of places for tourists in Batangas.",
@@ -41,7 +41,7 @@ const useFromClients = () => {
             tags: ["WEB", "BACKEND-DEV"],
         },
         {
-            id: "FC-003",
+            id: "cliemb",
             title: "CLIEMB: Monitoring System",
             tech_stack: ["NEXT.js", "React.js", "Nest.JS (API)", "PostgreSQL", "Hostinger VPS"],
             description:
@@ -62,7 +62,7 @@ const useFromClients = () => {
             tags: ["WEB", "MOBILE-APP", "FULLSTACK"],
         },
         {
-            id: "FC-001",
+            id: "ptd",
             title: "Peach Tree Designs",
             tech_stack: ["NEXT.js", "Express.js (API)", "PostgreSQL"],
             description: "A web portfolio of the business Peach Tree Designs.",
@@ -73,7 +73,7 @@ const useFromClients = () => {
             tags: ["WEB", "ADMIN-PANEL", "FULLSTACK"],
         },
         {
-            id: "FC-002",
+            id: "go-explore",
             title: "Go Explore Batangas",
             tech_stack: ["Express.JS (API)", "PostgreSQL", "Hostinger VPS"],
             description: "A web information system of places for tourists in Batangas.",
@@ -92,7 +92,7 @@ const useFromClients = () => {
             tags: ["WEB", "BACKEND-DEV"],
         },
         {
-            id: "FC-003",
+            id: "cliemb",
             title: "CLIEMB: Monitoring System",
             tech_stack: ["NEXT.js", "React.js", "Nest.JS (API)", "PostgreSQL", "Hostinger VPS"],
             description:
@@ -108,63 +108,12 @@ const useFromClients = () => {
                 Cliemb5,
                 Cliemb6,
             ],
-            isOnDevelopment: false,
+            isOnDevelopment: true,
             view_url: "https://cliemb.online/",
             tags: ["WEB", "MOBILE-APP", "FULLSTACK"],
         },
         {
-            id: "FC-001",
-            title: "Peach Tree Designs",
-            tech_stack: ["NEXT.js", "Express.js (API)", "PostgreSQL"],
-            description: "A web portfolio of the business Peach Tree Designs.",
-            body: "In this project, the client is from the USA, I was tasked to develop the Content Management Website and the backend API of it. I used NEXT.js for the website and Express.js for the API.",
-            img_url: [PeachTreeDesigns, PeachTreeDesigns1],
-            view_url: "https://www.peachtree-designs.com/",
-            isOnDevelopment: true,
-            tags: ["WEB", "ADMIN-PANEL", "FULLSTACK"],
-        },
-        {
-            id: "FC-002",
-            title: "Go Explore Batangas",
-            tech_stack: ["Express.JS (API)", "PostgreSQL", "Hostinger VPS"],
-            description: "A web information system of places for tourists in Batangas.",
-            body: "In this client project, I was tasked to develop their backend API using Express.js and the deployment of the frontend website and backend API.",
-            img_url: [
-                GoExploreBatangas,
-                GoExploreBatangas5,
-                GoExploreBatangas6,
-                GoExploreBatangas1,
-                GoExploreBatangas2,
-                GoExploreBatangas3,
-                GoExploreBatangas4,
-            ],
-            isOnDevelopment: true,
-            view_url: "https://www.goexplorebatangas.com/",
-            tags: ["WEB", "BACKEND-DEV"],
-        },
-        {
-            id: "FC-003",
-            title: "CLIEMB: Monitoring System",
-            tech_stack: ["NEXT.js", "React.js", "Nest.JS (API)", "PostgreSQL", "Hostinger VPS"],
-            description:
-                "A web and app live monitoring system for a clinic in Batangas State University.",
-            body: "In this project, I was tasked to develop their website, app, and API in which the two frontends communicates. I used NEXT.js with React for the Website, Expo React Native for the Mobile App, and NestJS for the API. The API has real-time communication through SocketIO which is used in real-time notification in monitoring of this Website. All of the technologies that were used here are written in Typescript.",
-            img_url: [
-                Cliemb,
-                Cliemb1,
-                Cliemb8,
-                Cliemb7,
-                Cliemb2,
-                Cliemb3,
-                Cliemb5,
-                Cliemb6,
-            ],
-            isOnDevelopment: false,
-            view_url: "https://cliemb.online/",
-            tags: ["WEB", "MOBILE-APP", "FULLSTACK"],
-        },
-        {
-            id: "FC-001",
+            id: "ptd",
             title: "Peach Tree Designs",
             tech_stack: ["NEXT.js", "Express.js (API)", "PostgreSQL"],
             description: "A web portfolio of the business Peach Tree Designs.",
