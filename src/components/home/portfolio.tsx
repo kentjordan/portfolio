@@ -24,7 +24,7 @@ function HomePortfolio() {
 
   return (
     <div
-      className='flex flex-col items-center p-4 overflow-hidden xl:overflow-visible'
+      className='flex flex-col items-center p-4 pt-28 overflow-hidden xl:overflow-visible'
       id='works'>
       <h1 className={`${anton.className} text-6xl my-8 text-center`}>
         <LinearGradient

@@ -1,12 +1,15 @@
 import { LinearGradient } from "react-text-gradients";
 import { Anton } from "next/font/google";
 import Image from "next/image";
+import { Roboto } from "next/font/google";
+
+const roboto = Roboto({ weight: ["400", "700"], subsets: ["latin"] });
 
 const anton = Anton({ weight: "400", subsets: ["latin"] });
 
 const HomeCertificates = () => {
   return (
-    <div className='w-full min-h-screen p-2 mt-32' id='certificates'>
+    <div className='w-full min-h-screen p-4 pt-28' id='certificates'>
       <div className='my-16'>
         <h1 className={`${anton.className} text-6xl my-8 text-center`}>
           <LinearGradient
@@ -14,6 +17,9 @@ const HomeCertificates = () => {
             fallbackColor='#6DD5FA'>
             Certificates
           </LinearGradient>
+        </h1>
+        <h1 className='text-stone-200 text-center'>
+          My earned certs over the past years
         </h1>
       </div>
       <div className='flex flex-wrap gap-8 items-top justify-center'>
