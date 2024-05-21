@@ -58,34 +58,34 @@ function HomeTechnologies() {
         {/* Web */}
         <div className='flex flex-col justify-center items-center py-8 rounded mb-8 border-stone-800 border bg-stone-950'>
           <h1 className='text-lg mb-6 text-center font-bold text-white'>
-            Full Stack Web
+            Web Development
           </h1>
           <div className='flex justify-center gap-x-6 gap-y-8 max-w-[60%] my-4 flex-wrap'>
-            <TechItem Icon={Html5Plain} size={56} title='HTML5' />
-            <TechItem Icon={Css3Plain} size={56} title='CSS3' />
-            <TechItem Icon={JavascriptOriginal} size={56} title='JavaScript' />
-            <TechItem Icon={TypescriptOriginal} size={56} title='TypeScript' />
-            <TechItem Icon={GitOriginal} size={56} title='Git' />
-            <TechItem Icon={ReactOriginal} size={56} title='React' />
-            <TechItem Icon={DockerOriginal} size={56} title='Docker' />
-            <TechItem Icon={NestjsOriginal} size={56} title='NestJS' />
-            <TechItem Icon={NextjsOriginalWordmark} size={56} title='NEXT.js' />
+            <TechItem Icon={Html5Plain} size={40} title='HTML5' />
+            <TechItem Icon={Css3Plain} size={40} title='CSS3' />
+            <TechItem Icon={JavascriptOriginal} size={40} title='JavaScript' />
+            <TechItem Icon={TypescriptOriginal} size={40} title='TypeScript' />
+            <TechItem Icon={GitOriginal} size={40} title='Git' />
+            <TechItem Icon={ReactOriginal} size={40} title='React' />
+            <TechItem Icon={DockerOriginal} size={40} title='Docker' />
+            <TechItem Icon={NestjsOriginal} size={40} title='NestJS' />
+            <TechItem Icon={NextjsOriginalWordmark} size={40} title='NEXT.js' />
             <TechItem
               Icon={TailwindcssOriginal}
-              size={56}
+              size={40}
               title='TailwindCSS'
             />
-            <TechItem Icon={UbuntuOriginal} size={56} title='Ubuntu' />
-            <TechItem Icon={PostgresqlOriginal} size={56} title='PostgreSQL' />
-            <TechItem Icon={NginxOriginal} size={56} title='NGINX' />
+            <TechItem Icon={UbuntuOriginal} size={40} title='Ubuntu' />
+            <TechItem Icon={PostgresqlOriginal} size={40} title='PostgreSQL' />
+            <TechItem Icon={NginxOriginal} size={40} title='NGINX' />
             <TechItem
               Icon={AmazonwebservicesPlainWordmark}
-              size={56}
+              size={40}
               title='AWS'
               fill='white'
             />
-            <TechItem Icon={ExpressOriginal} size={56} title='Express.js' />
-            <TechItem Icon={FastapiOriginal} size={56} title='FastAPI' />
+            <TechItem Icon={ExpressOriginal} size={40} title='Express.js' />
+            <TechItem Icon={FastapiOriginal} size={40} title='FastAPI' />
           </div>
         </div>
         {/* Machine Learing */}
@@ -94,15 +94,15 @@ function HomeTechnologies() {
             Machine Learning
           </h1>
           <div className='flex justify-center gap-x-6 gap-y-8 max-w-[60%] my-4 flex-wrap text-white'>
-            <TechItem Icon={PythonOriginal} size={56} title='Python' />
-            <TechItem Icon={JupyterOriginal} size={56} title='Jupyter' />
-            <TechItem Icon={PytorchOriginal} size={56} title='PyTorch' />
-            <TechItem Icon={TensorflowOriginal} size={56} title='Tensorflow' />
-            <TechItem Icon={PandasOriginal} size={56} title='Pandas' />
-            <TechItem Icon={NumpyOriginal} size={56} title='NumPy' />
+            <TechItem Icon={PythonOriginal} size={40} title='Python' />
+            <TechItem Icon={JupyterOriginal} size={40} title='Jupyter' />
+            <TechItem Icon={PytorchOriginal} size={40} title='PyTorch' />
+            <TechItem Icon={TensorflowOriginal} size={40} title='Tensorflow' />
+            <TechItem Icon={PandasOriginal} size={40} title='Pandas' />
+            <TechItem Icon={NumpyOriginal} size={40} title='NumPy' />
             <TechItem
               Icon={ScikitlearnOriginal}
-              size={56}
+              size={40}
               title='Scikit Learn'
             />
           </div>
