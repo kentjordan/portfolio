@@ -56,11 +56,11 @@ function HomeTechnologies() {
       </div>
       <div>
         {/* Web */}
-        <div className='flex flex-col justify-center items-center py-8 rounded mb-8 border-stone-800 border bg-stone-950'>
-          <h1 className='text-lg mb-6 text-center font-bold text-white'>
-            Web Development
+        <div className='flex flex-col justify-center items-center py-6 rounded mb-8 border-stone-800 border relative bg-stone-950 hover:border-[#6DD5FA] hover:scale-105 group'>
+          <h1 className='text-stone-600 text-xl m-4 font-black group-hover:text-white'>
+            WEB/APP
           </h1>
-          <div className='flex justify-center gap-x-6 gap-y-8 max-w-[60%] my-4 flex-wrap'>
+          <div className='flex justify-center gap-x-6 gap-y-8 z-10 max-w-[60%] my-4 flex-wrap'>
             <TechItem Icon={Html5Plain} size={40} title='HTML5' />
             <TechItem Icon={Css3Plain} size={40} title='CSS3' />
             <TechItem Icon={JavascriptOriginal} size={40} title='JavaScript' />
@@ -89,11 +89,11 @@ function HomeTechnologies() {
           </div>
         </div>
         {/* Machine Learing */}
-        <div className='flex flex-col justify-center items-center py-8 rounded mb-8 border-stone-800 border bg-stone-950'>
-          <h1 className='text-lg mb-6 text-center font-bold text-white'>
-            Machine Learning
+        <div className='flex flex-col justify-center items-center py-6 rounded mb-8 border-stone-800 border relative bg-stone-950 hover:border-[#6DD5FA] hover:scale-105 group'>
+          <h1 className='text-stone-700 text-xl font-black m-4 group-hover:text-white'>
+            ML/AI
           </h1>
-          <div className='flex justify-center gap-x-6 gap-y-8 max-w-[60%] my-4 flex-wrap text-white'>
+          <div className='flex justify-center gap-x-6 gap-y-8 max-w-[60%] z-10 my-4 flex-wrap text-white'>
             <TechItem Icon={PythonOriginal} size={40} title='Python' />
             <TechItem Icon={JupyterOriginal} size={40} title='Jupyter' />
             <TechItem Icon={PytorchOriginal} size={40} title='PyTorch' />

@@ -36,7 +36,7 @@ function HomePortfolio() {
       <div className='flex flex-col my-6 items-center justify-center mx-12'>
         <h1
           className={`${roboto.className} text-2xl text-center font-bold italic`}>
-          FROM CLIENTS
+          FROM FREELANCING
         </h1>
         <div className='flex items-center gap-3 justify-center mt-8 text-stone-400'>
           <PiHandSwipeLeftLight size={24} className=' text-stone-400' />
