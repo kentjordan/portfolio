@@ -31,13 +31,13 @@ const HomeAboutMe = () => {
         Communication and Technology strand. I was thought Web Development
         (HTML, CSS, JavaScript) and Native Mobile App Development (Java -
         Android Studio). Also, I learned Unity 3D for my Exposition project that
-        time. It was a campus tour powered by VR technology.
+        time. It was a campus tour of STI Lipa powered by VR technology.
         <br />
         <br />
         I&apos;ve been doing freelance since 1st quarter of 2023, my focus was
-        on building Web and Mobile apps. My first two clients from the students
-        in STI College - Lipa and University of Batangas, the project were their
-        captones which were web-based systems (see my recent works).
+        on building Web and Mobile apps. My first two clients were students in
+        STI College - Lipa and University of Batangas, the project were their
+        captones which are web-based systems (see my recent works).
         <br /> <br />
         As of now, I&apos;m an aspiring Chief Technolofy Officer (CTO) in our
         startup company. I&apos;ve been planning and implementing the BEST
