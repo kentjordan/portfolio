@@ -19,7 +19,7 @@ const TechItem = ({
   className,
 }: ITechItemProp) => {
   return (
-    <div className='flex flex-col items-center justify-center mx-1 cursor-pointer h-16 w-16'>
+    <div className='flex flex-col items-center justify-center m-4 cursor-pointer h-16 w-16'>
       <div>
         <Icon
           size={size}
@@ -28,9 +28,6 @@ const TechItem = ({
           className={`${className}`}
         />
       </div>
-      <p className='font-bold text-stone-300 hidden group-hover:block mt-1 text-center text-sm'>
-        {title}
-      </p>
     </div>
   );
 };
