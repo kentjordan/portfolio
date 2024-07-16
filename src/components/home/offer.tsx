@@ -62,8 +62,8 @@ const HomeOffer = () => {
           </div>
           <p className='text-neutral-400 text-lg leading-8 mt-8 group-hover:text-white cursor-default'>
             Beyond just a static website, I can help you to solve your complex
-            problem by creating a fully functional system to fulfill the needs
-            of your business. 🛠️{" "}
+            problem by creating a fully functional web-based system to fulfill
+            the needs of your business or problem. 🛠️
           </p>
         </div>
         {/* Mobile Apps */}
@@ -79,8 +79,9 @@ const HomeOffer = () => {
             </h1>
           </div>
           <p className='text-neutral-400 text-lg leading-8 mt-8 group-hover:text-white cursor-default'>
-            If mobile phone users is your target audience, I can help and
-            provide you a high performant and cross platform mobile apps. 📱
+            If mobile phone users are your target audience or you just want an
+            app for your business or problem, I can help and provide you a high
+            performant and cross-platform mobile app. 📱
           </p>
         </div>
         {/* ML/AI */}
