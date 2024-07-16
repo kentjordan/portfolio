@@ -55,9 +55,9 @@ function HomeTechnologies() {
           Technologies that I have been working with
         </h1>
       </div>
-      <div className='flex'>
+      <div className='flex flex-wrap justify-center items-center gap-6'>
         {/* Web */}
-        <div className='flex flex-col justify-center items-center rounded-xl border-stone-800 border bg-neutral-950 p-8 mx-4 hover:border-sky-500'>
+        <div className='flex flex-col justify-center items-center rounded-xl border-stone-800 border bg-neutral-950 p-6 sm:p-8 hover:border-sky-500'>
           <h1
             className={`${anton.className} text-white text-2xl mb-6 font-black`}>
             WEB / APP
@@ -90,7 +90,7 @@ function HomeTechnologies() {
           </div>
         </div>
         {/* Machine Learing */}
-        <div className='flex flex-col justify-center items-center rounded-xl border-stone-800 border bg-neutral-950 p-8 mx-4 hover:border-sky-500'>
+        <div className='flex flex-col justify-center items-center rounded-xl border-stone-800 border bg-neutral-950 p-6 sm:p-8 hover:border-sky-500'>
           <h1
             className={`${anton.className} text-white text-2xl mb-6 font-black`}>
             ML / AI

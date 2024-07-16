@@ -19,7 +19,7 @@ const TechItem = ({
   className,
 }: ITechItemProp) => {
   return (
-    <div className='flex flex-col items-center justify-center m-4 cursor-pointer h-16 w-16'>
+    <div className='flex flex-col items-center justify-center m-2 sm:m-4 cursor-pointer h-16 w-16'>
       <div>
         <Icon
           size={size}
