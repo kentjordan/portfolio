@@ -30,7 +30,7 @@ function HomePortfolio() {
         <LinearGradient
           gradient={["to left", "#0ED2F7, #B2FEFA"]}
           fallbackColor='#6DD5FA'>
-          My recent works
+          Recent Works
         </LinearGradient>
       </h1>
       <div className='flex flex-col my-6 items-center justify-center mx-12'>
