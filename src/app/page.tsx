@@ -1,4 +1,5 @@
 "use client";
+import HomeAboutMe from "@/components/home/about_me";
 import HomeCertificates from "@/components/home/certificates";
 import HomeLanding from "@/components/home/landing";
 import HomeOffer from "@/components/home/offer";
@@ -13,6 +14,7 @@ export default function Home() {
       <HomeTechnologies />
       <HomePortfolio />
       <HomeCertificates />
+      <HomeAboutMe />
     </div>
   );
 }
