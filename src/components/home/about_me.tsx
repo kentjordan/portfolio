@@ -35,10 +35,9 @@ const HomeAboutMe = () => {
         <br />
         <br />
         I&apos;ve been doing freelance since 1st quarter of 2023, my focus was
-        on building Web and Mobile apps. My first two clients from from the
-        students in STI College - Lipa and University of Batangas, the project
-        were their captones which were web-based systems (see my recent works
-        below).
+        on building Web and Mobile apps. My first two clients from the students
+        in STI College - Lipa and University of Batangas, the project were their
+        captones which were web-based systems (see my recent works).
         <br /> <br />
         As of now, I&apos;m an aspiring Chief Technolofy Officer (CTO) in our
         startup company. I&apos;ve been planning and implementing the BEST
