@@ -3,7 +3,7 @@ interface Props extends React.SVGProps<SVGElement> {
 }
 interface ITechItemProp {
   Icon: React.FunctionComponent<Props>;
-  title: string;
+  title?: string;
   fill?: string;
   className?: string;
   size: number;
@@ -19,7 +19,7 @@ const TechItem = ({
   className,
 }: ITechItemProp) => {
   return (
-    <div className='flex flex-col items-center justify-center m-2 sm:m-4 cursor-pointer h-16 w-16'>
+    <div className='flex flex-col items-center justify-center m-2 sm:m-4 h-16 w-16'>
       <div>
         <Icon
           size={size}
@@ -28,6 +28,11 @@ const TechItem = ({
           className={`${className}`}
         />
       </div>
+      {title && (
+        <p className='text-stone-300 mt-2 text-sm text-center cursor-default'>
+          {title}
+        </p>
+      )}
     </div>
   );
 };
