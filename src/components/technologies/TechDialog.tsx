@@ -20,6 +20,10 @@ import {
   PandasOriginal,
   NumpyOriginal,
   JupyterOriginal,
+  NextjsOriginal,
+  NextjsOriginalWordmark,
+  NextjsPlain,
+  NestjsLineWordmark,
 } from "devicons-react";
 import { Dispatch, SetStateAction } from "react";
 
@@ -56,20 +60,29 @@ const TechDialog = ({ field, setActiveDialog }: TechDialogProps) => {
               <TechItem
                 Icon={JavascriptOriginal}
                 size={50}
-                title='TypeScript'
+                title='JavaScript'
               />
               <TechItem
                 Icon={TypescriptOriginal}
                 size={50}
                 title='TypeScript'
               />
-              <TechItem Icon={ReactOriginal} size={50} title='React' />
+              <TechItem
+                Icon={NextjsOriginalWordmark}
+                size={50}
+                title='NEXT.js'
+              />
+              <TechItem Icon={ReactOriginal} size={50} title='React.js' />
               <TechItem
                 Icon={TailwindcssOriginal}
                 size={50}
                 title='TailwindCSS'
               />
-              <TechItem Icon={PostgresqlOriginal} size={50} title='HTML' />
+              <TechItem
+                Icon={PostgresqlOriginal}
+                size={50}
+                title='PostgreSQL'
+              />
               <TechItem Icon={NestjsOriginal} size={50} title='NestJS' />
               <TechItem Icon={DockerOriginal} size={50} title='Docker' />
               <TechItem Icon={GitOriginal} size={50} title='Git' />
