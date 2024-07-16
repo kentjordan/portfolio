@@ -41,7 +41,7 @@ function HomeTechnologies() {
   return (
     <div
       id='techstack'
-      className='w-full min-h-screen flex flex-col justify-center items-center rounded text-black p-4 pt-28 my-40'>
+      className='w-full min-h-screen flex flex-col justify-center items-center rounded text-black p-4 pt-28'>
       {/* Header */}
       <div className='flex justify-center items-center flex-col mb-16'>
         <h1 className={`${anton.className} text-6xl my-8 text-center`}>
