@@ -74,7 +74,10 @@ function HomeTechnologies() {
           <div className='flex flex-col relative'>
             <div className='bg-gradient-to-t from-neutral-950 via-neutral-950/85 to-transparent w-full h-full absolute flex justify-center items-end'>
               <div
-                onClick={() => setActiveDialog("WEB")}
+                onClick={() => {
+                  setActiveDialog("WEB");
+                  window.location.href = "/#techstack";
+                }}
                 className='flex items-center justify-center gap-3 cursor-pointer mb-6'>
                 <p className='text-white text-center cursor-pointer'>
                   See more
@@ -103,7 +106,10 @@ function HomeTechnologies() {
           <div className='flex flex-col relative'>
             <div className='bg-gradient-to-t from-neutral-950 via-neutral-950/85 to-transparent w-full h-full absolute flex justify-center items-end'>
               <div
-                onClick={() => setActiveDialog("ML")}
+                onClick={() => {
+                  setActiveDialog("ML");
+                  window.location.href = "/#techstack";
+                }}
                 className='flex items-center justify-center gap-3 cursor-pointer mb-6'>
                 <p className='text-white text-center cursor-pointer'>
                   See more

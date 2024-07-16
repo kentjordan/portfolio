@@ -1,4 +1,4 @@
-import { Roboto_Condensed } from "next/font/google";
+import { Anton, Roboto_Condensed } from "next/font/google";
 import TechItem from "./TechItem";
 import {
   TypescriptOriginal,
@@ -28,6 +28,8 @@ const roboto_condensed = Roboto_Condensed({
   subsets: ["latin"],
 });
 
+const anton = Anton({ weight: "400", subsets: ["latin"] });
+
 interface TechDialogProps {
   field: "WEB" | "ML";
   setActiveDialog: Dispatch<SetStateAction<"ML" | "WEB" | undefined>>;
@@ -35,18 +37,16 @@ interface TechDialogProps {
 
 const TechDialog = ({ field, setActiveDialog }: TechDialogProps) => {
   return (
-    <div className='bg-black/30 backdrop-blur-xl absolute w-full h-full z-10 flex justify-center items-center'>
-      <div className='flex flex-col justify-center items-center'>
+    <div className='bg-black/10 py-16 px-4 backdrop-blur-xl absolute w-full min-h-full z-10 flex justify-center items-center'>
+      <div className='flex flex-col justify-center  items-center'>
         <h1
-          className={`${roboto_condensed.className} text-white font-bold text-5xl text-center px-2`}>
-          {field === "WEB"
-            ? "Web Apps and Mobile Apps"
-            : "Machine Learning and Artificial Intelligence"}
+          className={`${anton.className} text-white font-bold text-5xl text-center px-2`}>
+          {field === "WEB" ? "Web & App" : "ML / AI"}
         </h1>
         <p className='text-stone-300 max-w-[64ch] text-center mt-4 px-2'>
           {field === "WEB"
             ? "Below are the technologies I've been using in building fullstack web apps and mobile apps in personal projects and freelancing. "
-            : "Below are the technologies that I’ve been using in the field of ML/AI"}
+            : "Below are the technologies that I’ve been using in the field of Machine Learning and Artificial Intelligence (ML/AI)"}
         </p>
         <div className='flex flex-col gap-4 mt-16'>
           {field === "WEB" && (
