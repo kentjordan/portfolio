@@ -28,13 +28,13 @@ export const MobileNavbarMenu = () => {
         animate={{ opacity: 1 }}
         className='bg-black md:hidden w-full h-full z-50 fixed p-6'>
         <div className='flex mb-12 mt-4 items-center'>
-          <h1 className='text-4xl mx-3 font-bold'>Section Menu</h1>
+          <h1 className='text-4xl mx-3 font-bold'>Menu</h1>
         </div>
         <ul className='flex justify-center flex-col gap-4 text-base'>
           <li
-            className={`cursor-pointer p-3 ${
+            className={`cursor-pointer p-3 hover:bg-sky-500/30 rounded-md ${
               window.location.hash === "" && currentPage?.toUpperCase() === ""
-                ? "border-b border-b-sky-500 text-bold"
+                ? "bg-sky-500/80 rounded-md text-bold"
                 : "border-0"
             }`}>
             <Link href='/' onClick={toggleMobileNavMenu}>
@@ -42,9 +42,9 @@ export const MobileNavbarMenu = () => {
             </Link>
           </li>
           <li
-            className={`cursor-pointer p-3 ${
+            className={`cursor-pointer p-3 hover:bg-sky-500/30 rounded-md ${
               window.location.hash === "#techstack"
-                ? "border-b border-b-sky-500 text-bold"
+                ? "bg-sky-500/80 rounded-md text-bold"
                 : "border-0"
             }`}>
             <Link href='/#techstack' onClick={toggleMobileNavMenu}>
@@ -52,9 +52,9 @@ export const MobileNavbarMenu = () => {
             </Link>
           </li>
           <li
-            className={`cursor-pointer p-3 ${
+            className={`cursor-pointer p-3 hover:bg-sky-500/30 rounded-md ${
               window.location.hash === "#works"
-                ? "border-b border-b-sky-500 text-bold"
+                ? "bg-sky-500/80 rounded-md text-bold"
                 : "border-0"
             }`}>
             <Link href='/#works' onClick={toggleMobileNavMenu}>
@@ -62,9 +62,9 @@ export const MobileNavbarMenu = () => {
             </Link>
           </li>
           <li
-            className={`cursor-pointer p-3 ${
+            className={`cursor-pointer p-3 hover:bg-sky-500/30 rounded-md ${
               window.location.hash === "#certificates"
-                ? "border-b border-b-sky-500 text-bold"
+                ? "bg-sky-500/80 rounded-md text-bold"
                 : "border-0"
             }`}>
             <Link href='/#certificates' onClick={toggleMobileNavMenu}>
@@ -72,9 +72,9 @@ export const MobileNavbarMenu = () => {
             </Link>
           </li>
           <li
-            className={`cursor-pointer p-3 ${
+            className={`cursor-pointer p-3 hover:bg-sky-500/30 rounded-md ${
               currentPage?.toUpperCase() === "CONTACT"
-                ? "border-b border-b-sky-500 text-bold"
+                ? "bg-sky-500/80 rounded-md text-bold"
                 : "border-0"
             }`}>
             <Link href='/contact' onClick={toggleMobileNavMenu}>
