@@ -37,6 +37,12 @@ import DC7 from "@/assets/digits-classification/7.png"
 import DC8 from "@/assets/digits-classification/8.png"
 import DC9 from "@/assets/digits-classification/9.png"
 
+import SA0 from "@/assets/sentiment-analysis/sent0.png"
+import SA1 from "@/assets/sentiment-analysis/sent1.png"
+import SA2 from "@/assets/sentiment-analysis/sent2.png"
+import SA3 from "@/assets/sentiment-analysis/sent3.png"
+import SA4 from "@/assets/sentiment-analysis/sent4.png"
+
 const usePersonalProjects = () => {
 
     const [personalProjects, setPersonalProjects] = useState<WorkItem[]>([
@@ -97,6 +103,22 @@ const usePersonalProjects = () => {
             view_url: "https://digits-classification.vercel.app/",
             isOnDevelopment: false,
             tags: ["NEXT.JS", "TENSORFLOW", "FASTAPI"],
+        },
+        {
+            id: "sentiment-analysis",
+            title: "Sentiment Analysis",
+            description: "Binary Text Sentiment classification built on top of Logistic Regression and PyTorch.",
+            body: "My first entry in the world of Natural Language Processing (NLP). My model was trained on Sentiment140 dataset—a list of tweets. ",
+            tech_stack: ["NEXT.js", "PyTorch", "FastAPI"],
+            img_url: [
+                SA0,
+                SA1,
+                SA2,
+                SA3,
+                SA4],
+            view_url: "https://sentiment-analysis-kjordan.vercel.app/",
+            isOnDevelopment: false,
+            tags: ["NEXT.JS", "PYTORCH", "FASTAPI"],
         },
         {
             id: "covid-tracker",
