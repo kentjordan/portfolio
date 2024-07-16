@@ -75,11 +75,11 @@ export const MobileNavbarMenu = () => {
             href='/#about-me'
             onClick={toggleMobileNavMenu}
             className={`cursor-pointer p-3 hover:bg-sky-500/30 rounded-md ${
-              currentPage?.toUpperCase() === "CONTACT"
+              window.location.hash === "#about-me"
                 ? "bg-sky-500/80 rounded-md text-bold"
                 : "border-0"
             }`}>
-            About me
+            About Me
           </Link>
           <Link
             href='/contact'
