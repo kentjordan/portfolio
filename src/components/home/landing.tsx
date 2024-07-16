@@ -23,7 +23,7 @@ const HomeLanding = () => {
       style={{
         maxHeight: `${height}px`,
       }}>
-      <div className='absolute bg-gradient-to-t from-black via-black/10  to-transparent max-w-[1280px] w-full h-full'></div>
+      <div className='absolute bg-gradient-to-t from-black via-black/10  to-transparent max-w-[1400px] w-full h-full'></div>
       {/* Info about me */}
       <div className='absolute bottom-0 flex text-center xl:text-start flex-col h-full flex-[0.6] justify-end mx-8 xl:justify-center xl:flex xl:relative'>
         <span
