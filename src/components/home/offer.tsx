@@ -95,7 +95,7 @@ const HomeOffer = () => {
           <p className='text-neutral-400 text-lg leading-8 mt-8 group-hover:text-white cursor-default'>
             I’m still improving my skills in Machine Learning and Artificial
             Intelligence. I’ll help you soon once I got comfortable in this
-            field . 😉
+            field. 😉
           </p>
         </div>
       </div>
