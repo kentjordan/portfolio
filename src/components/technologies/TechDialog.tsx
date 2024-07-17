@@ -37,7 +37,9 @@ const TechDialog = ({ field, setActiveDialog }: TechDialogProps) => {
       <div className='flex flex-col justify-center  items-center'>
         <h1
           className={`${anton.className} text-white font-bold text-5xl text-center px-2`}>
-          {field === "WEB" ? "WEB & MOBILE APPS" : "ML / AI"}
+          {field === "WEB"
+            ? "Web & Mobile Apps"
+            : "Machine Learning & Artificial Intelligence"}
         </h1>
         <p className='text-stone-300 max-w-[64ch] text-center mt-4 px-2'>
           {field === "WEB"
