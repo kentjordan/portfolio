@@ -20,17 +20,10 @@ import {
   PandasOriginal,
   NumpyOriginal,
   JupyterOriginal,
-  NextjsOriginal,
   NextjsOriginalWordmark,
-  NextjsPlain,
-  NestjsLineWordmark,
 } from "devicons-react";
 import { Dispatch, SetStateAction } from "react";
 
-const roboto_condensed = Roboto_Condensed({
-  weight: "400",
-  subsets: ["latin"],
-});
 
 const anton = Anton({ weight: "400", subsets: ["latin"] });
 
@@ -45,7 +38,7 @@ const TechDialog = ({ field, setActiveDialog }: TechDialogProps) => {
       <div className='flex flex-col justify-center  items-center'>
         <h1
           className={`${anton.className} text-white font-bold text-5xl text-center px-2`}>
-          {field === "WEB" ? "Web & App" : "ML / AI"}
+          {field === "WEB" ? "WEB / MOBILE" : "ML / AI"}
         </h1>
         <p className='text-stone-300 max-w-[64ch] text-center mt-4 px-2'>
           {field === "WEB"
