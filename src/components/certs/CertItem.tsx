@@ -36,7 +36,9 @@ const CertItem = ({ title, Background, Thumbnail, field }: CertItemProps) => {
           <Thumbnail />
         </div>
       </div>
-      <h1 className={`${roboto.className} mt-4 cursor-default`}>{title}</h1>
+      <h1 className={`${roboto.className} mt-4 cursor-default text-center`}>
+        {title}
+      </h1>
     </div>
   );
 };

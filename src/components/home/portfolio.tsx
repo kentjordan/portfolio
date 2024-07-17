@@ -24,9 +24,9 @@ function HomePortfolio() {
 
   return (
     <div
-      className='flex flex-col items-center p-4 pt-28 overflow-hidden xl:overflow-visible'
+      className='flex flex-col items-center py-32 overflow-hidden xl:overflow-visible px-4'
       id='works'>
-      <h1 className={`${anton.className} text-6xl my-8 text-center`}>
+      <h1 className={`${anton.className} text-6xl mb-8 text-center`}>
         <LinearGradient
           gradient={["to left", "#0ED2F7, #B2FEFA"]}
           fallbackColor='#6DD5FA'>

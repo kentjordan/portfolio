@@ -24,7 +24,6 @@ import {
 } from "devicons-react";
 import { Dispatch, SetStateAction } from "react";
 
-
 const anton = Anton({ weight: "400", subsets: ["latin"] });
 
 interface TechDialogProps {
@@ -38,7 +37,7 @@ const TechDialog = ({ field, setActiveDialog }: TechDialogProps) => {
       <div className='flex flex-col justify-center  items-center'>
         <h1
           className={`${anton.className} text-white font-bold text-5xl text-center px-2`}>
-          {field === "WEB" ? "WEB / MOBILE" : "ML / AI"}
+          {field === "WEB" ? "WEB & MOBILE APPS" : "ML / AI"}
         </h1>
         <p className='text-stone-300 max-w-[64ch] text-center mt-4 px-2'>
           {field === "WEB"
@@ -48,58 +47,58 @@ const TechDialog = ({ field, setActiveDialog }: TechDialogProps) => {
         <div className='flex flex-col gap-4 mt-16'>
           {field === "WEB" && (
             <div className='flex gap-6 flex-wrap max-w-[600px] justify-center items-center'>
-              <TechItem Icon={Html5Original} size={50} title='HTML' />
-              <TechItem Icon={Css3Original} size={50} title='CSS' />
+              <TechItem Icon={Html5Original} size={40} title='HTML' />
+              <TechItem Icon={Css3Original} size={40} title='CSS' />
               <TechItem
                 Icon={JavascriptOriginal}
-                size={50}
+                size={40}
                 title='JavaScript'
               />
               <TechItem
                 Icon={TypescriptOriginal}
-                size={50}
+                size={40}
                 title='TypeScript'
               />
               <TechItem
                 Icon={NextjsOriginalWordmark}
-                size={50}
+                size={40}
                 title='NEXT.js'
               />
-              <TechItem Icon={ReactOriginal} size={50} title='React.js' />
+              <TechItem Icon={ReactOriginal} size={40} title='React.js' />
               <TechItem
                 Icon={TailwindcssOriginal}
-                size={50}
+                size={40}
                 title='TailwindCSS'
               />
               <TechItem
                 Icon={PostgresqlOriginal}
-                size={50}
+                size={40}
                 title='PostgreSQL'
               />
-              <TechItem Icon={NestjsOriginal} size={50} title='NestJS' />
-              <TechItem Icon={DockerOriginal} size={50} title='Docker' />
-              <TechItem Icon={GitOriginal} size={50} title='Git' />
-              <TechItem Icon={FastapiOriginal} size={50} title='FastAPI' />
-              <TechItem Icon={NginxOriginal} size={50} title='NGINX' />
+              <TechItem Icon={NestjsOriginal} size={40} title='NestJS' />
+              <TechItem Icon={DockerOriginal} size={40} title='Docker' />
+              <TechItem Icon={GitOriginal} size={40} title='Git' />
+              <TechItem Icon={FastapiOriginal} size={40} title='FastAPI' />
+              <TechItem Icon={NginxOriginal} size={40} title='NGINX' />
             </div>
           )}
           {field === "ML" && (
             <div className='flex gap-6 flex-wrap max-w-[600px] justify-center items-center'>
-              <TechItem Icon={PythonOriginal} size={50} title='Python' />
-              <TechItem Icon={PytorchOriginal} size={50} title='PyTorch' />
+              <TechItem Icon={PythonOriginal} size={40} title='Python' />
+              <TechItem Icon={PytorchOriginal} size={40} title='PyTorch' />
               <TechItem
                 Icon={TensorflowOriginal}
-                size={50}
+                size={40}
                 title='Tensorflow'
               />
               <TechItem
                 Icon={ScikitlearnOriginal}
-                size={50}
+                size={40}
                 title='Scikit Learn'
               />
-              <TechItem Icon={PandasOriginal} size={50} title='Pandas' />
-              <TechItem Icon={NumpyOriginal} size={50} title='Numpy' />
-              <TechItem Icon={JupyterOriginal} size={50} title='Jupyter' />
+              <TechItem Icon={PandasOriginal} size={40} title='Pandas' />
+              <TechItem Icon={NumpyOriginal} size={40} title='Numpy' />
+              <TechItem Icon={JupyterOriginal} size={40} title='Jupyter' />
             </div>
           )}
         </div>

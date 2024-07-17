@@ -111,12 +111,12 @@ function Navbar() {
   return (
     <>
       <div
-        className={`${roboto.className} fixed bg-black/80 backdrop-blur hidden md:flex justify-between max-w-[1400px] w-full z-50 mx-8 text-lg text-stone-300 p-8`}>
+        className={`${roboto.className} fixed bg-black/80 backdrop-blur hidden lg:flex justify-between max-w-[1400px] w-full z-50 mx-8 text-lg text-stone-300 p-8`}>
         <div className='flex items-center text-base gap-4'>
           <BsDownload size={20} />
           <Link
             href='/contact'
-            className={`${roboto.className} cursor-pointer font-extrabold`}>
+            className={`${roboto.className} cursor-pointer`}>
             Resume/CV
           </Link>
         </div>
@@ -145,7 +145,7 @@ function Navbar() {
         </ul>
       </div>
       <div
-        className={`${roboto.className} bg-black/70 backdrop-blur flex justify-end md:hidden fixed max-w-[1280px] w-full z-50 text-lg text-stone-300`}>
+        className={`${roboto.className} bg-black/70 backdrop-blur flex justify-end lg:hidden fixed max-w-[1280px] w-full z-50 text-lg text-stone-300`}>
         <HiMenuAlt4
           className='cursor-pointer m-4'
           size={32}

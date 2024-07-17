@@ -8,9 +8,9 @@ const HomeOffer = () => {
   return (
     <div
       id='offer'
-      className='w-full min-h-screen flex flex-col justify-center items-center rounded text-black p-4 pt-28'>
+      className='w-full flex flex-col justify-center items-center rounded text-black py-32 px-4'>
       <div className='flex justify-center items-center flex-col mb-16'>
-        <h1 className={`${anton.className} text-6xl my-8 text-center`}>
+        <h1 className={`${anton.className} text-6xl mb-8 text-center`}>
           <LinearGradient
             gradient={["to left", "#0ED2F7, #B2FEFA"]}
             fallbackColor='#6DD5FA'>
@@ -33,7 +33,7 @@ const HomeOffer = () => {
       </div>
       <div className='w-full flex mt-8 gap-4 flex-wrap justify-center'>
         {/* Websites */}
-        <div className='w-[300px] h-[380px] border-neutral-800 border bg-neutral-950 rounded-md p-6 group hover:border-sky-300'>
+        <div className='w-[300px] h-[380px] border-neutral-800 border bg-neutral-950 rounded-lg p-6 group hover:border-sky-500'>
           <div className='flex items-center gap-4'>
             <PanelTop className='text-white ' size={32} />
             <h1
@@ -49,7 +49,7 @@ const HomeOffer = () => {
           </p>
         </div>
         {/* Web Apps */}
-        <div className='w-[300px] h-[380px] border-neutral-800 border bg-neutral-950 rounded-md p-6 group hover:border-sky-300'>
+        <div className='w-[300px] h-[380px] border-neutral-800 border bg-neutral-950 rounded-lg p-6 group hover:border-sky-500'>
           <div className='flex items-center gap-4'>
             <Globe className='text-white ' size={32} />
             <h1
@@ -64,7 +64,7 @@ const HomeOffer = () => {
           </p>
         </div>
         {/* Mobile Apps */}
-        <div className='w-[300px] h-[380px] border-neutral-800 border bg-neutral-950 rounded-md p-6 group hover:border-sky-300'>
+        <div className='w-[300px] h-[380px] border-neutral-800 border bg-neutral-950 rounded-lg p-6 group hover:border-sky-500'>
           <div className='flex items-center gap-4'>
             <Smartphone className='text-white ' size={32} />
             <h1
@@ -79,7 +79,7 @@ const HomeOffer = () => {
           </p>
         </div>
         {/* ML/AI */}
-        <div className='w-[300px] h-[380px] border-neutral-800 border bg-neutral-950 rounded-md p-6 group hover:border-sky-300'>
+        <div className='w-[300px] h-[380px] border-neutral-800 border bg-neutral-950 rounded-lg p-6 group hover:border-sky-500'>
           <div className='flex items-center gap-4'>
             <Share2 className='text-white ' size={32} />
             <h1

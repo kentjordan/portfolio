@@ -8,9 +8,11 @@ import Image from "next/image";
 
 const HomeCertificates = () => {
   return (
-    <div className='w-full min-h-screen p-4 pt-28' id='certificates'>
-      <div className='my-16'>
-        <h1 className={`${anton.className} text-6xl my-8 text-center`}>
+    <div
+      className='w-full min-h-screen flex flex-col justify-center py-32 '
+      id='certificates'>
+      <div>
+        <h1 className={`${anton.className} text-6xl mb-8 text-center`}>
           <LinearGradient
             gradient={["to left", "#0ED2F7, #B2FEFA"]}
             fallbackColor='#6DD5FA'>
@@ -21,7 +23,7 @@ const HomeCertificates = () => {
           My earned certs over the past years
         </h1>
       </div>
-      <div className='flex flex-wrap gap-28 items-top justify-center mx-2 pt-8 mt-24'>
+      <div className='flex flex-wrap gap-28 items-top justify-center mx-2 pt-8 mt-24 px-8'>
         <CertItem
           field='ml'
           title='Machine Learning Specialization'

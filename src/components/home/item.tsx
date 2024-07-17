@@ -27,14 +27,14 @@ const Item = ({
       onClick={() => {
         window.location.href = `/works/${id}`;
       }}
-      className='flex flex-col justify-between my-8 max-w-[300px] border border-neutral-700 bg-neutral-950 hover:border-[#6DD5FA] rounded cursor-pointer'>
+      className='flex flex-col justify-between mt-8 max-w-[300px] border border-neutral-700 bg-neutral-950 hover:border-sky-500 rounded-lg cursor-pointer'>
       <div>
         <Image
           src={img_url}
           width={600}
           height={400}
           alt='works 1'
-          className='h-40 w-full rounded-t'
+          className='h-40 w-full rounded-t-lg'
         />
         <div className='flex flex-col px-6 pb-8 pt-4'>
           {/*  Tags */}

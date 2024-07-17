@@ -8,9 +8,9 @@ const HomeAboutMe = () => {
   return (
     <div
       id='about-me'
-      className='w-full min-h-screen flex flex-col justify-center items-center rounded text-black p-4 pt-28'>
+      className='w-full min-h-screen flex flex-col justify-center items-center py-32 px-4 rounded text-black'>
       <div className='flex justify-center items-center flex-col '>
-        <h1 className={`${anton.className} text-6xl my-8 text-center`}>
+        <h1 className={`${anton.className} text-6xl mb-8 text-center`}>
           <LinearGradient
             gradient={["to left", "#0ED2F7, #B2FEFA"]}
             fallbackColor='#6DD5FA'>
