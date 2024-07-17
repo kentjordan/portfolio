@@ -27,7 +27,7 @@ const Item = ({
       onClick={() => {
         window.location.href = `/works/${id}`;
       }}
-      className='flex flex-col justify-between my-8 max-w-[300px] border border-stone-700 hover:border-[#6DD5FA] rounded hover:scale-105 cursor-pointer'>
+      className='flex flex-col justify-between my-8 max-w-[300px] border border-neutral-700 bg-neutral-950 hover:border-[#6DD5FA] rounded cursor-pointer'>
       <div>
         <Image
           src={img_url}
