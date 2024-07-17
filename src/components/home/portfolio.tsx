@@ -35,7 +35,7 @@ function HomePortfolio() {
       </h1>
       <div className='flex flex-col my-6 items-center justify-center mx-12'>
         <h1
-          className={`${roboto.className} text-2xl text-center font-bold italic`}>
+          className={`${roboto.className} text-lg text-center font-bold italic`}>
           FROM FREELANCING
         </h1>
         <div className='flex items-center gap-3 justify-center mt-8 text-stone-400'>
@@ -45,7 +45,7 @@ function HomePortfolio() {
         <Carousel
           className='mt-8 p-1 max-w-5xl'
           orientation='horizontal'
-          plugins={[Autoplay({ delay: 5000 })]}
+          plugins={[Autoplay({ delay: 2000 })]}
           opts={{
             align: "center",
             loop: true,
@@ -73,7 +73,7 @@ function HomePortfolio() {
         </Carousel>
       </div>
       <div className='flex flex-col mt-12 items-center justify-center mx-12'>
-        <h1 className={`${roboto.className} text-2xl text-center font-bold`}>
+        <h1 className={`${roboto.className} text-lg text-center font-bold`}>
           PERSONAL PROJECTS
         </h1>
         <div className='flex items-center gap-3 justify-center mt-8 text-stone-400'>
@@ -83,7 +83,7 @@ function HomePortfolio() {
         <Carousel
           className='mt-8 p-1 max-w-5xl'
           orientation='horizontal'
-          plugins={[Autoplay({ delay: 5000 })]}
+          plugins={[Autoplay({ delay: 2000 })]}
           opts={{
             align: "center",
             loop: true,
