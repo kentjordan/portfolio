@@ -3,8 +3,6 @@ import { Anton } from "next/font/google";
 import { Roboto } from "next/font/google";
 import CertItem from "../certs/CertItem";
 
-const roboto = Roboto({ weight: ["400", "700"], subsets: ["latin"] });
-
 const anton = Anton({ weight: "400", subsets: ["latin"] });
 import Image from "next/image";
 
@@ -26,7 +24,7 @@ const HomeCertificates = () => {
       <div className='flex flex-wrap gap-28 items-top justify-center mx-2 pt-8 mt-24'>
         <CertItem
           field='ml'
-          title='Machine Learning'
+          title='Machine Learning Specialization'
           Thumbnail={() => (
             <Image
               alt='Certificate'
