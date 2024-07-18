@@ -121,27 +121,37 @@ function Navbar() {
           </Link>
         </div>
         <ul className='flex gap-8 text-base'>
-          <li className='cursor-pointer hover:border-b-sky-500 hover:border-b py-1 px-2 hover:text-white'>
-            <Link href='/'>Home</Link>
-          </li>
-          <li className='cursor-pointer hover:border-b-sky-500 hover:border-b px-2 py-1 hover:text-white'>
-            <Link href='/#techstack'>Techstack</Link>
-          </li>
-          <li className='cursor-pointer hover:border-b-sky-500 hover:border-b px-2 py-1 hover:text-white'>
-            <Link href='/#works'>Works</Link>
-          </li>
-          {/* <li className='cursor-pointer hover:border-b-sky-500 hover:border-b px-2 py-1 hover:text-white'>
-            <Link href='/blogs'>Blogs</Link>
-          </li> */}
-          <li className='cursor-pointer hover:border-b-sky-500 hover:border-b px-2 py-1 hover:text-white'>
-            <Link href='/#certificates'>Certificates</Link>
-          </li>
-          <li className='cursor-pointer hover:border-b-sky-500 hover:border-b px-2 py-1 hover:text-white'>
-            <Link href='/#about-me'>About Me</Link>
-          </li>
-          <li className='cursor-pointer hover:border-b-sky-500 hover:border-b px-2 py-1 hover:text-white'>
-            <Link href='/contact'>Contact</Link>
-          </li>
+          <Link
+            className='cursor-pointer hover:border-b-sky-500 hover:border-b px-2 py-1 hover:text-white'
+            href='/'>
+            Home
+          </Link>
+          <Link
+            className='cursor-pointer hover:border-b-sky-500 hover:border-b px-2 py-1 hover:text-white'
+            href='/#techstack'>
+            Techstack
+          </Link>
+          <Link
+            className='cursor-pointer hover:border-b-sky-500 hover:border-b px-2 py-1 hover:text-white'
+            href='/#works'>
+            Works
+          </Link>
+          {/* <Link href='/blogs'>Blogs</Link> */}
+          <Link
+            className='cursor-pointer hover:border-b-sky-500 hover:border-b px-2 py-1 hover:text-white'
+            href='/#certificates'>
+            Certificates
+          </Link>
+          <Link
+            className='cursor-pointer hover:border-b-sky-500 hover:border-b px-2 py-1 hover:text-white'
+            href='/#about-me'>
+            About Me
+          </Link>
+          <Link
+            className='cursor-pointer hover:border-b-sky-500 hover:border-b px-2 py-1 hover:text-white'
+            href='/contact'>
+            Contact
+          </Link>
         </ul>
       </div>
       <div
