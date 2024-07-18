@@ -27,7 +27,7 @@ const HomeLanding = () => {
       {/* Info about me */}
       <div className='absolute bottom-0 flex text-center xl:text-start flex-col h-full flex-[0.6] justify-end mx-8 xl:justify-center xl:flex xl:relative'>
         <span
-          className={`${roboto.className} block my-2 text-lg sm:text-xl text-white`}>
+          className={`${roboto.className} block my-2 text-lg sm:text-xl text-neutral-300`}>
           Hi there! 🤗 I&apos;m
         </span>
         <h1 className={`${anton.className} text-7xl sm:text-6xl`}>
@@ -38,9 +38,9 @@ const HomeLanding = () => {
           </LinearGradient>
         </h1>
         <span
-          className={`${roboto.className}  mt-4 block my-2 text-lg sm:text-xl text-stone-300`}>
-          A fullstack web and app developer. An aspiring Machine Learning
-          Engineer.
+          className={`${roboto.className}  mt-4 block my-2 text-lg sm:text-xl text-neutral-300`}>
+          A Software Engineer specialized on fullstack Web Apps, Mobile Apps,
+          and Artificial Intelligence (ML/DL).
         </span>
         <div className='flex xl:justify-start justify-center gap-6 my-8'>
           <Link href='https://www.facebook.com/kentaki.dev'>
