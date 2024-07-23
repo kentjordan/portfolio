@@ -16,14 +16,14 @@ const HomeTestimonials = () => {
           </LinearGradient>
         </h1>
         <h1 className='text-stone-200 text-center max-w-[40ch]'>
-          See what my recent clients are about my service on their respective
+          See what my recent clients said about my service on their respective
           projects.
         </h1>
       </div>
       {/* End Header */}
       <div className='flex gap-8 flex-wrap justify-center items-center'>
         {/* Tesitomony 1 */}
-        <div className='cursor-default hover:border-sky-500 flex w-full max-w-[500px] h-auto sm:h-[300px] border bg-[#0F0F0F] border-[#3A3A3A] p-6 rounded-xl'>
+        <div className='cursor-default hover:border-sky-500 flex w-full max-w-[500px] h-auto sm:h-[320px] border bg-[#0F0F0F] border-[#3A3A3A] p-8 rounded-xl'>
           <div className='pr-6'>
             <h1
               className={`${anton.className} text-8xl text-center flex items-center h-full text-neutral-700`}>
@@ -44,7 +44,7 @@ const HomeTestimonials = () => {
           </div>
         </div>
         {/* Tesitomony 2 */}
-        <div className='cursor-default hover:border-sky-500 flex w-full max-w-[500px] h-auto sm:h-[300px] border bg-[#0F0F0F] border-[#3A3A3A] p-6 rounded-xl'>
+        <div className='cursor-default hover:border-sky-500 flex w-full max-w-[500px] h-auto sm:h-[320px] border bg-[#0F0F0F] border-[#3A3A3A] p-8 rounded-xl'>
           <div className='pr-6'>
             <h1
               className={`${anton.className} text-8xl text-center flex items-center h-full text-neutral-700`}>
