@@ -5,6 +5,7 @@ import HomeLanding from "@/components/home/landing";
 import HomeOffer from "@/components/home/offer";
 import HomePortfolio from "@/components/home/portfolio";
 import HomeTechnologies from "@/components/home/technologies";
+import HomeTestimonials from "@/components/home/testimonials";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <HomeOffer />
       <HomeTechnologies />
       <HomePortfolio />
+      <HomeTestimonials />
       <HomeCertificates />
       <HomeAboutMe />
     </div>
