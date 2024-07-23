@@ -8,13 +8,13 @@ const HomeOffer = () => {
   return (
     <div
       id='offer'
-      className='w-full flex flex-col justify-center items-center rounded text-black py-32 px-4'>
+      className='w-full min-h-screen flex flex-col justify-center items-center rounded py-32 px-4'>
       <div className='flex justify-center items-center flex-col mb-16'>
         <h1 className={`${anton.className} text-6xl mb-8 text-center`}>
           <LinearGradient
             gradient={["to left", "#0ED2F7, #B2FEFA"]}
             fallbackColor='#6DD5FA'>
-            What I can do?
+            What I Can Do?
           </LinearGradient>
           🚀
         </h1>
