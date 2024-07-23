@@ -45,7 +45,7 @@ function HomePortfolio() {
         <Carousel
           className='mt-8 p-1 max-w-5xl'
           orientation='horizontal'
-          plugins={[Autoplay({ delay: 2000 })]}
+          plugins={[Autoplay({ delay: 1800 })]}
           opts={{
             align: "center",
             loop: true,
