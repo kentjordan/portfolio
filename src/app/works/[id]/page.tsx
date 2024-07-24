@@ -58,7 +58,7 @@ function WorksPage({ params }: { params: { id: string } }) {
             return (
               <Image
                 key={i}
-                className='basis-1/2 flex-grow my-3 border-stone-400 border-2 rounded-lg w-full'
+                className='basis-1/2 flex-grow my-3 border-neutral-500 border rounded-lg w-full'
                 src={e}
                 alt='Image'
               />
