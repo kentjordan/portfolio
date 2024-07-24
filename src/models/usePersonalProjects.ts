@@ -43,6 +43,9 @@ import SA2 from "@/assets/sentiment-analysis/sent2.png"
 import SA3 from "@/assets/sentiment-analysis/sent3.png"
 import SA4 from "@/assets/sentiment-analysis/sent4.png"
 
+import LRV0 from "@/assets/lr-visualizer/lr-visualizer-0.png"
+import LRV1 from "@/assets/lr-visualizer/lr-visualizer-1.png"
+
 const usePersonalProjects = () => {
 
     const [personalProjects, setPersonalProjects] = useState<WorkItem[]>([
@@ -119,6 +122,19 @@ const usePersonalProjects = () => {
             view_url: "https://sentiment-analysis-kjordan.vercel.app/",
             isOnDevelopment: false,
             tags: ["NEXT.JS", "PYTORCH", "FASTAPI"],
+        },
+        {
+            id: "lr-visualizer",
+            title: "Linear Regression Visualizer",
+            description: "Visualize how gradient descent fit the Linear Regression into a dataset.",
+            body: "I started in Machine Learning field with Linear Regression. I made this at that time to visualize how Gradient Descent helps the parameter of Linear Regression fit into a dataset.",
+            tech_stack: ["NEXT.js", "Canvas2D"],
+            img_url: [
+                LRV0,
+                LRV1],
+            view_url: "https://visualize-linear-regression.vercel.app",
+            isOnDevelopment: false,
+            tags: ["NEXT.JS", "CANVAS-2D"],
         },
         {
             id: "covid-tracker",
