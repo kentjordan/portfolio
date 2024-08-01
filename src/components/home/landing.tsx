@@ -27,10 +27,10 @@ const HomeLanding = () => {
       {/* Info about me */}
       <div className='absolute bottom-0 flex text-center xl:text-start flex-col h-full flex-[0.6] justify-end mx-8 xl:justify-center xl:flex xl:relative'>
         <span
-          className={`${roboto.className} block my-2 text-lg sm:text-xl text-neutral-300`}>
+          className={`${roboto.className} block my-2 text-base sm:text-xl text-neutral-100`}>
           Hi there! 🤗 I&apos;m
         </span>
-        <h1 className={`${anton.className} text-7xl sm:text-6xl`}>
+        <h1 className={`${anton.className} text-5xl sm:text-6xl`}>
           <LinearGradient
             gradient={["to right", "#0ED2F7, #B2FEFA"]}
             fallbackColor='#6DD5FA'>
@@ -38,7 +38,7 @@ const HomeLanding = () => {
           </LinearGradient>
         </h1>
         <span
-          className={`${roboto.className}  mt-4 block my-2 text-lg sm:text-xl text-neutral-300`}>
+          className={`${roboto.className} mt-4 block my-2 text-base sm:text-xl text-neutral-100 max-w-[44ch]`}>
           A Software Engineer specialized on fullstack Web Apps, Mobile Apps,
           and Artificial Intelligence (ML/DL).
         </span>

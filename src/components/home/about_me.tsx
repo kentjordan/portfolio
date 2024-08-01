@@ -10,7 +10,8 @@ const HomeAboutMe = () => {
       id='about-me'
       className='w-full min-h-screen flex flex-col justify-center items-center py-32 px-4 rounded text-black'>
       <div className='flex justify-center items-center flex-col '>
-        <h1 className={`${anton.className} text-6xl mb-8 text-center`}>
+        <h1
+          className={`${anton.className} text-4xl sm:text-5xl mb-16 text-center`}>
           <LinearGradient
             gradient={["to left", "#0ED2F7, #B2FEFA"]}
             fallbackColor='#6DD5FA'>
@@ -18,7 +19,7 @@ const HomeAboutMe = () => {
           </LinearGradient>
         </h1>
       </div>
-      <p className='text-neutral-300 text-center text-xl leading-10 max-w-[80ch]'>
+      <p className='text-neutral-300 text-lg leading-10 max-w-[80ch]'>
         I&apos;m Kent John Jordan a{" "}
         <i>fullstack web and mobile app developer</i>. I&apos;m currently taking
         a bachelor degree in <i>Computer Science</i> with specialization in Game

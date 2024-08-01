@@ -36,12 +36,10 @@ const TechDialog = ({ field, setActiveDialog }: TechDialogProps) => {
     <div className='bg-black/10 py-16 px-4 backdrop-blur-xl absolute w-full min-h-full z-10 flex justify-center items-center'>
       <div className='flex flex-col justify-center  items-center'>
         <h1
-          className={`${anton.className} text-white font-bold text-5xl text-center px-2`}>
-          {field === "WEB"
-            ? "Web & Mobile Apps"
-            : "Machine Learning & Artificial Intelligence"}
+          className={`${anton.className} text-white font-bold text-3xl text-center px-2`}>
+          {field === "WEB" ? "Web & Mobile Apps" : "ML & AI"}
         </h1>
-        <p className='text-stone-300 max-w-[64ch] text-center mt-4 px-2'>
+        <p className='text-stone-300 max-w-[64ch] text-center text-sm mt-4 px-2'>
           {field === "WEB"
             ? "Below are the technologies I've been using in building fullstack web apps and mobile apps in personal projects and freelancing. "
             : "Below are the technologies that I’ve been using in the field of Machine Learning and Artificial Intelligence (ML/AI)"}

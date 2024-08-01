@@ -12,14 +12,15 @@ const HomeCertificates = () => {
       className='w-full min-h-screen flex flex-col justify-center py-32 '
       id='certificates'>
       <div>
-        <h1 className={`${anton.className} text-6xl mb-8 text-center`}>
+        <h1
+          className={`${anton.className} text-4xl sm:text-5xl mb-8 text-center`}>
           <LinearGradient
             gradient={["to left", "#0ED2F7, #B2FEFA"]}
             fallbackColor='#6DD5FA'>
             Certificates
           </LinearGradient>
         </h1>
-        <h1 className='text-stone-200 text-center'>
+        <h1 className='text-neutral-300 text-center'>
           My earned certs over the past years
         </h1>
       </div>

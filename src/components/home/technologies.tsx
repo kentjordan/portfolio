@@ -36,14 +36,15 @@ function HomeTechnologies() {
       )}
       {/* Header */}
       <div className='flex justify-center items-center flex-col mb-24'>
-        <h1 className={`${anton.className} text-6xl mb-8 text-center`}>
+        <h1
+          className={`${anton.className} text-4xl sm:text-5xl mb-8 text-center`}>
           <LinearGradient
             gradient={["to left", "#0ED2F7, #B2FEFA"]}
             fallbackColor='#6DD5FA'>
             Tech Stack
           </LinearGradient>
         </h1>
-        <h1 className='text-stone-200 text-center max-w-[40ch]'>
+        <h1 className='text-neutral-300 text-center max-w-[40ch]'>
           Technologies that I have been working with, in personal projects and
           freelancing.
         </h1>
@@ -57,7 +58,7 @@ function HomeTechnologies() {
           }}
           className='flex flex-col justify-center items-center rounded-lg border-stone-800 border bg-neutral-950 p-6 sm:p-8 hover:border-sky-500 cursor-pointer'>
           <h1
-            className={`${anton.className} text-white text-2xl mb-6 font-black`}>
+            className={`${anton.className} text-white text-xl mb-6 font-black`}>
             WEB / MOBILE
           </h1>
           <div className='flex flex-col relative'>
@@ -89,7 +90,7 @@ function HomeTechnologies() {
           }}
           className='flex flex-col justify-center items-center rounded-lg border-stone-800 border bg-neutral-950 p-6 sm:p-8 hover:border-sky-500 cursor-pointer'>
           <h1
-            className={`${anton.className} text-white text-2xl mb-6 font-black`}>
+            className={`${anton.className} text-white text-xl mb-6 font-black`}>
             ML / AI
           </h1>
           <div className='flex flex-col relative'>
