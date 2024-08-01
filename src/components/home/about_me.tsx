@@ -28,10 +28,10 @@ const HomeAboutMe = () => {
         <br />
         I started my journey on computer programming when I was a Senior
         Highschool student at STI College - Lipa taking Information,
-        Communication and Technology strand. I was thought Web Development
-        (HTML, CSS, JavaScript) and Native Mobile App Development (Java -
-        Android Studio). Also, I learned Unity 3D for my Exposition project that
-        time. It was a campus tour of STI Lipa powered by VR technology.
+        Communication and Technology strand. I was taught Web Development (HTML,
+        CSS, JavaScript) and Native Mobile App Development (Java - Android
+        Studio). Also, I learned Unity 3D for my Exposition project that time.
+        It was a campus tour of STI Lipa powered by VR technology.
         <br />
         <br />
         I&apos;ve been doing freelance since 1st quarter of 2023, my focus was
