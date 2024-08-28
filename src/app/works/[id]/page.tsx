@@ -21,7 +21,7 @@ function WorksPage({ params }: { params: { id: string } }) {
   }, [personalProjects, fromClients]);
 
   return (
-    <div className=' w-full max-w-[1280px] pt-40'>
+    <div className=' w-full max-w-[1280px] pt-40 select-none'>
       <div className='flex flex-col items-center'>
         <div className='flex flex-col items-center mb-8'>
           <h1 className='text-3xl font-bold mb-4 text-center px-2'>

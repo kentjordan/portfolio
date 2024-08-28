@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Cert = ({ params }: { params: { field: string } }) => {
   return (
-    <div className='w-full max-w-[1280px] pt-40 flex justify-center'>
+    <div className='w-full max-w-[1280px] pt-40 flex justify-center select-none'>
       {params.field === "ml" && (
         <div className='flex flex-col items-center'>
           <div className='flex flex-col items-center max-w-[600px] mb-8 p-2'>
