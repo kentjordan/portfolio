@@ -26,7 +26,7 @@ export const MobileNavbarMenu = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className='bg-black md:hidden w-full h-full z-50 fixed p-6'>
+        className='bg-black md:hidden w-full h-full z-50 fixed p-6 select-none'>
         <div className='flex mb-12 mt-4 items-center'>
           <h1 className='text-4xl mx-3 font-bold'>Menu</h1>
         </div>
