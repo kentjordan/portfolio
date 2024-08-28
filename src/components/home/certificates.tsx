@@ -48,6 +48,28 @@ const HomeCertificates = () => {
           )}
         />
         <CertItem
+          field='math-ml-ds'
+          title='Mathematics for Machine Learning and Data Science Specialization'
+          Thumbnail={() => (
+            <Image
+              alt='Certificate'
+              src={require("@/assets/certificates/cert-7.png")}
+              className='sm:w-96 sm:h-72 w-64 rounded-t-md rounded-md shadow-lg'
+              width={800}
+              height={400}
+            />
+          )}
+          Background={() => (
+            <Image
+              alt='Certificate'
+              src={require("@/assets/certificates/cert-container.png")}
+              className='sm:w-96 sm:h-72 w-64 rounded-t-md rounded-md shadow-lg border-2 border-stone-500'
+              width={800}
+              height={400}
+            />
+          )}
+        />
+        <CertItem
           field='others'
           title='Others'
           Thumbnail={() => (

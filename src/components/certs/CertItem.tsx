@@ -4,7 +4,7 @@ const roboto = Roboto({ weight: ["400", "700"], subsets: ["latin"] });
 
 interface CertItemProps {
   title: string;
-  field: "others" | "ml";
+  field: "others" | "ml" | "math-ml-ds";
   Thumbnail: () => JSX.Element;
   Background: () => JSX.Element;
 }
@@ -36,7 +36,8 @@ const CertItem = ({ title, Background, Thumbnail, field }: CertItemProps) => {
           <Thumbnail />
         </div>
       </div>
-      <h1 className={`${roboto.className} mt-4 cursor-default text-center`}>
+      <h1
+        className={`${roboto.className} mt-4 cursor-default text-center max-w-[32ch]`}>
         {title}
       </h1>
     </div>

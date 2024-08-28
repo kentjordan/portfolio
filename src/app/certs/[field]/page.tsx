@@ -53,6 +53,29 @@ const Cert = ({ params }: { params: { field: string } }) => {
           </div>
         </div>
       )}
+      {params.field === "math-ml-ds" && (
+        <div className='flex flex-col items-center'>
+          <div className='flex flex-col items-center max-w-[600px] mb-8 p-2'>
+            <h1 className='text-4xl font-bold text-center'>
+              Mathematics for Machine Learning and Data Science Specialization
+            </h1>
+            <p className='text-center mt-4'>
+              These certifications were offered by DeepLearning.AI on Coursera.
+              The specialization consists of 3 courses. Each course has
+              theorical discussion and its applicatoin in Jupyter Notebook.
+            </p>
+          </div>
+          <div className='flex flex-col gap-8 p-2'>
+            <Image
+              alt='Certificate'
+              src={require("@/assets/certificates/cert-7.png")}
+              className='w-full p-[-2px] bg-white'
+              width={800}
+              height={400}
+            />
+          </div>
+        </div>
+      )}
       {params.field === "others" && (
         <div className='flex flex-col items-center'>
           <div className='flex flex-col items-center max-w-[600px] mb-8 p-2'>
