@@ -40,7 +40,7 @@ const HomeAboutMe = () => {
         STI College - Lipa and University of Batangas, the project were their
         captones which are web-based systems (see my recent works).
         <br /> <br />
-        As of now, I&apos;m an aspiring Chief Technolofy Officer (CTO) in our
+        As of now, I&apos;m an aspiring Chief Technology Officer (CTO) in our
         startup company. I&apos;ve been planning and implementing the BEST
         software architecture and technologies for our product. Our minimum
         valuable product will be launched on early 2025 for beta testing. Stay
