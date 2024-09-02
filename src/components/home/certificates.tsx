@@ -70,6 +70,28 @@ const HomeCertificates = () => {
           )}
         />
         <CertItem
+          field='nlp'
+          title='Natural Language Processing Specialization'
+          Thumbnail={() => (
+            <Image
+              alt='Certificate'
+              src={require("@/assets/certificates/cert-8.png")}
+              className='sm:w-96 sm:h-72 w-64 rounded-t-md rounded-md shadow-lg'
+              width={800}
+              height={400}
+            />
+          )}
+          Background={() => (
+            <Image
+              alt='Certificate'
+              src={require("@/assets/certificates/cert-container.png")}
+              className='sm:w-96 sm:h-72 w-64 rounded-t-md rounded-md shadow-lg border-2 border-stone-500'
+              width={800}
+              height={400}
+            />
+          )}
+        />
+        <CertItem
           field='others'
           title='Others'
           Thumbnail={() => (

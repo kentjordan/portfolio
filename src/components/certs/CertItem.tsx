@@ -4,7 +4,7 @@ const roboto = Roboto({ weight: ["400", "700"], subsets: ["latin"] });
 
 interface CertItemProps {
   title: string;
-  field: "others" | "ml" | "math-ml-ds";
+  field: "others" | "ml" | "math-ml-ds" | "nlp";
   Thumbnail: () => JSX.Element;
   Background: () => JSX.Element;
 }
