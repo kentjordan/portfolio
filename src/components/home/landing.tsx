@@ -39,8 +39,8 @@ const HomeLanding = () => {
         </h1>
         <span
           className={`${roboto.className} mt-4 block my-2 text-base sm:text-xl text-neutral-100 max-w-[44ch]`}>
-          A Software Engineer specialized on fullstack Web Apps, Mobile Apps,
-          and Artificial Intelligence (ML/DL).
+          A Software Engineer specialized in <b>Fullstack Web Development</b>,{" "}
+          <b>Machine Learning</b>, and <b>Agentic AI</b>.
         </span>
         <div className='flex xl:justify-start justify-center gap-6 my-8'>
           <Link href='https://www.facebook.com/kentaki.dev'>

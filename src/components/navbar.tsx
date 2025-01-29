@@ -26,17 +26,20 @@ export const MobileNavbarMenu = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className='bg-black md:hidden w-full h-full z-50 fixed p-6 select-none'>
-        <div className='flex mb-12 mt-4 items-center'>
-          <h1 className='text-4xl mx-3 font-bold'>Menu</h1>
+        className='bg-black/50 backdrop-blur-lg md:hidden w-full h-full z-50 fixed p-8 select-none'>
+        <div
+          onClick={toggleMobileNavMenu}
+          className='flex items-center cursor-pointer mb-12 justify-end'>
+          <IoClose color='white' size={24} />
+          <h1 className='font-bold'>CLOSE</h1>
         </div>
-        <div className='flex justify-center flex-col gap-4 text-base'>
+        <div className='flex justify-center flex-col gap-2 text-base'>
           <Link
             href='/'
             onClick={toggleMobileNavMenu}
-            className={`cursor-pointer p-3 hover:bg-sky-500/30 rounded-md ${
+            className={`text-2xl cursor-pointer p-4 hover:bg-white/10 rounded-xl ${
               window.location.hash === "" && currentPage?.toUpperCase() === ""
-                ? "bg-sky-500/80 rounded-md text-bold"
+                ? "bg-white/30 rounded-xl font-bold"
                 : "border-0"
             }`}>
             Home
@@ -44,9 +47,9 @@ export const MobileNavbarMenu = () => {
           <Link
             href='/#techstack'
             onClick={toggleMobileNavMenu}
-            className={`cursor-pointer p-3 hover:bg-sky-500/30 rounded-md ${
+            className={`text-2xl cursor-pointer p-4 hover:bg-white/10 rounded-xl ${
               window.location.hash === "#techstack"
-                ? "bg-sky-500/80 rounded-md text-bold"
+                ? "bg-white/30 rounded-xl font-bold"
                 : "border-0"
             }`}>
             Techstack
@@ -54,9 +57,9 @@ export const MobileNavbarMenu = () => {
           <Link
             href='/#works'
             onClick={toggleMobileNavMenu}
-            className={`cursor-pointer p-3 hover:bg-sky-500/30 rounded-md ${
+            className={`text-2xl cursor-pointer p-4 hover:bg-white/10 rounded-xl ${
               window.location.hash === "#works"
-                ? "bg-sky-500/80 rounded-md text-bold"
+                ? "bg-white/30 rounded-xl font-bold"
                 : "border-0"
             }`}>
             Works
@@ -64,9 +67,9 @@ export const MobileNavbarMenu = () => {
           <Link
             href='/#certificates'
             onClick={toggleMobileNavMenu}
-            className={`cursor-pointer p-3 hover:bg-sky-500/30 rounded-md ${
+            className={`text-2xl cursor-pointer p-4 hover:bg-white/10 rounded-xl ${
               window.location.hash === "#certificates"
-                ? "bg-sky-500/80 rounded-md text-bold"
+                ? "bg-white/30 rounded-xl font-bold"
                 : "border-0"
             }`}>
             Certificates
@@ -74,9 +77,9 @@ export const MobileNavbarMenu = () => {
           <Link
             href='/#about-me'
             onClick={toggleMobileNavMenu}
-            className={`cursor-pointer p-3 hover:bg-sky-500/30 rounded-md ${
+            className={`text-2xl cursor-pointer p-4 hover:bg-white/10 rounded-xl ${
               window.location.hash === "#about-me"
-                ? "bg-sky-500/80 rounded-md text-bold"
+                ? "bg-white/30 rounded-xl font-bold"
                 : "border-0"
             }`}>
             About Me
@@ -84,19 +87,13 @@ export const MobileNavbarMenu = () => {
           <Link
             href='/contact'
             onClick={toggleMobileNavMenu}
-            className={`cursor-pointer p-3 hover:bg-sky-500/30 rounded-md ${
+            className={`text-2xl cursor-pointer p-4 hover:bg-white/10 rounded-xl ${
               currentPage?.toUpperCase() === "CONTACT"
-                ? "bg-sky-500/80 rounded-md text-bold"
+                ? "bg-white/30 rounded-xl font-bold"
                 : "border-0"
             }`}>
             Contact
           </Link>
-          <div
-            onClick={toggleMobileNavMenu}
-            className='flex items-center cursor-pointer p-3 mt-4 border-t border-t-stone-800 justify-end'>
-            <IoClose color='rgb(239 68 68)' size={24} />
-            <h1 className='font-bold text-red-500'>CLOSE</h1>
-          </div>
         </div>
       </motion.div>
     )
@@ -111,7 +108,7 @@ function Navbar() {
   return (
     <>
       <div
-        className={`${roboto.className} fixed bg-black/80 backdrop-blur hidden lg:flex justify-between max-w-[1400px] w-full z-50 mx-8 text-lg text-stone-300 p-8`}>
+        className={`${roboto.className} fixed bg-black/80 rounded-full backdrop-blur border-b border-neutral-700 hidden lg:flex justify-between max-w-[1400px] w-full z-50 mx-8 text-lg text-stone-300 mt-6 px-8 py-4`}>
         <div className='flex items-center text-base gap-4'>
           <BsDownload size={20} />
           <Link
@@ -120,7 +117,7 @@ function Navbar() {
             Resume/CV
           </Link>
         </div>
-        <ul className='flex gap-8 text-base'>
+        <ul className='flex gap-4 text-base'>
           <Link
             className='cursor-pointer hover:border-b-sky-500 hover:border-b px-2 py-1 hover:text-white'
             href='/'>
