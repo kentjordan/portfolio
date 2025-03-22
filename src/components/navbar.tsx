@@ -108,48 +108,48 @@ function Navbar() {
   return (
     <>
       <div
-        className={`${roboto.className} fixed bg-black/80 rounded-full backdrop-blur border-b border-neutral-700 hidden lg:flex justify-between max-w-[1400px] w-full z-50 mx-8 text-lg text-stone-300 mt-6 px-8 py-4`}>
+        className={`${roboto.className} fixed bg-black/80 backdrop-blur hidden lg:flex justify-between max-w-[1400px] w-full z-50 mx-8 text-lg text-stone-300 px-8 pt-8 pb-4`}>
         <div className='flex items-center text-base gap-4'>
           <BsDownload size={20} />
           <Link
             href='/contact'
-            className={`${roboto.className} cursor-pointer`}>
+            className={`${roboto.className} cursor-pointer text-sm`}>
             Resume/CV
           </Link>
         </div>
         <ul className='flex gap-4 text-base'>
           <Link
-            className='cursor-pointer hover:border-b-sky-500 hover:border-b px-2 py-1 hover:text-white'
+            className='cursor-pointer hover:border-b-sky-500 hover:border-b px-2 py-1 hover:text-white text-sm'
             href='/'>
             Home
           </Link>
           <Link
-            className='cursor-pointer hover:border-b-sky-500 hover:border-b px-2 py-1 hover:text-white'
+            className='cursor-pointer hover:border-b-sky-500 hover:border-b px-2 py-1 hover:text-white text-sm'
             href='/#techstack'>
             Techstack
           </Link>
           <Link
-            className='cursor-pointer hover:border-b-sky-500 hover:border-b px-2 py-1 hover:text-white'
+            className='cursor-pointer hover:border-b-sky-500 hover:border-b px-2 py-1 hover:text-white text-sm'
             href='/#works'>
             Works
           </Link>
           {/* <Link href='/blogs'>Blogs</Link> */}
           <Link
-            className='cursor-pointer hover:border-b-sky-500 hover:border-b px-2 py-1 hover:text-white'
+            className='cursor-pointer hover:border-b-sky-500 hover:border-b px-2 py-1 hover:text-white text-sm'
             href='/#certificates'>
             Certificates
           </Link>
           <Link
-            className='cursor-pointer hover:border-b-sky-500 hover:border-b px-2 py-1 hover:text-white'
+            className='cursor-pointer hover:border-b-sky-500 hover:border-b px-2 py-1 hover:text-white text-sm'
             href='/#about-me'>
             About Me
           </Link>
-          <Link
-            className='cursor-pointer hover:border-b-sky-500 hover:border-b px-2 py-1 hover:text-white'
-            href='/contact'>
-            Contact
-          </Link>
         </ul>
+        <Link
+          className='cursor-pointer hover:border-white hover:border px-3 text-center items-center flex justify-center py-1 hover:text-white hover:bg-black text-black text-sm bg-white rounded-full'
+          href='/contact'>
+          Contact me
+        </Link>
       </div>
       <div
         className={`${roboto.className} bg-black/70 backdrop-blur flex justify-end lg:hidden fixed max-w-[1280px] w-full z-50 text-lg text-stone-300`}>
