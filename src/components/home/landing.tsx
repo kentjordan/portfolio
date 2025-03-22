@@ -5,6 +5,7 @@ import { BsFacebook, BsGithub, BsTwitter, BsLinkedin } from "react-icons/bs";
 import Link from "next/link";
 import { useLayoutEffect, useState } from "react";
 import { LinearGradient } from "react-text-gradients";
+import { TypeAnimation } from "react-type-animation";
 
 const anton = Anton({ weight: "400", subsets: ["latin"] });
 const roboto = Roboto({ weight: "400", subsets: ["latin"] });
@@ -27,21 +28,34 @@ const HomeLanding = () => {
       {/* Info about me */}
       <div className='absolute bottom-0 flex text-center xl:text-start flex-col h-full flex-[0.6] justify-end mx-8 xl:justify-center xl:flex xl:relative'>
         <span
-          className={`${roboto.className} block my-2 text-base sm:text-xl text-neutral-100`}>
-          Hi there! 🤗 I&apos;m
+          className={`${roboto.className} mt-4 block my-2 text-base sm:text-xl text-neutral-100 max-w-[40ch]`}>
+          Hello there! ☺️ I&apos;m a passionate{" "}
+          <b className='text-[#0ED2F7]'>Software Engineer</b> living in the
+          Philippines, specializing in
         </span>
         <h1 className={`${anton.className} text-5xl sm:text-6xl`}>
           <LinearGradient
             gradient={["to right", "#0ED2F7, #B2FEFA"]}
             fallbackColor='#6DD5FA'>
-            Kent John Jordan
+            <TypeAnimation
+              sequence={[
+                "Web Development",
+                900,
+                "App Development",
+                900,
+                "AI: Computer Vision",
+                900,
+                "AI: Language Model",
+                900,
+              ]}
+              wrapper='span'
+              speed={80}
+              className='text-5xl'
+              repeat={Infinity}
+            />
           </LinearGradient>
         </h1>
-        <span
-          className={`${roboto.className} mt-4 block my-2 text-base sm:text-xl text-neutral-100 max-w-[44ch]`}>
-          A Software Engineer specialized in <b>Fullstack Web Development</b>,{" "}
-          <b>Machine Learning</b>, and <b>Agentic AI</b>.
-        </span>
+
         <div className='flex xl:justify-start justify-center gap-6 my-8'>
           <Link href='https://www.facebook.com/kentaki.dev'>
             <BsFacebook size={32} />

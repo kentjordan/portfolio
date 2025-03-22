@@ -24,6 +24,7 @@
     "react-dom": "^18",
     "react-icons": "^4.11.0",
     "react-text-gradients": "^1.0.2",
+    "react-type-animation": "^3.2.0",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
     "zustand": "^4.4.6"
