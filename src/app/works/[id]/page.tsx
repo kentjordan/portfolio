@@ -5,10 +5,11 @@ import usePersonalProjects from "@/models/usePersonalProjects";
 import { WorkItem } from "@/types/works";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
-function WorksPage({ params }: { params: { id: string } }) {
+function WorksPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params);
   const personalProjects = usePersonalProjects();
   const fromClients = useFromClients();
 
@@ -16,9 +17,9 @@ function WorksPage({ params }: { params: { id: string } }) {
 
   useEffect(() => {
     const allWorks = fromClients.concat(personalProjects);
-    const item = allWorks.find((e) => e.id === params.id);
+    const item = allWorks.find((e) => e.id === id);
     setWorkItem(item);
-  }, [personalProjects, fromClients]);
+  }, [personalProjects, fromClients, id]);
 
   return (
     <div className=' w-full max-w-[1280px] pt-40 select-none'>

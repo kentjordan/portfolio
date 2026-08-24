@@ -22,6 +22,10 @@ function HomePortfolio() {
   const fromClient = useFromClient();
   const personalProjects = usePersonalProjects();
 
+  // Duplicated so Embla has enough slides to satisfy `loop: true`
+  // at the lg:basis-96 slide width.
+  const clientSlides = [...fromClient, ...fromClient];
+
   return (
     <div
       className='flex flex-col items-center py-32 overflow-hidden xl:overflow-visible px-4'
@@ -52,14 +56,13 @@ function HomePortfolio() {
             loop: true,
           }}>
           <CarouselContent>
-            {fromClient.map((e, i) => {
+            {clientSlides.map((e, i) => {
               return (
                 <CarouselItem
-                  key={e.id}
+                  key={`${e.id}-${i}`}
                   className='lg:basis-96 flex justify-center'>
                   <Item
                     id={e.id}
-                    key={e.id}
                     title={e.title}
                     description={e.description}
                     img_url={e.img_url[0]}
@@ -90,14 +93,13 @@ function HomePortfolio() {
             loop: true,
           }}>
           <CarouselContent>
-            {personalProjects.map((e, i) => {
+            {personalProjects.map((e) => {
               return (
                 <CarouselItem
                   key={e.id}
                   className='lg:basis-96 flex justify-center'>
                   <Item
                     id={e.id}
-                    key={e.id}
                     title={e.title}
                     description={e.description}
                     img_url={e.img_url[0]}

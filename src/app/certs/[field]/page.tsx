@@ -1,9 +1,11 @@
 import Image from "next/image";
 
-const Cert = ({ params }: { params: { field: string } }) => {
+const Cert = async ({ params }: { params: Promise<{ field: string }> }) => {
+  const { field } = await params;
+
   return (
     <div className='w-full max-w-[1280px] pt-40 flex justify-center select-none'>
-      {params.field === "ml" && (
+      {field === "ml" && (
         <div className='flex flex-col items-center'>
           <div className='flex flex-col items-center max-w-[600px] mb-8 p-2'>
             <h1 className='text-4xl font-bold text-center'>
@@ -53,7 +55,7 @@ const Cert = ({ params }: { params: { field: string } }) => {
           </div>
         </div>
       )}
-      {params.field === "math-ml-ds" && (
+      {field === "math-ml-ds" && (
         <div className='flex flex-col items-center'>
           <div className='flex flex-col items-center max-w-[600px] mb-8 p-2'>
             <h1 className='text-4xl font-bold text-center'>
@@ -76,7 +78,7 @@ const Cert = ({ params }: { params: { field: string } }) => {
           </div>
         </div>
       )}
-      {params.field === "nlp" && (
+      {field === "nlp" && (
         <div className='flex flex-col items-center'>
           <div className='flex flex-col items-center max-w-[600px] mb-8 p-2'>
             <h1 className='text-4xl font-bold text-center'>
@@ -99,7 +101,7 @@ const Cert = ({ params }: { params: { field: string } }) => {
           </div>
         </div>
       )}
-      {params.field === "others" && (
+      {field === "others" && (
         <div className='flex flex-col items-center'>
           <div className='flex flex-col items-center max-w-[600px] mb-8 p-2'>
             <h1 className='text-4xl font-bold text-center'>
