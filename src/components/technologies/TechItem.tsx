@@ -3,13 +3,14 @@ interface Props extends React.SVGProps<SVGElement> {
 }
 interface ITechItemProp {
   Icon: React.FunctionComponent<Props>;
-  title?: string;
+  title: string;
   fill?: string;
   className?: string;
   size: number;
   color?: string;
 }
 
+/** A logo tile with the technology's name; its width comes from the parent grid. */
 const TechItem = ({
   Icon,
   title,
@@ -19,20 +20,9 @@ const TechItem = ({
   className,
 }: ITechItemProp) => {
   return (
-    <div className='flex flex-col items-center justify-center m-2 sm:m-4 h-16 w-16'>
-      <div>
-        <Icon
-          size={size}
-          fill={fill}
-          color={color}
-          className={`${className}`}
-        />
-      </div>
-      {title && (
-        <p className='text-stone-300 mt-2 text-sm text-center cursor-default'>
-          {title}
-        </p>
-      )}
+    <div className='flex cursor-default flex-col items-center justify-center gap-2 rounded-xl bg-neutral-950 px-2 py-4'>
+      <Icon size={size} fill={fill} color={color} className={className} />
+      <p className='text-center text-xs text-neutral-300'>{title}</p>
     </div>
   );
 };
