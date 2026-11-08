@@ -1,17 +1,18 @@
+import { pagePaddingX } from "@/lib/utils";
 import Image from "next/image";
 
 const Cert = async ({ params }: { params: Promise<{ field: string }> }) => {
   const { field } = await params;
 
   return (
-    <div className='w-full max-w-[1280px] pt-40 flex justify-center select-none'>
+    <div className={`w-full max-w-[1280px] pt-28 flex justify-center select-none ${pagePaddingX}`}>
       {field === "ml" && (
         <div className='flex flex-col items-center'>
           <div className='flex flex-col items-center max-w-[600px] mb-8 p-2'>
-            <h1 className='text-4xl font-bold text-center'>
+            <h1 className='text-2xl sm:text-3xl font-bold text-center'>
               Machine Learning Certifications
             </h1>
-            <p className='text-center mt-4'>
+            <p className='mt-4 text-center text-sm sm:text-base leading-7 text-neutral-300'>
               These certifications were offered by DeepLearning.AI and Stanford
               University on Coursera. This is Machine Learning Specialization.
               The specialization consists of 3 courses. Each course has
@@ -58,10 +59,10 @@ const Cert = async ({ params }: { params: Promise<{ field: string }> }) => {
       {field === "math-ml-ds" && (
         <div className='flex flex-col items-center'>
           <div className='flex flex-col items-center max-w-[600px] mb-8 p-2'>
-            <h1 className='text-4xl font-bold text-center'>
+            <h1 className='text-2xl sm:text-3xl font-bold text-center'>
               Mathematics for Machine Learning and Data Science Specialization
             </h1>
-            <p className='text-center mt-4'>
+            <p className='mt-4 text-center text-sm sm:text-base leading-7 text-neutral-300'>
               These certifications were offered by DeepLearning.AI on Coursera.
               The specialization consists of 3 courses. Each course has
               theorical discussion and its applicatoin in Jupyter Notebook.
@@ -81,10 +82,10 @@ const Cert = async ({ params }: { params: Promise<{ field: string }> }) => {
       {field === "nlp" && (
         <div className='flex flex-col items-center'>
           <div className='flex flex-col items-center max-w-[600px] mb-8 p-2'>
-            <h1 className='text-4xl font-bold text-center'>
+            <h1 className='text-2xl sm:text-3xl font-bold text-center'>
               Natural Language Processing Specialization
             </h1>
-            <p className='text-center mt-4'>
+            <p className='mt-4 text-center text-sm sm:text-base leading-7 text-neutral-300'>
               These certifications were offered by DeepLearning.AI on Coursera.
               The specialization consists of 3 courses. Each course has
               theorical discussion and its applicatoin in Jupyter Notebook.
@@ -104,10 +105,10 @@ const Cert = async ({ params }: { params: Promise<{ field: string }> }) => {
       {field === "others" && (
         <div className='flex flex-col items-center'>
           <div className='flex flex-col items-center max-w-[600px] mb-8 p-2'>
-            <h1 className='text-4xl font-bold text-center'>
+            <h1 className='text-2xl sm:text-3xl font-bold text-center'>
               Other Certifications
             </h1>
-            <p className='text-center mt-4'>
+            <p className='mt-4 text-center text-sm sm:text-base leading-7 text-neutral-300'>
               Random Certifications I have earned in the past years.
             </p>
           </div>

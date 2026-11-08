@@ -2,6 +2,7 @@
 
 import CategoryTags from "@/components/home/category_tags";
 import TechIcons from "@/components/technologies/TechIcons";
+import { pagePaddingX } from "@/lib/utils";
 import useFromClients from "@/models/useFromClients";
 import usePersonalProjects from "@/models/usePersonalProjects";
 import { WorkItem } from "@/types/works";
@@ -24,7 +25,7 @@ function WorksPage({ params }: { params: Promise<{ id: string }> }) {
   }, [personalProjects, fromClients, id]);
 
   return (
-    <div className=' w-full max-w-[1280px] pt-40 select-none'>
+    <div className={`w-full max-w-[1280px] pt-28 select-none ${pagePaddingX}`}>
       <div className='flex flex-col items-center'>
         <div className='flex flex-col items-center mb-8'>
           {workItem && (
@@ -33,10 +34,10 @@ function WorksPage({ params }: { params: Promise<{ id: string }> }) {
               className='mb-4 justify-center px-2'
             />
           )}
-          <h1 className='text-3xl font-bold mb-4 text-center px-2'>
+          <h1 className='text-2xl sm:text-3xl font-bold mb-3 text-center px-2'>
             {workItem?.title}
           </h1>
-          <span className='text-stone-400 text-center px-2 max-w-[40ch]'>
+          <span className='text-sm sm:text-base text-stone-400 text-center px-2 max-w-[40ch]'>
             {workItem?.description}
           </span>
           {!workItem?.isOnDevelopment && workItem?.view_url && (
@@ -47,7 +48,7 @@ function WorksPage({ params }: { params: Promise<{ id: string }> }) {
               <FaExternalLinkAlt />
             </div>
           )}
-          <span className='text-stone-300 text-center px-2 mt-12 max-w-[80ch]'>
+          <span className='text-sm sm:text-base leading-7 text-stone-300 text-center px-2 mt-10 max-w-[80ch]'>
             {workItem?.body}
           </span>
           {workItem && workItem.tech.length > 0 && (
