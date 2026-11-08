@@ -9,10 +9,11 @@ const parse = (yearMonth: YearMonth) => {
 };
 
 /**
- * When a project was built, on its card and its detail page: "Jul 2023",
- * "Jan – May 2024" or "Dec 2023 – Jun 2024". Formatted by hand because
- * Intl's date ranges space the dash differently in Node and in browsers,
- * which would make the server and browser text disagree on hydration.
+ * When a project was built, on its card and its detail page, and when a
+ * timeline entry happened: "Jul 2023", "Jan – May 2024", "Dec 2023 – Jun 2024"
+ * or "Dec 2025 – Present". Formatted by hand because Intl's date ranges space
+ * the dash differently in Node and in browsers, which would make the server
+ * and browser text disagree on hydration.
  */
 const WorkDate = ({
   date,
@@ -22,6 +23,16 @@ const WorkDate = ({
   className?: string;
 }) => {
   const start = parse(date.start);
+
+  if (date.end === "present") {
+    return (
+      <p className={cn("text-xs text-neutral-500", className)}>
+        <time dateTime={date.start}>{`${start.month} ${start.year}`}</time>
+        {" – Present"}
+      </p>
+    );
+  }
+
   const end = parse(date.end);
   const endText = `${end.month} ${end.year}`;
 

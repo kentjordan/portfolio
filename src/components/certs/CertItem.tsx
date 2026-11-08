@@ -1,10 +1,11 @@
+import type { CertField } from "@/types/certs";
 import { Roboto } from "next/font/google";
 
 const roboto = Roboto({ weight: ["400", "700"], subsets: ["latin"] });
 
 interface CertItemProps {
   title: string;
-  field: "others" | "ml" | "math-ml-ds" | "nlp";
+  field: CertField;
   Thumbnail: () => JSX.Element;
   Background: () => JSX.Element;
 }

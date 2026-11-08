@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import {
   Award,
   Briefcase,
+  History,
   Home,
   Layers,
   Mail,
@@ -25,6 +26,7 @@ const navItems = [
   { href: "/#techstack", id: "techstack", label: "Techstack", Icon: Layers },
   { href: "/#works", id: "works", label: "Works", Icon: Briefcase },
   { href: "/#certificates", id: "certificates", label: "Certificates", Icon: Award },
+  { href: "/#timeline", id: "timeline", label: "Timeline", Icon: History },
   { href: "/#about-me", id: "about-me", label: "About Me", Icon: UserRound },
 ];
 
@@ -103,7 +105,9 @@ function SidebarContent({
   const activeIndex = navItems.findIndex(({ id }) => id === active);
 
   return (
-    <div className={cn("flex h-full flex-col px-4 py-6", className)}>
+    // min-h-full, not h-full: when the drawer is too short and scrolls, the
+    // content grows past it with its bottom padding instead of overflowing.
+    <div className={cn("flex min-h-full flex-col px-4 py-6", className)}>
       <nav aria-label='Main' className='relative flex flex-col gap-[0.3125rem]'>
         {/* Rail: a line from the first icon's center to the last one's. The blue
             stretch is one step tall, centered on the current link's icon. */}
@@ -193,7 +197,8 @@ export const MobileNavbarMenu = () => {
             animate={{ x: 0 }}
             exit={{ x: "-100%" }}
             transition={{ type: "tween", duration: 0.25, ease: "easeOut" }}
-            className={`${roboto.className} fixed inset-y-0 left-0 z-[56] w-72 max-w-[85vw] select-none bg-black lg:hidden`}>
+            // overflow-y-auto: on short landscape phones the links push Contact below the fold
+            className={`${roboto.className} fixed inset-y-0 left-0 z-[56] w-72 max-w-[85vw] select-none overflow-y-auto bg-black lg:hidden`}>
             <button
               type='button'
               onClick={toggle}

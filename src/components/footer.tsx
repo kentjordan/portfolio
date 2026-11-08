@@ -24,6 +24,9 @@ const Footer = () => {
           <Link className={linkClass} href='/#certificates'>
             Certificates
           </Link>
+          <Link className={linkClass} href='/#timeline'>
+            Timeline
+          </Link>
           <Link className={linkClass} href='/#about-me'>
             About Me
           </Link>

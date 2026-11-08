@@ -78,3 +78,8 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Keeps the page from scrolling behind an open modal dialog (the timeline's details). */
+html:has(dialog[open]:modal) {
+  overflow: hidden;
+}

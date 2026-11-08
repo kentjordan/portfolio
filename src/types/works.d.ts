@@ -8,12 +8,13 @@ export type WorkCategory = "Web App" | "Mobile App" | "ML/AI";
 export type YearMonth = `${number}-${number}`;
 
 /**
- * When a project was built, from its first month of work to its last.
- * `start` and `end` are the same month for a project built within one.
+ * When a project was built (or a timeline milestone happened), from its first
+ * month to its last. `start` and `end` are the same month for a project built
+ * within one; `end` is "present" while it's still going on.
  */
 export interface WorkPeriod {
     start: YearMonth,
-    end: YearMonth,
+    end: YearMonth | "present",
 }
 
 export interface WorkItem {
