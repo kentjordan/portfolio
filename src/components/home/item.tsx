@@ -1,5 +1,6 @@
 import Image, { StaticImageData } from "next/image";
 import { Roboto } from "next/font/google";
+import { useRouter } from "nextjs-toploader/app";
 import type { WorkCategory, WorkPeriod } from "@/types/works";
 import TechIcons from "../technologies/TechIcons";
 import type { TechName } from "../technologies/stack";
@@ -27,10 +28,13 @@ const Item = ({
   categories: WorkCategory[];
   tech: TechName[];
 }) => {
+  // nextjs-toploader's router starts the top progress bar on push, which
+  // next/navigation's doesn't.
+  const router = useRouter();
   return (
     <div
       onClick={() => {
-        window.location.href = `/works/${id}`;
+        router.push(`/works/${id}`);
       }}
       className='flex h-full w-full cursor-pointer flex-col overflow-hidden rounded-xl border border-neutral-800 bg-neutral-950 transition-colors hover:border-sky-500'>
       <Image

@@ -34,6 +34,8 @@ _Last reviewed 2026-11-08 against Next.js 16.3.2._
 | Animation | Framer Motion (mobile drawer slide-in, hero parallax); plain CSS transitions for the sidebar's show/hide and rail |
 | Gradient text | `react-text-gradients` |
 | State | Zustand (only the mobile drawer's open/closed flag) |
+| Loading bar | `nextjs-toploader`: the progress bar across the top of the screen while a route loads (see [Styling and state](#styling-and-state)) |
+| Link previews | `next/og` (`ImageResponse`) renders the Open Graph image at build time |
 | Icons | `react-icons`, `lucide-react`, `devicons-react` (technology logos). `devicons-react` has no Seaborn or SciPy logo, so Seaborn's is devicon's SVG in `src/assets/tech/` and SciPy's is the `react-icons` Simple Icons glyph. Project cards show NGINX as its Simple Icons glyph too, because devicon's NGINX logo is a wordmark. |
 | Fonts | `next/font/google`: Anton for section headings and service card titles, Roboto for the sidebar, hero intro and the other card titles. Everything else uses Tailwind's default system font stack. |
 
@@ -60,7 +62,8 @@ npm run dev      # http://localhost:3000
 ```text
 src/
 ├── app/                        Routes (one folder per URL segment)
-│   ├── layout.tsx              Root layout: sidebar, mobile drawer, page, footer; site <title>
+│   ├── layout.tsx              Root layout: loading bar, sidebar, mobile drawer, page, footer; site <title> and link-preview metadata
+│   ├── opengraph-image.tsx     The link-preview image: the name "Kent John B. Jordan" on black
 │   ├── globals.css             Tailwind layers, shadcn CSS variables, smooth scrolling, no page scrolling behind an open dialog
 │   ├── page.tsx                /              home page
 │   ├── works/page.tsx          /works         project carousels
@@ -87,7 +90,7 @@ src/
 │   └── timeline.d.ts           Milestone, TimelineDate
 ├── zustand/store.tsx           useNavbarStore: mobile drawer toggle
 ├── lib/utils.ts                cn() helper for merging Tailwind classes; pagePaddingX (shared side padding)
-├── assets/                     Images imported by components (projects, certificates, me.png, tech/ logos)
+├── assets/                     Images imported by components (projects, certificates, me.png, tech/ logos); fonts/ holds Anton's TTF and its OFL license for opengraph-image.tsx
 └── global.d.ts                 Lets TypeScript import *.png files
 ```
 
@@ -106,7 +109,7 @@ Every route shares the root layout: the sidebar on the left (a slide-in drawer b
 | `/works` | [src/app/works/page.tsx](src/app/works/page.tsx) | The same carousels as the home page's Works section | Nothing |
 | `/about`, `/blogs`, `/portfolio` | `src/app/<name>/page.tsx` | "Under Development" placeholder | Nothing (the Blogs links are commented out) |
 
-The other URLs the site serves are Next.js built-ins: `/favicon.ico` (from `src/app/favicon.ico`), imported images under `/_next/static/media/`, and the `/_next/image` optimizer used by `next/image`.
+The other URLs the site serves are Next.js built-ins: `/favicon.ico` (from `src/app/favicon.ico`), `/opengraph-image` (the link-preview PNG from `src/app/opengraph-image.tsx`, prerendered at build time), imported images under `/_next/static/media/`, and the `/_next/image` optimizer used by `next/image`.
 
 The project has no route handlers (`route.ts`), middleware, server actions, `generateStaticParams`, or custom `not-found`, `error` or `loading` pages. An unknown path gets Next's default 404 page.
 
@@ -285,6 +288,7 @@ The links are defined in two places, so update both:
 | Bio recording | `src/assets/who-am-i.mp3`. Replace the file to change it; the Listen button reads the length from the file. It's referenced with `new URL("…", import.meta.url)`, which the bundler turns into a hashed `/_next/static/media/` URL, so no config is needed. |
 | Contact email | `src/app/contact/page.tsx` |
 | Site title and description (shared by every page) | `metadata` in `src/app/layout.tsx` |
+| Link preview on Facebook, X, LinkedIn and the like | The image is `src/app/opengraph-image.tsx` (the name in Anton with the section headings' gradient, 1200×630); the preview's title is `openGraph.title` in `src/app/layout.tsx`. Every page uses the same preview. Image URLs resolve against Vercel's production domain on deploy, so `metadataBase` isn't set; the build warning about it only applies to local builds. Facebook caches previews: after a deploy, paste the URL into the [Sharing Debugger](https://developers.facebook.com/tools/debug/) and click "Scrape Again". |
 | Carousel autoplay speed | The `delay` props on the two `ProjectCarousel`s in `src/components/home/portfolio.tsx`: 1800 ms for freelance, 2000 ms for personal |
 
 ## Styling and state
@@ -295,6 +299,7 @@ The links are defined in two places, so update both:
 - **Layout.** From the `lg` breakpoint (1024px) a fixed 240px sidebar sits on the left and `<body>` gets `lg:pl-60`, so every page fills the remaining width. Below `lg`, a floating menu button opens the same sidebar as a drawer, which scrolls when its links don't fit the screen, as on a landscape phone. Side padding comes from `pagePaddingX` in `lib/utils.ts` (24px on phones, 40px from `sm`, 64px from `lg`, 80px from `xl`), used by every home section, the footer, `/contact`, `/works/[id]` and `/certs/[field]`; change it there to resize the margins site-wide. Home sections are built from `Section` and `SectionHeading` (`components/home/section.tsx`): the same vertical padding, a 1152px (`max-w-6xl`) column, and headings, grids and text aligned to the column's left edge. Section subtitles have no width cap, so they only wrap when the column is too narrow. The hero is the exception: it stays centered and spans the whole screen, because the sidebar is hidden over it. From `lg` up, `lg:-ml-60 lg:w-[calc(100%+15rem)]` in `landing.tsx` cancels the gutter, so changing the sidebar width means updating `w-60` in `navbar.tsx`, `lg:pl-60` in `layout.tsx` and those two classes. Other pages are at most 1280px wide. Because the sidebar narrows the content area, the three-card carousels only start at `xl` (1280px). The three service cards sit in one row from `md` (768px). The four certificate cards sit in one row from `md` (768px) and two by two below that; each card's image stack scales to its column.
 - **Timeline.** At most 768px wide (`max-w-3xl`) and aligned to the column's left edge. It borrows the sidebar's rail: a `bg-white/10` line runs through 32px nodes whose black backgrounds hide the line behind them, and a black strip in the last card ends the line at the last node. A card's picture (its entry's image, a mosaic of a group's images, or the kind's icon on a tinted panel) is a 16:9 banner above the text on phones, and from `sm` a 160px-wide 4:3 thumbnail to its right, cropped from the top. Each card is one button, stretched over the card from its title. The dialog is a native modal `<dialog>`: the browser keeps focus inside it and closes it on Escape, the close button and a click on the backdrop close it too, focus goes back to the card afterwards, and a `:has()` rule in `globals.css` stops the page scrolling behind it. It zooms in as it opens unless reduced motion is on; otherwise only colors transition.
 - **Type scale.** Section titles are `text-3xl sm:text-4xl` (Anton). Timeline year labels are Anton `text-2xl`. The hero intro (the page's `<h1>`) is 18px, 21px from `sm`. Card titles are 16–18px and body text 14–16px. Keep new sections on this scale.
+- **Loading bar.** `<NextTopLoader>` in `layout.tsx` draws a 3px `#6DD5FA` bar across the top of the screen while a route loads, with no spinner. It starts by itself for `<Link>` and `<a>` clicks. Same-page hash links (`/#works` on the home page) only scroll, so they don't show it. For navigation in code, use `useRouter` from `nextjs-toploader/app` instead of `next/navigation`, as the project and certificate cards do; `next/navigation`'s `router.push` doesn't start the bar.
 - **State.** The mobile drawer's open flag lives in the Zustand store (`src/zustand/store.tsx`).
 
 ## Configuration
@@ -323,7 +328,7 @@ Found in a code review on 2026-11-08, with HTTP behavior confirmed against the d
 
 ### Navigation and UI
 
-- **Cards aren't links.** Project and certificate cards are `div`s that set `window.location.href` (`components/home/item.tsx:24`, `components/certs/CertItem.tsx:30`). Every click reloads the whole page, and the cards can't be reached with the keyboard or opened in a new tab. Switching to `<Link>` fixes all three.
+- **Cards aren't links.** Project and certificate cards are `div`s that call `router.push` on click (`components/home/item.tsx:36`, `components/certs/CertItem.tsx:33`), so they can't be reached with the keyboard or opened in a new tab. Switching to `<Link>` fixes both, and the loading bar still shows.
 - **Freelance projects never show "View Live"**, because all three are marked `isOnDevelopment: true`.
 - **The contact email isn't clickable.** `/contact` shows it as plain text rather than a `mailto:` link.
 

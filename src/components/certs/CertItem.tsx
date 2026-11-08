@@ -1,5 +1,6 @@
 import type { CertField } from "@/types/certs";
 import { Roboto } from "next/font/google";
+import { useRouter } from "nextjs-toploader/app";
 
 const roboto = Roboto({ weight: ["400", "700"], subsets: ["latin"] });
 
@@ -24,11 +25,13 @@ const HoverOverlay = () => (
  * grid column. pt-6/pr-6 reserve the space the top image is shifted into.
  */
 const CertItem = ({ title, Background, Thumbnail, field }: CertItemProps) => {
+  // nextjs-toploader's router starts the top progress bar on push.
+  const router = useRouter();
   return (
     <div className='flex flex-col items-center'>
       <div
         onClick={() => {
-          window.location.href = `/certs/${field}`;
+          router.push(`/certs/${field}`);
         }}
         className='group relative w-full cursor-pointer pr-6 pt-6'>
         {/* Background: the lower-left image */}
