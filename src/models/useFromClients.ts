@@ -24,7 +24,6 @@ const useFromClients = () => {
         {
             id: "go-explore",
             title: "Go Explore Batangas",
-            tech_stack: ["Express.JS (API)", "PostgreSQL", "Hostinger VPS"],
             description: "A web information system of places for tourists in Batangas.",
             body: "In this client project, I was tasked to develop their backend API using Express.js and the deployment of the frontend website and backend API.",
             img_url: [
@@ -38,12 +37,12 @@ const useFromClients = () => {
             ],
             isOnDevelopment: true,
             view_url: "https://www.goexplorebatangas.com/",
-            tags: ["WEB", "BACKEND-DEV"],
+            categories: ["Web App"],
+            tech: ["PostgreSQL"],
         },
         {
             id: "cliemb",
             title: "CLIEMB: Monitoring System",
-            tech_stack: ["NEXT.js", "React.js", "Nest.JS (API)", "PostgreSQL", "Hostinger VPS"],
             description:
                 "A web and app live monitoring system for a clinic in Batangas State University.",
             body: "In this project, I was tasked to develop their website, app, and API in which the two frontends communicates. I used NEXT.js with React for the Website, Expo React Native for the Mobile App, and NestJS for the API. The API has real-time communication through SocketIO which is used in real-time notification in monitoring of this Website. All of the technologies that were used here are written in Typescript.",
@@ -59,18 +58,19 @@ const useFromClients = () => {
             ],
             isOnDevelopment: true,
             view_url: "https://cliemb.online/",
-            tags: ["WEB", "MOBILE-APP", "FULLSTACK"],
+            categories: ["Web App", "Mobile App"],
+            tech: ["NEXT.js", "React.js", "NestJS", "PostgreSQL", "TypeScript"],
         },
         {
             id: "ptd",
             title: "Peach Tree Designs",
-            tech_stack: ["NEXT.js", "Express.js (API)", "PostgreSQL"],
             description: "A web portfolio of the business Peach Tree Designs.",
             body: "In this project, the client is from the USA, I was tasked to develop the Content Management Website and the backend API of it. I used NEXT.js for the website and Express.js for the API.",
             img_url: [PeachTreeDesigns, PeachTreeDesigns1],
             view_url: "https://www.peachtree-designs.com/",
             isOnDevelopment: true,
-            tags: ["WEB", "ADMIN-PANEL", "FULLSTACK"],
+            categories: ["Web App"],
+            tech: ["NEXT.js", "PostgreSQL"],
         }
     ]);
 

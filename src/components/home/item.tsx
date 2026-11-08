@@ -1,8 +1,10 @@
-import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
-import { Anton, Roboto } from "next/font/google";
+import { Roboto } from "next/font/google";
+import type { WorkCategory } from "@/types/works";
+import TechIcons from "../technologies/TechIcons";
+import type { TechName } from "../technologies/stack";
+import CategoryTags from "./category_tags";
 
-const anton = Anton({ weight: "400", subsets: ["latin"] });
 const roboto = Roboto({ weight: ["400", "700"], subsets: ["latin"] });
 
 const Item = ({
@@ -10,9 +12,8 @@ const Item = ({
   title,
   description,
   img_url,
-  view_url,
-  isOnDevelopment,
-  tags,
+  categories,
+  tech,
 }: {
   id: string;
   title: string;
@@ -20,52 +21,33 @@ const Item = ({
   img_url: string | StaticImageData;
   view_url: string;
   isOnDevelopment: boolean;
-  tags: string[];
+  categories: WorkCategory[];
+  tech: TechName[];
 }) => {
   return (
     <div
       onClick={() => {
         window.location.href = `/works/${id}`;
       }}
-      className='flex flex-col justify-between mt-8 max-w-[300px] border border-neutral-700 bg-neutral-950 hover:border-sky-500 rounded-lg cursor-pointer'>
-      <div>
-        <Image
-          src={img_url}
-          width={600}
-          height={400}
-          alt='works 1'
-          className='h-40 w-full rounded-t-lg'
-        />
-        <div className='flex flex-col px-6 pb-8 pt-4'>
-          {/*  Tags */}
-          <div className='flex mt-1 mb-2'>
-            {tags.map((item, index) => {
-              if (index >= 1) {
-                return (
-                  <span
-                    key={index}
-                    className='ml-1 text-stone-400 bg-stone-800 px-2 py-1 rounded text-xs'>
-                    {item}
-                  </span>
-                );
-              }
-              return (
-                <span
-                  key={index}
-                  className='text-stone-400 bg-stone-800 px-2 py-1 rounded text-xs'>
-                  {item}
-                </span>
-              );
-            })}
-          </div>
-          {/*  Title */}
-          <h1 className={`${roboto.className} mt-4  text-xl font-bold`}>
-            {title}
-          </h1>
-          {/* Description */}
-          <p className='text-stone-400 my-2 text-sm'>{description}</p>
-          {/*  */}
-        </div>
+      className='flex h-full w-full cursor-pointer flex-col overflow-hidden rounded-xl border border-neutral-800 bg-neutral-950 transition-colors hover:border-sky-500'>
+      <Image
+        src={img_url}
+        width={600}
+        height={400}
+        alt={title}
+        className='h-40 w-full object-cover object-top'
+      />
+      {/* flex-1 + mt-auto pin the logos to the bottom, so they line up across
+          the carousel's equal-height cards. */}
+      <div className='flex flex-1 flex-col p-5'>
+        <CategoryTags categories={categories} />
+        <h3 className={`${roboto.className} mt-3 text-base font-bold`}>
+          {title}
+        </h3>
+        <p className='mt-1.5 text-sm leading-6 text-neutral-400'>
+          {description}
+        </p>
+        {tech.length > 0 && <TechIcons tech={tech} className='mt-auto pt-4' />}
       </div>
     </div>
   );

@@ -1,5 +1,7 @@
 "use client";
 
+import CategoryTags from "@/components/home/category_tags";
+import TechIcons from "@/components/technologies/TechIcons";
 import useFromClients from "@/models/useFromClients";
 import usePersonalProjects from "@/models/usePersonalProjects";
 import { WorkItem } from "@/types/works";
@@ -25,6 +27,12 @@ function WorksPage({ params }: { params: Promise<{ id: string }> }) {
     <div className=' w-full max-w-[1280px] pt-40 select-none'>
       <div className='flex flex-col items-center'>
         <div className='flex flex-col items-center mb-8'>
+          {workItem && (
+            <CategoryTags
+              categories={workItem.categories}
+              className='mb-4 justify-center px-2'
+            />
+          )}
           <h1 className='text-3xl font-bold mb-4 text-center px-2'>
             {workItem?.title}
           </h1>
@@ -42,17 +50,14 @@ function WorksPage({ params }: { params: Promise<{ id: string }> }) {
           <span className='text-stone-300 text-center px-2 mt-12 max-w-[80ch]'>
             {workItem?.body}
           </span>
-          <div className='font-bold mt-8 flex flex-wrap justify-center'>
-            {workItem?.tech_stack?.map((e, i) => {
-              return (
-                <span
-                  key={i}
-                  className='border border-stone-400 p-2 text-stone-400 text-center rounded-lg m-1'>
-                  {e}
-                </span>
-              );
-            })}
-          </div>
+          {workItem && workItem.tech.length > 0 && (
+            <TechIcons
+              tech={workItem.tech}
+              size={16}
+              labeled
+              className='mt-8 justify-center px-2'
+            />
+          )}
         </div>
         <div className='flex flex-wrap p-3'>
           {workItem?.img_url.map((e, i) => {

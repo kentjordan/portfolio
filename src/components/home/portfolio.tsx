@@ -68,7 +68,8 @@ function HomePortfolio() {
                     img_url={e.img_url[0]}
                     view_url={e.view_url}
                     isOnDevelopment={e.isOnDevelopment}
-                    tags={e.tags}
+                    categories={e.categories}
+                    tech={e.tech}
                   />
                 </CarouselItem>
               );
@@ -105,7 +106,8 @@ function HomePortfolio() {
                     img_url={e.img_url[0]}
                     view_url={e.view_url}
                     isOnDevelopment={e.isOnDevelopment}
-                    tags={e.tags}
+                    categories={e.categories}
+                    tech={e.tech}
                   />
                 </CarouselItem>
               );
