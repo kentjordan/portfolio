@@ -1,121 +1,128 @@
 "use client";
-import { Anton, Roboto } from "next/font/google";
-
-const anton = Anton({ weight: "400", subsets: ["latin"] });
-const roboto = Roboto({ weight: ["400", "700"], subsets: ["latin"] });
-
+import { useId, useRef } from "react";
+import { Roboto } from "next/font/google";
+import Autoplay from "embla-carousel-autoplay";
 import { PiHandSwipeLeftLight } from "react-icons/pi";
 
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
 } from "@/components/ui/carousel";
-import Item from "./item";
 import useFromClient from "@/models/useFromClients";
 import usePersonalProjects from "@/models/usePersonalProjects";
+import { WorkItem } from "@/types/works";
+import Item from "./item";
+import { Section, SectionHeading } from "./section";
 
-import Autoplay from "embla-carousel-autoplay";
-import { LinearGradient } from "react-text-gradients";
+const roboto = Roboto({ weight: ["400", "700"], subsets: ["latin"] });
+
+// shadcn's outline buttons take the light theme's colors, and their default
+// spot outside the carousel's edges is clipped by the section on narrow
+// screens, so these sit in the label row as dark circles that match the cards.
+const navButtonClass =
+  "static h-9 w-9 translate-y-0 border-neutral-700 bg-transparent text-neutral-300 ring-offset-black hover:border-sky-500 hover:bg-transparent hover:text-white focus-visible:ring-sky-500";
+
+function ProjectCarousel({
+  label,
+  items,
+  delay,
+}: {
+  label: string;
+  items: WorkItem[];
+  delay: number;
+}) {
+  // In a ref so the buttons can stop this carousel's autoplay. A swipe already
+  // stops it; a click should too, or the card the visitor just picked would
+  // slide away a moment later.
+  const autoplay = useRef(Autoplay({ delay }));
+  const stopAutoplay = () => autoplay.current.stop();
+  const headingId = useId();
+
+  return (
+    <Carousel
+      aria-labelledby={headingId}
+      className='w-full'
+      orientation='horizontal'
+      plugins={[autoplay.current]}
+      opts={{
+        align: "start",
+        loop: true,
+      }}>
+      <div className='mb-6 flex items-end justify-between gap-4'>
+        <div>
+          <h3
+            id={headingId}
+            className={`${roboto.className} text-xs font-bold uppercase tracking-[0.2em] text-neutral-400`}>
+            {label}
+          </h3>
+          <div className='mt-2 flex items-center gap-2 text-neutral-500'>
+            <PiHandSwipeLeftLight size={18} />
+            <span className='text-xs'>Swipe to see more</span>
+          </div>
+        </div>
+        {/* Capture phase, because the buttons' own onClick does the scrolling. */}
+        <div className='flex shrink-0 gap-2'>
+          <CarouselPrevious
+            className={navButtonClass}
+            onClickCapture={stopAutoplay}
+          />
+          <CarouselNext
+            className={navButtonClass}
+            onClickCapture={stopAutoplay}
+          />
+        </div>
+      </div>
+      <CarouselContent>
+        {items.map((e, i) => {
+          return (
+            <CarouselItem
+              key={`${e.id}-${i}`}
+              className='flex sm:basis-1/2 xl:basis-1/3'>
+              <Item
+                id={e.id}
+                title={e.title}
+                description={e.description}
+                img_url={e.img_url[0]}
+                view_url={e.view_url}
+                isOnDevelopment={e.isOnDevelopment}
+                categories={e.categories}
+                tech={e.tech}
+              />
+            </CarouselItem>
+          );
+        })}
+      </CarouselContent>
+    </Carousel>
+  );
+}
 
 function HomePortfolio() {
   const fromClient = useFromClient();
   const personalProjects = usePersonalProjects();
 
   // Duplicated so Embla has enough slides to satisfy `loop: true`
-  // at the lg:basis-96 slide width.
+  // when three slides are visible at once (xl:basis-1/3).
   const clientSlides = [...fromClient, ...fromClient];
 
   return (
-    <div
-      className='flex flex-col items-center py-32 overflow-hidden xl:overflow-visible px-4'
-      id='works'>
-      <h1
-        className={`${anton.className} text-4xl sm:text-5xl mb-8 text-center`}>
-        <LinearGradient
-          gradient={["to left", "#0ED2F7, #B2FEFA"]}
-          fallbackColor='#6DD5FA'>
-          Recent Works
-        </LinearGradient>
-      </h1>
-      <div className='flex flex-col my-6 items-center justify-center mx-12'>
-        <h1
-          className={`${roboto.className} text-lg text-center font-bold italic`}>
-          FROM FREELANCING
-        </h1>
-        <div className='flex items-center gap-3 justify-center mt-8 text-stone-400'>
-          <PiHandSwipeLeftLight size={24} className=' text-stone-400' />
-          <span className='text-xs'>Swipe to see more</span>
-        </div>
-        <Carousel
-          className='mt-8 p-1 max-w-5xl'
-          orientation='horizontal'
-          plugins={[Autoplay({ delay: 1800 })]}
-          opts={{
-            align: "center",
-            loop: true,
-          }}>
-          <CarouselContent>
-            {clientSlides.map((e, i) => {
-              return (
-                <CarouselItem
-                  key={`${e.id}-${i}`}
-                  className='lg:basis-96 flex justify-center'>
-                  <Item
-                    id={e.id}
-                    title={e.title}
-                    description={e.description}
-                    img_url={e.img_url[0]}
-                    view_url={e.view_url}
-                    isOnDevelopment={e.isOnDevelopment}
-                    categories={e.categories}
-                    tech={e.tech}
-                  />
-                </CarouselItem>
-              );
-            })}
-          </CarouselContent>
-        </Carousel>
+    <Section id='works' className='overflow-hidden'>
+      <SectionHeading title='Recent Works' />
+      <div className='space-y-16'>
+        <ProjectCarousel
+          label='FROM FREELANCING'
+          items={clientSlides}
+          delay={1800}
+        />
+        <ProjectCarousel
+          label='PERSONAL PROJECTS'
+          items={personalProjects}
+          delay={2000}
+        />
       </div>
-      <div className='flex flex-col mt-12 items-center justify-center mx-12'>
-        <h1 className={`${roboto.className} text-lg text-center font-bold`}>
-          PERSONAL PROJECTS
-        </h1>
-        <div className='flex items-center gap-3 justify-center mt-8 text-stone-400'>
-          <PiHandSwipeLeftLight size={24} className=' text-stone-400' />
-          <span className='text-xs'>Swipe to see more</span>
-        </div>
-        <Carousel
-          className='mt-8 p-1 max-w-5xl'
-          orientation='horizontal'
-          plugins={[Autoplay({ delay: 2000 })]}
-          opts={{
-            align: "center",
-            loop: true,
-          }}>
-          <CarouselContent>
-            {personalProjects.map((e) => {
-              return (
-                <CarouselItem
-                  key={e.id}
-                  className='lg:basis-96 flex justify-center'>
-                  <Item
-                    id={e.id}
-                    title={e.title}
-                    description={e.description}
-                    img_url={e.img_url[0]}
-                    view_url={e.view_url}
-                    isOnDevelopment={e.isOnDevelopment}
-                    categories={e.categories}
-                    tech={e.tech}
-                  />
-                </CarouselItem>
-              );
-            })}
-          </CarouselContent>
-        </Carousel>
-      </div>
-    </div>
+    </Section>
   );
 }
 
