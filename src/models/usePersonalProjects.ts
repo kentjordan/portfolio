@@ -64,8 +64,8 @@ const usePersonalProjects = () => {
         {
             id: "sent",
             title: "Sent",
-            description: "A social media platform with a real-time messaging system.",
-            body: "In building of this personal project, I used NEXT.js and TailwindCSS in the frontend while in the backend I used NestJS and PostgreSQL.",
+            description: "Follow friends, share what's on your mind, and chat in real time, all in one clean social app.",
+            body: "Sent is a social platform built around real conversations. Find people, follow them, share posts, and jump into a real-time chat where messages arrive the moment they're sent. I designed and built every layer myself, from the interface to the server and database, then launched it to real users, who signed up, followed each other, and started posting. It's proof I can take a product with live, interactive features from idea to launch on my own.",
             img_url: [
                 Sent1,
                 Sent2,
@@ -88,8 +88,8 @@ const usePersonalProjects = () => {
         {
             id: "digits-classification",
             title: "Digits Classification",
-            description: "0-9 digits classification built on top of CNN and Tensorflow.",
-            body: "My first entry for Digits Classification on top of Convolutional Neural Network. Built from scratch with NEXT.js, FastAPI, and Tensorflow. The model was trained on MNIST dataset.",
+            description: "Sketch any digit from 0 to 9 and watch a neural network read your handwriting.",
+            body: "No two people write a 7 the same way, which makes handwriting a classic challenge for computers. This app hands you a canvas: draw a digit, hit Guess, and a convolutional neural network trained on tens of thousands of real handwritten samples tells you what you wrote. I built it from scratch, from training the model to wiring it into a live app you can try in seconds.",
             img_url: [
                 DC5,
                 DC0,
@@ -110,8 +110,8 @@ const usePersonalProjects = () => {
         {
             id: "sentiment-analysis",
             title: "Sentiment Analysis",
-            description: "Binary Text Sentiment classification built on top of Logistic Regression and PyTorch.",
-            body: "My first entry in the world of Natural Language Processing (NLP). My model was trained on Sentiment140 dataset—a list of tweets. ",
+            description: "Type any sentence and an AI model tells you whether it sounds positive or negative.",
+            body: "Is that comment happy or annoyed? This app answers in a click. Type any sentence and a model trained on Sentiment140, a large dataset of real tweets, labels it positive or negative. It was my first step into Natural Language Processing, and I took it all the way, from training the model to shipping it as a live app. It's the same core idea behind tools that track customer feedback and brand sentiment at scale.",
             img_url: [
                 SA0,
                 SA1,
@@ -126,8 +126,8 @@ const usePersonalProjects = () => {
         {
             id: "lr-visualizer",
             title: "Linear Regression Visualizer",
-            description: "Visualize how gradient descent fit the Linear Regression into a dataset.",
-            body: "I started in Machine Learning field with Linear Regression. I made this at that time to visualize how Gradient Descent helps the parameter of Linear Regression fit into a dataset.",
+            description: "See machine learning in action as gradient descent fits a line to the data, one step at a time.",
+            body: "Machine learning can feel like a black box, and this visualizer opens it up. Watch gradient descent nudge a regression line, step by step, until it settles on the best fit for the data, with the line's equation shown right on the chart. I created it when I was first learning ML so I could see how a model actually learns, and now it does the same for anyone who watches.",
             img_url: [
                 LRV0,
                 LRV1],
@@ -139,8 +139,8 @@ const usePersonalProjects = () => {
         {
             id: "covid-tracker",
             title: "COVID 19 Data Tracker",
-            description: "Data tracker for COVID 19 made in Android Studio and Java.",
-            body: "A simple COVID 19 Data Tracker made in Android Studio when I was freshmen. I used Java as the main programming language and an API for COVID 19 data.",
+            description: "Global case counts, vaccine progress, and trusted health answers, all in one Android app.",
+            body: "During the pandemic, reliable COVID-19 information was spread across different sources. I built this Android app as a freshman to bring it together in one place: worldwide and Philippine case counts, country rankings, a vaccine tracker that follows candidates through each trial phase, and answers to common questions from the Department of Health. It's where my habit of turning scattered public data into something clear and useful began.",
             img_url: [
                 COVIDTracker0,
                 COVIDTracker1
@@ -153,8 +153,8 @@ const usePersonalProjects = () => {
         {
             id: "kabsahi-cart",
             title: "Kabsahi Cart",
-            description: "A Cart System for an eCommerce supposedly for Kabsahi.",
-            body: "In building of this personal project, I used React.js, and Redux Tookit as the state management.",
+            description: "A concept ordering experience for Kabsahi that takes hungry customers from craving to checkout in a few clicks.",
+            body: "Every extra step in an online order is a chance for a hungry customer to give up. This concept for Kabsahi, a restaurant serving Arabian and Filipino favorites, keeps the path short: choose delivery or pickup, browse best sellers and the full menu, save favorites, and fine-tune the cart with a running subtotal. The cart stays in sync across the whole page as you go, the kind of smooth experience that turns first orders into repeat ones.",
             img_url: [
                 Kabhsahi1,
                 Kabhsahi2,
@@ -171,8 +171,8 @@ const usePersonalProjects = () => {
         {
             id: "calculator",
             title: "Calculator",
-            description: "An MDAS calculator based on flutter web.",
-            body: "This simple calculator is written in Flutter which uses Dart programming language.",
+            description: "A distraction-free calculator that follows the order of operations, so 2 + 3 × 4 gives you 14, not 20.",
+            body: "Many basic calculators work strictly left to right, so they can quietly hand you the wrong answer. This one follows MDAS, handling multiplication and division before addition and subtraction, inside a clean interface with nothing to get in your way. It runs right in the browser from a single cross-platform codebase, the same approach that lets one app ship to the web, iOS, and Android.",
             img_url: [MDASCalculator],
             view_url: "https://calc-kjordan.vercel.app/",
             isOnDevelopment: false,
@@ -182,8 +182,8 @@ const usePersonalProjects = () => {
         {
             id: "bs-visualizer",
             title: "Binary Search Visualizer",
-            description: "To visualize the binary search algorithm.",
-            body: "This simple visualizer of the the Binary Search algorithm is written in React.js.",
+            description: "Watch binary search close in on any number by cutting the list in half at every step.",
+            body: "Binary search is why finding one item among a million sorted ones takes about 20 steps instead of up to a million. This visualizer shows it in action: enter a number and follow the left, middle, and right markers as each comparison rules out half of what's left, until the target is found. It turns one of the most important ideas in computer science into something you can understand at a glance.",
             img_url: [BinarySearch],
             view_url:
                 "https://kjordan-visualize.vercel.app/algorithms/searching/binary-search/demo",

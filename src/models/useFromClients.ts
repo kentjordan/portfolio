@@ -24,8 +24,8 @@ const useFromClients = () => {
         {
             id: "go-explore",
             title: "Go Explore Batangas",
-            description: "A web information system of places for tourists in Batangas.",
-            body: "In this client project, I was tasked to develop their backend API using Express.js and the deployment of the frontend website and backend API.",
+            description: "Your guide to the best of Batangas: beaches, resorts, nature trips, and festivals all year round.",
+            body: "Batangas is packed with beaches, resorts, and festivals, and Go Explore puts them all in one place: destinations sorted by interest, a month-by-month festival calendar, and favorites for planning the next trip. I built the backend that powers it, from accounts and ratings to the analytics that show admins which destinations travelers love most, then took the entire platform live. The team called the finished site solid, and they passed their capstone with it.",
             img_url: [
                 GoExploreBatangas,
                 GoExploreBatangas5,
@@ -44,8 +44,8 @@ const useFromClients = () => {
             id: "cliemb",
             title: "CLIEMB: Monitoring System",
             description:
-                "A web and app live monitoring system for a clinic in Batangas State University.",
-            body: "In this project, I was tasked to develop their website, app, and API in which the two frontends communicates. I used NEXT.js with React for the Website, Expo React Native for the Mobile App, and NestJS for the API. The API has real-time communication through SocketIO which is used in real-time notification in monitoring of this Website. All of the technologies that were used here are written in Typescript.",
+                "One tap tells the campus clinic who needs help, where, and how urgently, in real time.",
+            body: "In an emergency, every minute spent asking who and where is a minute lost. Built for a clinic at Batangas State University, CLIEMB lets students, professors, and staff call for help at the press of a button. The clinic's live dashboard instantly shows the severity, room and floor, equipment needed, and even a photo, so staff know how fast to move, where to go, and what to bring. I delivered all of it, from the mobile app to the clinic dashboard and the real-time backend, and the client said it exceeded their expectations.",
             img_url: [
                 Cliemb,
                 Cliemb1,
@@ -64,8 +64,8 @@ const useFromClients = () => {
         {
             id: "ptd",
             title: "Peach Tree Designs",
-            description: "A web portfolio of the business Peach Tree Designs.",
-            body: "In this project, the client is from the USA, I was tasked to develop the Content Management Website and the backend API of it. I used NEXT.js for the website and Express.js for the API.",
+            description: "A self-managed portfolio for a US level-design studio, so new work goes live without waiting on a developer.",
+            body: "Peach Tree Designs crafts detailed game worlds, and their portfolio has to keep up with every new build. For this US-based studio, I built the content management system behind their site: a private admin panel where the team adds a project with its image and write-up, plus the backend that publishes it straight to their portfolio. No code, no back-and-forth with a developer, just a showcase that grows as fast as they create.",
             img_url: [PeachTreeDesigns, PeachTreeDesigns1],
             view_url: "https://www.peachtree-designs.com/",
             isOnDevelopment: true,
