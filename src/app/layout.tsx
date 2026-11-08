@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`bg-black text-white flex items-center flex-col h-screen`}>
+        className={`bg-black text-white flex items-center flex-col h-screen lg:pl-60`}>
         <Navbar />
         <MobileNavbarMenu />
         {children}
