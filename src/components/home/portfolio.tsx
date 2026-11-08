@@ -88,6 +88,7 @@ function ProjectCarousel({
                 img_url={e.img_url[0]}
                 view_url={e.view_url}
                 isOnDevelopment={e.isOnDevelopment}
+                date={e.date}
                 categories={e.categories}
                 tech={e.tech}
               />

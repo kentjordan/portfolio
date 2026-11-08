@@ -34,7 +34,7 @@ _Last reviewed 2026-11-08 against Next.js 16.3.2._
 | Animation | Framer Motion (mobile drawer slide-in, hero parallax); plain CSS transitions for the sidebar's show/hide and rail |
 | Gradient text | `react-text-gradients` |
 | State | Zustand (only the mobile drawer's open/closed flag) |
-| Icons | `react-icons`, `lucide-react`, `devicons-react` (technology logos). `devicons-react` has no Seaborn or SciPy logo, so Seaborn's is devicon's SVG in `src/assets/tech/` and SciPy's is the `react-icons` Simple Icons glyph. |
+| Icons | `react-icons`, `lucide-react`, `devicons-react` (technology logos). `devicons-react` has no Seaborn or SciPy logo, so Seaborn's is devicon's SVG in `src/assets/tech/` and SciPy's is the `react-icons` Simple Icons glyph. Project cards show NGINX as its Simple Icons glyph too, because devicon's NGINX logo is a wordmark. |
 | Fonts | `next/font/google`: Anton for section headings and service card titles, Roboto for the sidebar, hero intro and the other card titles. Everything else uses Tailwind's default system font stack. |
 
 ## Getting started
@@ -73,7 +73,7 @@ src/
 ├── components/
 │   ├── navbar.tsx              Sidebar (lg and up) and slide-in drawer (MobileNavbarMenu); links in navItems
 │   ├── footer.tsx
-│   ├── home/                   One component per home-page section, plus item.tsx (project card), category_tags.tsx (a project's category labels) and section.tsx (Section, SectionHeading)
+│   ├── home/                   One component per home-page section, plus item.tsx (project card), category_tags.tsx (a project's category labels), work_date.tsx (when a project was built) and section.tsx (Section, SectionHeading)
 │   ├── certs/CertItem.tsx      Certificate category card used on the home page
 │   ├── technologies/           stack.ts (every technology and its logo), TechItem (logo tile with the technology's name), TechIcons (a project's technologies as logos or logo-and-name chips), logos.tsx (logos devicons-react lacks)
 │   └── ui/                     shadcn/ui components: button, carousel
@@ -126,7 +126,7 @@ The hero is layered (`landing.tsx`). The photo is a background anchored to the b
 
 ### `/works/[id]` — project detail
 
-A client component. It reads both project lists, finds the entry whose `id` matches the URL, and shows its category labels, title, description, "View Live" link, `body`, technologies (logo-and-name chips) and every image in `img_url`. "View Live" appears only when `isOnDevelopment` is `false` and `view_url` is not empty.
+A client component. It reads both project lists, finds the entry whose `id` matches the URL, and shows its category labels, title, date, description, "View Live" link, `body`, technologies (logo-and-name chips) and every image in `img_url`. "View Live" appears only when `isOnDevelopment` is `false` and `view_url` is not empty.
 
 | `id` | Title | List | "View Live" |
 | --- | --- | --- | --- |
@@ -176,6 +176,7 @@ Each project is a `WorkItem` (`src/types/works.d.ts`):
 | `img_url` | `(string \| StaticImageData)[]` | Yes | The first image is the card thumbnail; the detail page shows all of them |
 | `view_url` | `string` | Yes | "View Live" link. Use `""` when there isn't one. |
 | `isOnDevelopment` | `boolean` | Yes | `true` hides "View Live" |
+| `date` | `WorkPeriod`: `{ start, end }`, each a `"YYYY-MM"` month | Yes | When it was built, shown under the title on the card and the detail page as "Jul 2023", "Jan – May 2024" or "Dec 2023 – Jun 2024". Give the same month twice for a project built within one. The current values are the months of the first and last commits in each project's GitHub repos. |
 | `categories` | `WorkCategory[]` | Yes | Labels on the card and above the detail-page heading: `"Web App"`, `"Mobile App"`, `"ML/AI"` |
 | `tech` | `TechName[]` | Yes | Logos on the card, logo-and-name chips on the detail page. Only names from the Tech Stack section (`src/components/technologies/stack.ts`) type-check; use `[]` when none apply. |
 
@@ -213,6 +214,7 @@ Images live in `src/assets/certificates/` and are loaded with `require()`.
        img_url: [MyApp0, MyApp1],   // first image = card thumbnail
        view_url: "https://my-app.example.com",
        isOnDevelopment: false,
+       date: { start: "2024-04", end: "2024-06" },   // first and last month of work
        categories: ["Web App"],
        tech: ["NEXT.js", "PostgreSQL"],
    },
@@ -243,7 +245,7 @@ The links are defined in two places, so update both:
 | Hero intro and social links | `src/components/home/landing.tsx`. Keep the intro to a sentence or two so the hero fits one screen; the longer story belongs in the bio. |
 | Hero photo | `src/assets/me.png` |
 | Services ("What I Can Do?") | `src/components/home/offer.tsx` |
-| Technologies | `groups` in `src/components/technologies/stack.ts`, which feeds both the Tech Stack section and the logos on project cards. Logos come from `devicons-react`; for one it lacks, add the SVG to `src/assets/tech/` and wrap it in `technologies/logos.tsx` like `SeabornOriginal`. A wordmark logo is unreadable at card size, so give it a `SmallIcon` for the cards, as NEXT.js has. |
+| Technologies | `groups` in `src/components/technologies/stack.ts`, which feeds both the Tech Stack section and the logos on project cards. Logos come from `devicons-react`; for one it lacks, add the SVG to `src/assets/tech/` and wrap it in `technologies/logos.tsx` like `SeabornOriginal`. A wordmark logo is unreadable at card size, so give it a `SmallIcon` for the cards, as NEXT.js and NGINX have. |
 | Testimonials | `src/components/home/testimonials.tsx` |
 | Bio | `src/components/home/about_me.tsx` |
 | Bio recording | `src/assets/who-am-i.mp3`. Replace the file to change it; the Listen button reads the length from the file. It's referenced with `new URL("…", import.meta.url)`, which the bundler turns into a hashed `/_next/static/media/` URL, so no config is needed. |

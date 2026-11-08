@@ -58,8 +58,9 @@ const usePersonalProjects = () => {
         //     view_url:
         //         "https://kjordan-visualize.vercel.app/algorithms/searching/linear-search/demo",
         //     isOnDevelopment: false,
+        //     date: { start: "2022-09", end: "2022-09" },
         //     categories: ["Web App"],
-        //     tech: ["React.js"],
+        //     tech: ["React.js", "TypeScript"],
         // },
         {
             id: "sent",
@@ -82,8 +83,9 @@ const usePersonalProjects = () => {
             ],
             view_url: "https://sent-beta.vercel.app/",
             isOnDevelopment: false,
+            date: { start: "2023-12", end: "2024-06" },
             categories: ["Web App"],
-            tech: ["NEXT.js", "TailwindCSS", "NestJS", "PostgreSQL"],
+            tech: ["NEXT.js", "TailwindCSS", "NestJS", "PostgreSQL", "TypeScript"],
         },
         {
             id: "digits-classification",
@@ -104,8 +106,9 @@ const usePersonalProjects = () => {
             ],
             view_url: "https://digits-classification.vercel.app/",
             isOnDevelopment: false,
+            date: { start: "2024-04", end: "2024-04" },
             categories: ["ML/AI"],
-            tech: ["NEXT.js", "FastAPI", "Tensorflow", "Python"],
+            tech: ["NEXT.js", "TailwindCSS", "FastAPI", "Tensorflow", "Numpy", "TypeScript", "Python"],
         },
         {
             id: "sentiment-analysis",
@@ -120,8 +123,9 @@ const usePersonalProjects = () => {
                 SA4],
             view_url: "https://sentiment-analysis-kjordan.vercel.app/",
             isOnDevelopment: false,
+            date: { start: "2024-07", end: "2024-07" },
             categories: ["ML/AI"],
-            tech: ["NEXT.js", "FastAPI", "PyTorch", "Pandas", "Python", "Docker"],
+            tech: ["NEXT.js", "TailwindCSS", "FastAPI", "PyTorch", "Pandas", "Numpy", "Jupyter", "TypeScript", "Python", "Docker"],
         },
         {
             id: "lr-visualizer",
@@ -133,8 +137,9 @@ const usePersonalProjects = () => {
                 LRV1],
             view_url: "https://visualize-linear-regression.vercel.app",
             isOnDevelopment: false,
+            date: { start: "2024-01", end: "2024-07" },
             categories: ["ML/AI"],
-            tech: ["NEXT.js"],
+            tech: ["HTML", "TailwindCSS", "JavaScript"], // p5.js isn't in the Tech Stack section
         },
         {
             id: "covid-tracker",
@@ -147,6 +152,7 @@ const usePersonalProjects = () => {
             ],
             view_url: "",
             isOnDevelopment: true,
+            date: { start: "2020-10", end: "2020-10" },
             categories: ["Mobile App"],
             tech: [], // Java and Android aren't in the Tech Stack section
         },
@@ -165,8 +171,9 @@ const usePersonalProjects = () => {
             ],
             view_url: "https://kabsahi-devlopment.vercel.app/",
             isOnDevelopment: false,
+            date: { start: "2023-01", end: "2023-02" },
             categories: ["Web App"],
-            tech: ["React.js"],
+            tech: ["NEXT.js", "TailwindCSS", "TypeScript"],
         },
         {
             id: "calculator",
@@ -176,6 +183,7 @@ const usePersonalProjects = () => {
             img_url: [MDASCalculator],
             view_url: "https://calc-kjordan.vercel.app/",
             isOnDevelopment: false,
+            date: { start: "2021-05", end: "2021-09" },
             categories: ["Web App"],
             tech: [], // Flutter isn't in the Tech Stack section
         },
@@ -188,8 +196,9 @@ const usePersonalProjects = () => {
             view_url:
                 "https://kjordan-visualize.vercel.app/algorithms/searching/binary-search/demo",
             isOnDevelopment: false,
+            date: { start: "2022-09", end: "2022-09" },
             categories: ["Web App"],
-            tech: ["React.js"],
+            tech: ["React.js", "TypeScript"],
         },
     ]);
 

@@ -1,9 +1,10 @@
 import Image, { StaticImageData } from "next/image";
 import { Roboto } from "next/font/google";
-import type { WorkCategory } from "@/types/works";
+import type { WorkCategory, WorkPeriod } from "@/types/works";
 import TechIcons from "../technologies/TechIcons";
 import type { TechName } from "../technologies/stack";
 import CategoryTags from "./category_tags";
+import WorkDate from "./work_date";
 
 const roboto = Roboto({ weight: ["400", "700"], subsets: ["latin"] });
 
@@ -12,6 +13,7 @@ const Item = ({
   title,
   description,
   img_url,
+  date,
   categories,
   tech,
 }: {
@@ -21,6 +23,7 @@ const Item = ({
   img_url: string | StaticImageData;
   view_url: string;
   isOnDevelopment: boolean;
+  date: WorkPeriod;
   categories: WorkCategory[];
   tech: TechName[];
 }) => {
@@ -44,6 +47,7 @@ const Item = ({
         <h3 className={`${roboto.className} mt-3 text-base font-bold`}>
           {title}
         </h3>
+        <WorkDate date={date} className='mt-1' />
         <p className='mt-1.5 text-sm leading-6 text-neutral-400'>
           {description}
         </p>

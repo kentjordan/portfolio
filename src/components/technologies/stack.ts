@@ -23,7 +23,7 @@ import {
   TypescriptOriginal,
 } from "devicons-react";
 import type { FunctionComponent, SVGProps } from "react";
-import { SiScipy } from "react-icons/si";
+import { SiNginx, SiScipy } from "react-icons/si";
 import { SeabornOriginal } from "./logos";
 
 type TechIcon = FunctionComponent<
@@ -63,7 +63,8 @@ const groups = [
       { name: "Docker", Icon: DockerOriginal },
       { name: "Git", Icon: GitOriginal },
       { name: "FastAPI", Icon: FastapiOriginal },
-      { name: "NGINX", Icon: NginxOriginal },
+      // The wordmark keeps its own green; `fill` colors only the card glyph.
+      { name: "NGINX", Icon: NginxOriginal, SmallIcon: SiNginx, fill: "#009639" },
     ],
   },
   {

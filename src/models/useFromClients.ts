@@ -37,8 +37,9 @@ const useFromClients = () => {
             ],
             isOnDevelopment: true,
             view_url: "https://www.goexplorebatangas.com/",
+            date: { start: "2023-08", end: "2023-12" },
             categories: ["Web App"],
-            tech: ["PostgreSQL"],
+            tech: ["PostgreSQL", "TypeScript"],
         },
         {
             id: "cliemb",
@@ -58,8 +59,9 @@ const useFromClients = () => {
             ],
             isOnDevelopment: true,
             view_url: "https://cliemb.online/",
+            date: { start: "2024-01", end: "2024-05" },
             categories: ["Web App", "Mobile App"],
-            tech: ["NEXT.js", "React.js", "NestJS", "PostgreSQL", "TypeScript"],
+            tech: ["NEXT.js", "React.js", "TailwindCSS", "NestJS", "PostgreSQL", "TypeScript", "NGINX"],
         },
         {
             id: "ptd",
@@ -69,8 +71,9 @@ const useFromClients = () => {
             img_url: [PeachTreeDesigns, PeachTreeDesigns1],
             view_url: "https://www.peachtree-designs.com/",
             isOnDevelopment: true,
+            date: { start: "2023-07", end: "2023-07" },
             categories: ["Web App"],
-            tech: ["NEXT.js", "PostgreSQL"],
+            tech: ["NEXT.js", "TailwindCSS", "PostgreSQL", "TypeScript", "Docker"],
         }
     ]);
 

@@ -1,6 +1,7 @@
 "use client";
 
 import CategoryTags from "@/components/home/category_tags";
+import WorkDate from "@/components/home/work_date";
 import TechIcons from "@/components/technologies/TechIcons";
 import { pagePaddingX } from "@/lib/utils";
 import useFromClients from "@/models/useFromClients";
@@ -37,6 +38,12 @@ function WorksPage({ params }: { params: Promise<{ id: string }> }) {
           <h1 className='text-2xl sm:text-3xl font-bold mb-3 text-center px-2'>
             {workItem?.title}
           </h1>
+          {workItem && (
+            <WorkDate
+              date={workItem.date}
+              className='mb-3 px-2 text-sm text-stone-500'
+            />
+          )}
           <span className='text-sm sm:text-base text-stone-400 text-center px-2 max-w-[40ch]'>
             {workItem?.description}
           </span>
