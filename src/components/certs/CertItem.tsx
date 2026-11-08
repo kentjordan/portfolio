@@ -9,6 +9,19 @@ interface CertItemProps {
   Background: () => JSX.Element;
 }
 
+/** Darkens and blurs one image of the stack while the card is hovered. */
+const HoverOverlay = () => (
+  <div className='absolute inset-0 flex items-center justify-center rounded-md group-hover:bg-black/40 group-hover:backdrop-blur-sm'>
+    <span className='hidden text-sm font-semibold group-hover:block'>
+      View more
+    </span>
+  </div>
+);
+
+/**
+ * Two certificate images stacked with a 24px offset, filling the width of its
+ * grid column. pt-6/pr-6 reserve the space the top image is shifted into.
+ */
 const CertItem = ({ title, Background, Thumbnail, field }: CertItemProps) => {
   return (
     <div className='flex flex-col items-center'>
@@ -16,30 +29,22 @@ const CertItem = ({ title, Background, Thumbnail, field }: CertItemProps) => {
         onClick={() => {
           window.location.href = `/certs/${field}`;
         }}
-        className='flex flex-col justify-center rounded-md relative group'>
-        {/* Background */}
-        <div className='-ml-6'>
-          <div className='sm:w-96 sm:h-72 h-full w-64 group-hover:bg-black/40 group-hover:backdrop-blur-sm rounded-md absolute cursor-pointer flex justify-center items-center'>
-            <h1 className='cursor-pointer hidden group-hover:block font-bold text-xl'>
-              View more
-            </h1>
-          </div>
+        className='group relative w-full cursor-pointer pr-6 pt-6'>
+        {/* Background: the lower-left image */}
+        <div className='relative'>
           <Background />
+          <HoverOverlay />
         </div>
-        {/* Thumbnail */}
-        <div className='absolute -top-6 -right-6'>
-          <div className='sm:w-96 sm:h-72 h-full w-64 group-hover:bg-black/40 group-hover:backdrop-blur-sm rounded-md absolute cursor-pointer flex justify-center items-center'>
-            <h1 className='cursor-pointer hidden group-hover:block font-bold text-xl'>
-              View more
-            </h1>
-          </div>
+        {/* Thumbnail: the upper-right image, drawn on top */}
+        <div className='absolute left-6 right-0 top-0'>
           <Thumbnail />
+          <HoverOverlay />
         </div>
       </div>
-      <h1
-        className={`${roboto.className} mt-4 cursor-default text-center max-w-[32ch]`}>
+      <h3
+        className={`${roboto.className} mt-4 max-w-[32ch] cursor-default text-center text-sm text-neutral-300`}>
         {title}
-      </h1>
+      </h3>
     </div>
   );
 };
