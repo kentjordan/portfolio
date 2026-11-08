@@ -1,52 +1,112 @@
-import { Globe, PanelTop, Share2, Smartphone } from "lucide-react";
-import { Anton } from "next/font/google";
-import { LinearGradient } from "react-text-gradients";
+"use client";
+import { Pause, Play } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Section, SectionHeading } from "./section";
 
-const anton = Anton({ weight: "400", subsets: ["latin"] });
+/** Seconds as m:ss. */
+const formatTime = (seconds: number) => {
+  const s = Math.floor(seconds);
+  return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+};
+
+/** Play/pause button for the recording in src/assets/who-am-i.mp3. */
+function ListenButton() {
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [src, setSrc] = useState<string>();
+  const [playing, setPlaying] = useState(false);
+  const [current, setCurrent] = useState(0);
+  const [duration, setDuration] = useState(0);
+
+  // The bundler turns this into the file's public URL. It's resolved in the
+  // browser only: on the server, import.meta.url is a file:// path, which would
+  // make the server and browser HTML disagree.
+  useEffect(() => {
+    setSrc(new URL("../../assets/who-am-i.mp3", import.meta.url).href);
+  }, []);
+
+  const toggle = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (audio.paused) audio.play().catch(() => setPlaying(false));
+    else audio.pause();
+  };
+
+  const started = playing || current > 0;
+
+  return (
+    <>
+      <button
+        type='button'
+        onClick={toggle}
+        aria-label={
+          playing ? "Pause the recording" : "Listen to a recording of this section"
+        }
+        className='inline-flex select-none items-center gap-2 rounded-full bg-sky-400 px-4 py-2 text-sm font-semibold text-black transition-colors hover:bg-sky-300'>
+        {playing ? (
+          <Pause size={16} fill='currentColor' />
+        ) : (
+          <Play size={16} fill='currentColor' />
+        )}
+        {playing ? "Pause" : "Listen"}
+        {duration > 0 && (
+          <span aria-hidden className='font-normal tabular-nums text-black/70'>
+            · {started && `${formatTime(current)} / `}
+            {formatTime(duration)}
+          </span>
+        )}
+      </button>
+      <audio
+        ref={audioRef}
+        src={src}
+        preload='metadata'
+        onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
+        onTimeUpdate={(e) => setCurrent(e.currentTarget.currentTime)}
+        onPlay={() => setPlaying(true)}
+        onPause={() => setPlaying(false)}
+        onEnded={(e) => {
+          // Rewind so the next press starts from the beginning.
+          e.currentTarget.currentTime = 0;
+        }}
+      />
+    </>
+  );
+}
 
 const HomeAboutMe = () => {
+  // The home page turns off text selection (select-none in page.tsx); the bio
+  // opts back in so visitors can copy it.
   return (
-    <div
-      id='about-me'
-      className='w-full min-h-screen flex flex-col justify-center items-center py-32 px-4 rounded text-black'>
-      <div className='flex justify-center items-center flex-col '>
-        <h1
-          className={`${anton.className} text-4xl sm:text-5xl mb-16 text-center`}>
-          <LinearGradient
-            gradient={["to left", "#0ED2F7, #B2FEFA"]}
-            fallbackColor='#6DD5FA'>
-            Who am I?
-          </LinearGradient>
-        </h1>
+    <Section id='about-me' className='select-text'>
+      <SectionHeading title='Who am I?' />
+      <div className='space-y-5 text-base leading-7 text-neutral-300'>
+        <ListenButton />
+        <p>
+          As a full-stack developer, I help businesses and individuals turn
+          ideas into functional, scalable, and user-friendly software. I handle
+          the whole process end to end, from intuitive interfaces to robust
+          backend systems and API integrations, and I build software that
+          doesn&apos;t just work but solves real problems, improves workflows,
+          and creates meaningful value.
+        </p>
+        <p>
+          But I&apos;m not a typical full-stack developer. I also help startups
+          and companies make strategic product decisions: weighing how a feature
+          affects user retention, keeping compute and storage costs within
+          budget, and optimizing development timelines. By combining engineering
+          expertise with product thinking, I make sure every technical decision
+          serves the business goals and delivers reliable, measurable results.
+        </p>
+        <p>
+          Beyond development, I&apos;m deeply interested in{" "}
+          <strong className='text-[#0ED2F7]'>
+            Quantitative Finance, Machine Learning, and Agentic AI
+          </strong>
+          . I keep exploring these fields, and my curiosity for mathematics,
+          data, and intelligent systems shapes how I approach engineering and
+          problem-solving.
+        </p>
       </div>
-      <p className='text-neutral-300 text-lg leading-10 max-w-[80ch]'>
-        I&apos;m Kent John Jordan a{" "}
-        <i>fullstack web and mobile app developer</i>. I&apos;m currently taking
-        a bachelor degree in <i>Computer Science</i> with specialization in Game
-        Development at <i>University of St. La Salle</i>. Though my degree
-        focuses on game dev, my heart is on the field of <i>Web Development</i>,{" "}
-        <i>Machine Learning</i> and <i>Artificial Intelligence</i>. <br />
-        <br />
-        I started my journey on computer programming when I was a Senior
-        Highschool student at STI College - Lipa taking Information,
-        Communication and Technology strand. I was taught Web Development (HTML,
-        CSS, JavaScript) and Native Mobile App Development (Java - Android
-        Studio). Also, I learned Unity 3D for my Exposition project that time.
-        It was a campus tour of STI Lipa powered by VR technology.
-        <br />
-        <br />
-        I&apos;ve been doing freelance since 1st quarter of 2023, my focus was
-        on building Web and Mobile apps. My first two clients were students in
-        STI College - Lipa and University of Batangas, the project were their
-        captones which are web-based systems (see my recent works).
-        <br /> <br />
-        As of now, I&apos;m an aspiring Chief Technology Officer (CTO) in our
-        startup company. I&apos;ve been planning and implementing the BEST
-        software architecture and technologies for our product. Our minimum
-        valuable product will be launched on early 2025 for beta testing. Stay
-        tuned! 🚀
-      </p>
-    </div>
+    </Section>
   );
 };
 
