@@ -78,10 +78,10 @@ const HomeLanding = () => {
         className={`${roboto.className} relative flex max-w-xl flex-col items-center [text-shadow:0_1px_12px_rgb(0_0_0/0.8)]`}>
         {/* The short intro doubles as the page's main heading; the full story is in "Who am I?" */}
         <h1 className='text-[18px]/7 text-neutral-300 sm:text-[21px]/8'>
-          Hello there! 😊 I&apos;m Kent, a{" "}
-          <strong className='text-[#0ED2F7]'>Full-Stack Developer</strong> based
-          in the Philippines. I turn ideas into scalable, user-friendly
-          software.
+          Hi, I’m Kent, a{" "}
+          <strong className='text-[#0ED2F7]'>full-stack developer</strong>{" "}
+          turning ideas into software customers love. Obsessed with quant
+          finance, ML, and agentic AI.
         </h1>
         <div className='mt-6 flex justify-center gap-5'>
           {socials.map(({ label, href, Icon }) => (
